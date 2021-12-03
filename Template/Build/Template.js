@@ -35,7 +35,7 @@ var Template;
             pose: {
                 angry: "PFAD",
                 happy: "PFAD",
-                upset: "PFAD",
+                upset: "PFAD"
             }
         }
     };
@@ -46,9 +46,9 @@ var Template;
             { scene: Template.Scene, name: "Scene" }
         ];
         let uiElement = document.querySelector("[type=interface]");
-        Template.dataForSave =
-            // start the sequence
-            Template.ƒS.Progress.go(scenes);
+        Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
+        // start the sequence
+        Template.ƒS.Progress.go(scenes);
     }
 })(Template || (Template = {}));
 var Template;
@@ -83,8 +83,12 @@ var Template;
                 break;
             case firstDialogueElementOptions.iSayYes:
                 await Template.ƒS.Character.show(Template.characters.aisaka, Template.characters.aisaka.pose.angry, Template.ƒS.positions.center);
+                break;
             case firstDialogueElementOptions.iSayNo:
+                await Template.ƒS.Speech.tell(Template.characters.aisaka, text.aisaka.T0001);
+                break;
         }
+        await Template.ƒS.Speech.tell(Template.characters.aisaka, text.aisaka.T0001);
     }
     Template.Scene = Scene;
 })(Template || (Template = {}));

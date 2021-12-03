@@ -42,7 +42,7 @@ namespace Template {
       pose: {
         angry: "PFAD",
         happy: "PFAD",
-        upset: "PFAD",
+        upset: "PFAD"
       }
     }
   };
@@ -59,7 +59,7 @@ namespace Template {
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
-    dataForSave = 
+    dataForSave = ƒS.Progress.setData(dataForSave, uiElement);
 
     // start the sequence
     ƒS.Progress.go(scenes);

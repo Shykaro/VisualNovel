@@ -39,11 +39,14 @@ namespace Template {
     
       case firstDialogueElementOptions.iSayYes:
         await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positions.center);
-    
-
+        break;
       case firstDialogueElementOptions.iSayNo:
-        
+        await ƒS.Speech.tell(characters.aisaka, text.aisaka.T0001);
+        break;
     }
+
+
+    await ƒS.Speech.tell(characters.aisaka, text.aisaka.T0001);
 
 
 
