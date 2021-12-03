@@ -52,16 +52,29 @@ namespace Template {
     
   };
 
+  export function fromLeftToRight(): ƒS.AnimationDefinition{
+    return{
+      start: {translation: ƒS.positions.bottomleft, rotation: -20, scaling: new ƒS.Position(0.5, 1.5), color: ƒS.Color.CSS("white", 0)},
+      end: {translation: ƒS.positions.bottomleft, rotation: 20, scaling: new ƒS.Position(1.5, 0.5), color: ƒS.Color.CSS("red") },
+      duration: 1,
+      playmode: ƒS.ANIMATION_PLAYMODE.LOOP
+  };
+}
+
+
+
+
+  let uiElement: HTMLElement = document.querySelector("[type=interface]");
+  dataForSave = ƒS.Progress.setData(dataForSave, uiElement);
+
+
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
       { scene: Scene, name: "Scene" }
     ];
-
-    let uiElement: HTMLElement = document.querySelector("[type=interface]");
-    dataForSave = ƒS.Progress.setData(dataForSave, uiElement);
-
-    // start the sequence
+     // start the sequence
     ƒS.Progress.go(scenes);
   }
+  
 }

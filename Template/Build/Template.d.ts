@@ -34,6 +34,7 @@ declare namespace Template {
         };
     };
     let dataForSave: {};
+    function fromLeftToRight(): ƒS.AnimationDefinition;
 }
 declare namespace Template {
     function Scene(): ƒS.SceneReturn;

@@ -20,6 +20,7 @@ namespace Template {
     await ƒS.update();
     await ƒS.Speech.tell(characters.aisaka, text.aisaka.T0000);
     await ƒS.Speech.tell(characters.aisaka, "Hi2");
+    await ƒS.Character.animate(characters.aisaka, characters.aisaka.pose.happy, fromLeftToRight());
     await ƒS.Character.hide(characters.aisaka);
 
 

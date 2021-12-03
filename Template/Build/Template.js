@@ -40,13 +40,22 @@ var Template;
         }
     };
     Template.dataForSave = {};
+    function fromLeftToRight() {
+        return {
+            start: { translation: Template.ƒS.positions.bottomleft, rotation: -20, scaling: new Template.ƒS.Position(0.5, 1.5), color: Template.ƒS.Color.CSS("white", 0) },
+            end: { translation: Template.ƒS.positions.bottomleft, rotation: 20, scaling: new Template.ƒS.Position(1.5, 0.5), color: Template.ƒS.Color.CSS("red") },
+            duration: 1,
+            playmode: Template.ƒS.ANIMATION_PLAYMODE.LOOP
+        };
+    }
+    Template.fromLeftToRight = fromLeftToRight;
+    let uiElement = document.querySelector("[type=interface]");
+    Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
             { scene: Template.Scene, name: "Scene" }
         ];
-        let uiElement = document.querySelector("[type=interface]");
-        Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
         // start the sequence
         Template.ƒS.Progress.go(scenes);
     }
@@ -70,6 +79,7 @@ var Template;
         await Template.ƒS.update();
         await Template.ƒS.Speech.tell(Template.characters.aisaka, text.aisaka.T0000);
         await Template.ƒS.Speech.tell(Template.characters.aisaka, "Hi2");
+        await Template.ƒS.Character.animate(Template.characters.aisaka, Template.characters.aisaka.pose.happy, Template.fromLeftToRight());
         await Template.ƒS.Character.hide(Template.characters.aisaka);
         let firstDialogueElementOptions = {
             iSayOk: "OK.",
