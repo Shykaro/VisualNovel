@@ -28,7 +28,7 @@ namespace Template {
   export let locations = {
     bedroom: {
       name: "Bedroom",
-      background: "./Images/Backgrounds/Bedroom.png"
+      background: "./Assets/Background/MountainCastle.png"
     }
   };
 
@@ -40,9 +40,9 @@ namespace Template {
       name: "Aisaka",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        angry: "PFAD",
-        happy: "PFAD",
-        upset: "PFAD"
+        angry: "./Assets/Character/Knight.png",
+        happy: "./Assets/Character/Knight.png",
+        upset: "./Assets/Character/Knight.png"
       }
     }
   };
@@ -51,6 +51,7 @@ namespace Template {
   export let dataForSave = {
     
   };
+
 
   export function fromLeftToRight(): ƒS.AnimationDefinition{
     return{
@@ -64,15 +65,19 @@ namespace Template {
 
 
 
-  let uiElement: HTMLElement = document.querySelector("[type=interface]");
-  dataForSave = ƒS.Progress.setData(dataForSave, uiElement);
+  
 
 
   window.addEventListener("load", start);
   function start(_event: Event): void {
+    console.log("FudgeStory template starting NOW");
     let scenes: ƒS.Scenes = [
       { scene: Scene, name: "Scene" }
     ];
+
+    let uiElement: HTMLElement = document.querySelector("[type=interface]");
+    dataForSave = ƒS.Progress.setData(dataForSave, uiElement);
+
      // start the sequence
     ƒS.Progress.go(scenes);
   }

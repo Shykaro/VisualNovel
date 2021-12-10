@@ -4,17 +4,18 @@ namespace Template {
 
     let text = {
       narrator: {
-          T0000: "",
-          T0001: ""
+          T0000: "You Died.",
+          T0001: "You will be judged infront of the Eternities of the everliving astral World."
 
       },
       aisaka: {
-          T0000: "",
-          T0001: ""
+          T0000: "No",
+          T0001: "NoNo"
       }
   };
 
 
+    await ƒS.Location.show(locations.bedroom);
     await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
     await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positionPercent(30, 100));
     await ƒS.update();

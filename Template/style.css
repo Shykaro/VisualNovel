@@ -1,5 +1,63 @@
 scene {
-  width: 1280px;
-  height: 720px;
-  display: inline-block;
+    width: 1280px;
+    height: 720px;
+    display: inline-block;
+}
+
+canvas {
+    width: 100%;
+}
+
+speech {
+    position: absolute;
+    top: 540px;
+    left: 150px;
+    color: beige;
+    background-color: rgb(109, 67, 48);
+    border: double 8px rgb(49, 19, 6);
+    width: 40%;
+    height: 10vh;
+    padding: 10px;
+    ;
+}
+
+speech name {
+    display: block;
+    margin-bottom: 20px;
+    color: rgb(209, 217, 224);
+}
+
+speech content {
+    color: rgb(209, 217, 224);
+}
+
+.dialogBox {
+    background-color: rgb(55, 109, 209);
+    width: 480px;
+    border: double;
+    margin-left: 500px;
+    margin-top: 300px;
+}
+
+.dialogBox button {
+    background-color: rgb(160, 186, 235);
+    border: double;
+    margin: 5px;
+    width: 150px;
+}
+
+.dialogBox2 {
+    background-color: rgb(55, 109, 209);
+    width: 280px;
+    border: double;
+    margin-left: 600px;
+    margin-top: 300px;
+}
+
+.dialogBox2 button {
+    background-color: rgb(160, 186, 235);
+    border: double;
+    margin: 10px;
+    width: 250px;
+    height: 50px;
 }
