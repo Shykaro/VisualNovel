@@ -24,7 +24,6 @@ namespace Template {
     click: ""
   };
 
-
   export let locations = {
     bedroom: {
       name: "Bedroom",
@@ -46,6 +45,86 @@ namespace Template {
       }
     }
   };
+
+  export let items = {
+    pen: {
+      name: "Roter Buntstift",
+      description: "Ein Bunter Stift der Rot ist.",
+      image: ""
+    }
+  };
+
+
+
+  // Menü Zusatz
+  let inGameMenu  = {
+    //buttons, die man angezeigt haben möchte & strings dienen zur css-gestaltung
+    save: "Save",
+    load: "Load",
+    close: "Close"
+    //open: "Open" Useless
+  };
+
+  let gameMenu: ƒS.Menu;
+
+  // true ist offenes Menü, false ist zu.
+  let menu: boolean = true;
+
+  async function buttonFunctionalities(_option:string): Promise<void> {
+    console.log(_option);
+
+    switch (_option){
+      case inGameMenu.save:
+        await ƒS.Progress.save();
+        break;
+      case inGameMenu.load:
+        await ƒS.Progress.load();
+        break;
+      case inGameMenu.close:
+        gameMenu.close();
+        menu = false;
+        break;
+      //case inGameMenu.open:
+      //  gameMenu.open();
+      //  menu = true;
+      // break;
+
+    }
+  }
+  
+
+  // Unterscheidung zwischen Open Menu und Closed Menu
+  document.addEventListener("keydown", hndKeyPress);
+  async function hndKeyPress(_event:KeyboardEvent): Promise<void> {
+    switch (_event.code) {
+      case ƒ.KEYBOARD_CODE.F8:
+        console.log("Save");
+        await ƒS.Progress.save();
+        break;
+      case ƒ.KEYBOARD_CODE.F9:
+        console.log("Load");
+        await ƒS.Progress.load();
+        break;
+      case ƒ.KEYBOARD_CODE.M:
+        if (menu) {
+          console.log("Close");
+          await gameMenu.close();
+          menu = false;
+        }
+        else {
+          console.log("Open");
+          await gameMenu.open();
+          menu = true;
+        }
+        break;
+
+    }
+    
+  }
+
+
+
+
 
   
 
@@ -71,7 +150,13 @@ namespace Template {
 
   window.addEventListener("load", start);
   function start(_event: Event): void {
+
     console.log("FudgeStory template starting NOW");
+
+    //Menü
+    gameMenu = ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
+
+    //Szenenreihenfolge
     let scenes: ƒS.Scenes = [
       { id: "Einfuehrung", scene: Introduction, name: "Introduction to FS"},
       { scene: Scene, name: "Scene" }

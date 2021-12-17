@@ -50,6 +50,14 @@ namespace Template {
 
     await ƒS.Speech.tell(characters.aisaka, text.aisaka.T0001);
 
+    //Inventory Befehle
+    ƒS.Inventory.add(items.pen);
+    await ƒS.Inventory.open();
+    await ƒS.Inventory.close();
+
+
+    // Menü
+
 
 
   }
