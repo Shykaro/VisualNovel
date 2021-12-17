@@ -34,7 +34,7 @@ namespace Template {
     let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementOptions, "individualCSSClass");
 
 
-    switch (firstDialogueElement){
+    switch (firstDialogueElement) {
       case firstDialogueElementOptions.iSayOk:
         await ƒS.Speech.tell(characters.aisaka, "Hi2.");
         break;

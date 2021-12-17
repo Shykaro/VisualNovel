@@ -47,13 +47,14 @@ namespace Template {
     }
   };
 
+  
 
   export let dataForSave = {
     
   };
 
 
-  export function fromLeftToRight(): ƒS.AnimationDefinition{
+  export function fromLeftToRight(): ƒS.AnimationDefinition {
     return{
       start: {translation: ƒS.positions.bottomleft, rotation: -20, scaling: new ƒS.Position(0.5, 1.5), color: ƒS.Color.CSS("white", 0)},
       end: {translation: ƒS.positions.bottomleft, rotation: 20, scaling: new ƒS.Position(1.5, 0.5), color: ƒS.Color.CSS("red") },
@@ -72,7 +73,10 @@ namespace Template {
   function start(_event: Event): void {
     console.log("FudgeStory template starting NOW");
     let scenes: ƒS.Scenes = [
+      { id: "Einfuehrung", scene: Introduction, name: "Introduction to FS"},
       { scene: Scene, name: "Scene" }
+      //{ id: "Ende", scene: End, name: "Introduction to FS"},
+    
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
