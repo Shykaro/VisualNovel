@@ -18,13 +18,18 @@ namespace Template {
 
   export let sound = {
     //music
-    backgroundTheme: "",
+    backgroundTheme: "./Assets/Music/Vampires/WastedBlood.mp3",
+    introtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
 
     //sound
     click: ""
   };
 
   export let locations = {
+    introduction: {
+      name: "Intro",
+      background: "./Assets/Background/Intro.jpg"
+    },
     bedroom: {
       name: "Bedroom",
       background: "./Assets/Background/MountainCastle.png"

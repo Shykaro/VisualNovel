@@ -10,24 +10,36 @@ var Template;
 (function (Template) {
     async function Scene() {
         console.log("FudgeStory Template Scene starting");
+        //Texte
         let text = {
             narrator: {
                 T0000: "You Died.",
-                T0001: "You will be judged infront of the Eternities of the everliving astral World."
+                T0001: "You will be judged infront of the Eternities of the everliving astral World.",
+                T0002: "...",
+                T0003: "You were found guilty by the ten commandments.",
+                T0004: "You will suffer in Hell",
+                T0005: "You will suffer in Hell",
+                T0006: "You will suffer in Hell",
             },
             aisaka: {
                 T0000: "No",
                 T0001: "NoNo"
             }
         };
-        await Template.ƒS.Location.show(Template.locations.bedroom);
+        //Actual timeline
+        await Template.ƒS.Location.show(Template.locations.introduction);
+        await Template.ƒS.Sound.play(Template.sound.backgroundTheme, 0.1, true);
         await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
-        await Template.ƒS.Character.show(Template.characters.aisaka, Template.characters.aisaka.pose.angry, Template.ƒS.positionPercent(30, 100));
+        //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positionPercent(30, 100));
         await Template.ƒS.update();
-        await Template.ƒS.Speech.tell(Template.characters.aisaka, text.aisaka.T0000);
-        await Template.ƒS.Speech.tell(Template.characters.aisaka, "Hi2");
-        await Template.ƒS.Character.animate(Template.characters.aisaka, Template.characters.aisaka.pose.happy, Template.fromLeftToRight());
-        await Template.ƒS.Character.hide(Template.characters.aisaka);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0003);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0004);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0005);
+        //await ƒS.Character.animate(characters.aisaka, characters.aisaka.pose.happy, fromLeftToRight());
+        //await ƒS.Character.hide(characters.aisaka);
         let firstDialogueElementOptions = {
             iSayOk: "OK.",
             iSayYes: "ja",
@@ -70,11 +82,16 @@ var Template;
     };
     Template.sound = {
         //music
-        backgroundTheme: "",
+        backgroundTheme: "./Assets/Music/Vampires/WastedBlood.mp3",
+        introtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
         //sound
         click: ""
     };
     Template.locations = {
+        introduction: {
+            name: "Intro",
+            background: "./Assets/Background/Intro.jpg"
+        },
         bedroom: {
             name: "Bedroom",
             background: "./Assets/Background/MountainCastle.png"

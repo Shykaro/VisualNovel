@@ -17,9 +17,14 @@ declare namespace Template {
     };
     let sound: {
         backgroundTheme: string;
+        introtheme: string;
         click: string;
     };
     let locations: {
+        introduction: {
+            name: string;
+            background: string;
+        };
         bedroom: {
             name: string;
             background: string;
