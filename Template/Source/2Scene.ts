@@ -16,12 +16,13 @@ namespace Template {
   };
 
 //Actual timeline
+    
     await ƒS.Location.show(locations.introduction);
     
     await ƒS.update(transition.cut.duration, transition.cut.alpha, transition.cut.edge);
     await ƒS.Sound.play(sound.backgroundTheme, 0.1, true);
-    //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positionPercent(30, 100));
-    await ƒS.update();
+    await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positionPercent(50, 90));
+    await ƒS.update(1);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0000);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0002 + ".....");

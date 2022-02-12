@@ -61,9 +61,9 @@ namespace Template {
       name: "Aisaka",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        angry: "./Assets/Character/Knight.png",
-        happy: "./Assets/Character/Knight.png",
-        upset: "./Assets/Character/Knight.png"
+        angry: "../Assets/Character/Knight.png",
+        happy: "../Assets/Character/Knight.png",
+        upset: "../Assets/Character/Knight.png"
       }
     }
   };

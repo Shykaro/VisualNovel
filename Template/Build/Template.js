@@ -26,8 +26,8 @@ var Template;
         await Template.ƒS.Location.show(Template.locations.introduction);
         await Template.ƒS.update(Template.transition.cut.duration, Template.transition.cut.alpha, Template.transition.cut.edge);
         await Template.ƒS.Sound.play(Template.sound.backgroundTheme, 0.1, true);
-        //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positionPercent(30, 100));
-        await Template.ƒS.update();
+        await Template.ƒS.Character.show(Template.characters.aisaka, Template.characters.aisaka.pose.angry, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002 + ".....");
@@ -154,9 +154,9 @@ var Template;
             name: "Aisaka",
             origin: Template.ƒS.ORIGIN.BOTTOMCENTER,
             pose: {
-                angry: "./Assets/Character/Knight.png",
-                happy: "./Assets/Character/Knight.png",
-                upset: "./Assets/Character/Knight.png"
+                angry: "../Assets/Character/Knight.png",
+                happy: "../Assets/Character/Knight.png",
+                upset: "../Assets/Character/Knight.png"
             }
         }
     };
