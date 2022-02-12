@@ -2,69 +2,99 @@
 var Template;
 (function (Template) {
     async function Introduction() {
-        console.log("FudgeStory Template Scene starting");
+        console.log("1 Pre Intro Scene starting");
     }
     Template.Introduction = Introduction;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
     async function Scene() {
-        console.log("FudgeStory Template Scene starting");
+        console.log("2 Intro Scene starting");
         //Texte
         let text = {
             narrator: {
                 T0000: "You Died.",
                 T0001: "You will be judged infront of the Eternities of the everliving astral World.",
-                T0002: "...",
+                T0002: ".....",
                 T0003: "You were found guilty by the ten commandments.",
                 T0004: "You will suffer in Hell",
-                T0005: "You will suffer in Hell",
-                T0006: "You will suffer in Hell",
-            },
-            aisaka: {
-                T0000: "No",
-                T0001: "NoNo"
+                T0005: "You will suffer...",
+                T0006: "You will..."
             }
         };
         //Actual timeline
         await Template.ƒS.Location.show(Template.locations.introduction);
+        await Template.ƒS.update(Template.transition.cut.duration, Template.transition.cut.alpha, Template.transition.cut.edge);
         await Template.ƒS.Sound.play(Template.sound.backgroundTheme, 0.1, true);
-        await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
         //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positionPercent(30, 100));
         await Template.ƒS.update();
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
-        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002 + ".....");
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0003);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0004);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0005);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0006);
         //await ƒS.Character.animate(characters.aisaka, characters.aisaka.pose.happy, fromLeftToRight());
         //await ƒS.Character.hide(characters.aisaka);
         let firstDialogueElementOptions = {
-            iSayOk: "OK.",
-            iSayYes: "ja",
-            iSayNo: "no"
+            iSayDot1: "...",
+            iSayDot2: "...",
+            iSayDot3: "..."
         };
         let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementOptions, "individualCSSClass");
         switch (firstDialogueElement) {
-            case firstDialogueElementOptions.iSayOk:
-                await Template.ƒS.Speech.tell(Template.characters.aisaka, "Hi2.");
+            case firstDialogueElementOptions.iSayDot1:
+                await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
                 break;
-            case firstDialogueElementOptions.iSayYes:
-                await Template.ƒS.Character.show(Template.characters.aisaka, Template.characters.aisaka.pose.angry, Template.ƒS.positions.center);
+            case firstDialogueElementOptions.iSayDot2:
+                //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positions.center);
+                await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
                 break;
-            case firstDialogueElementOptions.iSayNo:
-                await Template.ƒS.Speech.tell(Template.characters.aisaka, text.aisaka.T0001);
+            case firstDialogueElementOptions.iSayDot3:
+                await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
                 break;
         }
-        await Template.ƒS.Speech.tell(Template.characters.aisaka, text.aisaka.T0001);
+        //await ƒS.Speech.tell(characters.aisaka, text.aisaka.T0001);
         //Inventory Befehle
-        Template.ƒS.Inventory.add(Template.items.pen);
-        await Template.ƒS.Inventory.open();
-        await Template.ƒS.Inventory.close();
+        //ƒS.Inventory.add(items.pen);
+        //await ƒS.Inventory.open();
+        //await ƒS.Inventory.close();
         // Menü
     }
     Template.Scene = Scene;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function WiderstandsVersteck() {
+        console.log("3 WV Scene starting");
+        //Texte
+        let text = {
+            narrator: {
+                T0000: "You Died.",
+                T0001: "You will be judged infront of the Eternities of the everliving astral World.",
+                T0002: ".....",
+                T0003: "You were found guilty by the ten commandments.",
+                T0004: "You will suffer in Hell",
+                T0005: "You will suffer...",
+                T0006: "You will..."
+            }
+        };
+        await Template.ƒS.Location.show(Template.locations.bedroom);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
+        await Template.ƒS.update(Template.transition.donner1.duration, Template.transition.donner1.alpha, Template.transition.donner1.edge);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
+        await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
+        await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
+        await Template.ƒS.update(Template.transition.arcane.duration, Template.transition.arcane.alpha, Template.transition.arcane.edge);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
+        await Template.ƒS.Sound.play(Template.sound.backgroundTheme, 0.1, true);
+        //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positionPercent(30, 100));
+        await Template.ƒS.update();
+    }
+    Template.WiderstandsVersteck = WiderstandsVersteck;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -73,12 +103,31 @@ var Template;
     console.log("FudgeStory template starting");
     //define Transitions
     Template.transition = {
-        clock: {
-            duration: 1,
-            alpha: "./Transitions/puzzle.png",
-            edge: 1 //härte verlauf der transition, 
+        cut: {
+            duration: 3,
+            alpha: "./Transitions/Cut1.jpg",
+            edge: 0.1 //härte verlauf der transition, 
         },
-        wipe: {}
+        donner1: {
+            duration: 3,
+            alpha: "./Transitions/Gewitter1.jpg",
+            edge: 1
+        },
+        donner2: {
+            duration: 3,
+            alpha: "./Transitions/Gewitter2.jpg",
+            edge: 1
+        },
+        donner3: {
+            duration: 3,
+            alpha: "./Transitions/Gewitter3.jpg",
+            edge: 1
+        },
+        arcane: {
+            duration: 3,
+            alpha: "./Transitions/Arcane.jpg",
+            edge: 1
+        }
     };
     Template.sound = {
         //music
@@ -191,8 +240,9 @@ var Template;
         gameMenu = Template.ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
         //Szenenreihenfolge
         let scenes = [
-            { id: "Einfuehrung", scene: Template.Introduction, name: "Introduction to FS" },
-            { scene: Template.Scene, name: "Scene" }
+            { id: "Einfuehrung", scene: Template.Introduction, name: "1Introduction" },
+            { scene: Template.Scene, name: "2Scene" },
+            { scene: Template.WiderstandsVersteck, name: "3WV" }
             //{ id: "Ende", scene: End, name: "Introduction to FS"},
         ];
         let uiElement = document.querySelector("[type=interface]");

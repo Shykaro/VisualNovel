@@ -6,13 +6,30 @@ namespace Template {
 
   //define Transitions
   export let transition = {
-    clock: {
-      duration: 1, //länge der Transition
-      alpha: "./Transitions/puzzle.png",  //Pfad zur greyscaled alpha map
-      edge: 1  //härte verlauf der transition, 
+    cut: {
+      duration: 3, //länge der Transition
+      alpha: "./Transitions/Cut1.jpg",  //Pfad zur greyscaled alpha map
+      edge: 0.1  //härte verlauf der transition, 
     },
-    wipe: {
-
+    donner1: {
+      duration: 3, //länge der Transition
+      alpha: "./Transitions/Gewitter1.jpg",  //Pfad zur greyscaled alpha map
+      edge: 1
+    },
+    donner2: {
+      duration: 3, //länge der Transition
+      alpha: "./Transitions/Gewitter2.jpg",  //Pfad zur greyscaled alpha map
+      edge: 1
+    },
+    donner3: {
+      duration: 3, //länge der Transition
+      alpha: "./Transitions/Gewitter3.jpg",  //Pfad zur greyscaled alpha map
+      edge: 1
+    },
+    arcane: {
+      duration: 3, //länge der Transition
+      alpha: "./Transitions/Arcane.jpg",  //Pfad zur greyscaled alpha map
+      edge: 1
     }
   };
 
@@ -163,8 +180,9 @@ namespace Template {
 
     //Szenenreihenfolge
     let scenes: ƒS.Scenes = [
-      { id: "Einfuehrung", scene: Introduction, name: "Introduction to FS"},
-      { scene: Scene, name: "Scene" }
+      { id: "Einfuehrung", scene: Introduction, name: "1Introduction"},
+      { scene: Scene, name: "2Scene" },
+      { scene: WiderstandsVersteck, name: "3WV" }
       //{ id: "Ende", scene: End, name: "Introduction to FS"},
     
     ];

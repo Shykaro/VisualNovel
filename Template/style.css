@@ -1,5 +1,5 @@
 body {
-    background-color: darkslategrey;
+    background-color: #220c0c;
 }
 
 scene {
@@ -33,9 +33,9 @@ speech {
     position: absolute;
     top: 540px;
     left: 150px;
-    color: beige;
-    background-color: rgb(109, 67, 48);
-    border: double 8px rgb(49, 19, 6);
+    color: rgb(231, 220, 245);
+    background-color: #6b2b2b;
+    border: double 8px #310e0e;
     width: 73%;
     height: 10vh;
     padding: 10px;
