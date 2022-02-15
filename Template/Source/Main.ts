@@ -35,8 +35,9 @@ namespace Template {
 
   export let sound = {
     //music
-    backgroundTheme: "./Assets/Music/Vampires/WastedBlood.mp3",
+    backgroundtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
     introtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
+    wvtheme: "./Assets/Music/Vampires/Persian Battle.mp3",
 
     //sound
     click: ""
@@ -57,14 +58,19 @@ namespace Template {
     narrator: {
       name: ""
     },
-    aisaka: {
-      name: "Aisaka",
+    general: {
+      name: "General",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        angry: "../Assets/Character/Knight.png",
-        happy: "../Assets/Character/Knight.png",
-        upset: "../Assets/Character/Knight.png"
+        base: "./Assets/Character/HumanChars/General.gif",
       }
+    },
+      smage: {
+        name: "SmallMage",
+        origin: ƒS.ORIGIN.BOTTOMCENTER,
+        pose: {
+          base: "./Assets/Character/HumanChars/General.gif",
+        }
     }
   };
 
@@ -181,7 +187,7 @@ namespace Template {
     //Szenenreihenfolge
     let scenes: ƒS.Scenes = [
       { id: "Einfuehrung", scene: Introduction, name: "1Introduction"},
-      { scene: Scene, name: "2Scene" },
+      //{ scene: Scene, name: "2Scene" },
       { scene: WiderstandsVersteck, name: "3WV" }
       //{ id: "Ende", scene: End, name: "Introduction to FS"},
     

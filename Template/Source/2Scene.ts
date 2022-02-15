@@ -20,9 +20,7 @@ namespace Template {
     await ƒS.Location.show(locations.introduction);
     
     await ƒS.update(transition.cut.duration, transition.cut.alpha, transition.cut.edge);
-    await ƒS.Sound.play(sound.backgroundTheme, 0.1, true);
-    await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positionPercent(50, 90));
-    await ƒS.update(1);
+    await ƒS.Sound.play(sound.backgroundtheme, 0.1, true);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0000);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0002 + ".....");
@@ -30,6 +28,7 @@ namespace Template {
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0005);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0006);
+    await ƒS.Sound.fade(sound.backgroundtheme, 0, 1);
     //await ƒS.Character.animate(characters.aisaka, characters.aisaka.pose.happy, fromLeftToRight());
     //await ƒS.Character.hide(characters.aisaka);
 

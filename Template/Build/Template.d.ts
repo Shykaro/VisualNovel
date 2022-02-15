@@ -38,8 +38,9 @@ declare namespace Template {
         };
     };
     let sound: {
-        backgroundTheme: string;
+        backgroundtheme: string;
         introtheme: string;
+        wvtheme: string;
         click: string;
     };
     let locations: {
@@ -56,13 +57,18 @@ declare namespace Template {
         narrator: {
             name: string;
         };
-        aisaka: {
+        general: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
-                angry: string;
-                happy: string;
-                upset: string;
+                base: string;
+            };
+        };
+        smage: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                base: string;
             };
         };
     };
