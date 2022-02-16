@@ -1,11 +1,17 @@
 declare namespace Template {
-    function Introduction(): ƒS.SceneReturn;
+    function ReIntroduction(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function Scene(): ƒS.SceneReturn;
+    function Intro(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function WiderstandsVersteck(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function HauptVersteck(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function TrueEnding(): ƒS.SceneReturn;
 }
 declare namespace Template {
     export import ƒ = FudgeCore;
@@ -41,7 +47,9 @@ declare namespace Template {
         backgroundtheme: string;
         introtheme: string;
         wvtheme: string;
+        wvthemeBad: string;
         click: string;
+        boom: string;
     };
     let locations: {
         introduction: {
@@ -73,12 +81,18 @@ declare namespace Template {
         };
     };
     let items: {
-        pen: {
+        rose: {
             name: string;
             description: string;
             image: string;
         };
     };
-    let dataForSave: {};
+    let x: number;
+    let y: number;
+    let z: number;
+    let dataForSave: {
+        PName: string;
+    };
     function fromLeftToRight(): ƒS.AnimationDefinition;
+    function start(_event: Event): void;
 }

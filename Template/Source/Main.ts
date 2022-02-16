@@ -37,10 +37,12 @@ namespace Template {
     //music
     backgroundtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
     introtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
-    wvtheme: "./Assets/Music/Vampires/Persian Battle.mp3",
+    wvtheme: "./Assets/Music/Vampires/Haunted Mansion.mp3",
+    wvthemeBad: "./Assets/Music/Vampires/GodzillaVsKong.mp3",
 
     //sound
-    click: ""
+    click: "",
+    boom: "",
   };
 
   export let locations = {
@@ -75,13 +77,17 @@ namespace Template {
   };
 
   export let items = {
-    pen: {
-      name: "Roter Buntstift",
-      description: "Ein Bunter Stift der Rot ist.",
-      image: ""
+    rose: {
+      name: "Rose",
+      description: "Eine seltsam leuchtende Rose",
+      image: "./Assets/Items/rose.jpg"
     }
   };
 
+  //Platzhalter für global use
+  export let x: number = 0; //counter für gestellte fragen in 3wv.ts == smage dead? x>3 means dead.
+  export let y: number = 0; //Deathcounter
+  export let z: number = 0;
 
 
   // Menü Zusatz
@@ -119,6 +125,26 @@ namespace Template {
 
     }
   }
+
+    // shortcuts to open and close the inventory, kinda useless
+  document.addEventListener("keydown", hndKeypressForInventory);
+  async function hndKeypressForInventory(_event: KeyboardEvent): Promise<void> {
+      switch (_event.code) {
+        case ƒ.KEYBOARD_CODE.I:
+          console.log("open inventory");
+          await ƒS.Inventory.open();
+          break;
+        case ƒ.KEYBOARD_CODE.ESC:
+          console.log("close inventory");
+          await ƒS.Inventory.open();
+          let roseclick = await ƒS.Inventory.open();
+          if (roseclick[0] == "Rose") {
+            ƒS.Inventory.add(items.rose);
+          }
+          ƒS.Inventory.close();
+          break;
+      }
+    }
   
 
   // Unterscheidung zwischen Open Menu und Closed Menu
@@ -156,7 +182,8 @@ namespace Template {
 
   
 
-  export let dataForSave = {
+  export let dataForSave = {  
+      PName: "",
     
   };
 
@@ -177,18 +204,25 @@ namespace Template {
 
 
   window.addEventListener("load", start);
-  function start(_event: Event): void {
+  export function start(_event: Event): void { //added export to call from 3wv.ts scene
 
-    console.log("FudgeStory template starting NOW");
+    console.log("Sequenzreihe startet jetzt. Splish Splash your opinion is trash");
+
+    if (y == 1) {
+      console.log("######### Second run. #########");
+    }
 
     //Menü
     gameMenu = ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
 
     //Szenenreihenfolge
     let scenes: ƒS.Scenes = [
-      { id: "Einfuehrung", scene: Introduction, name: "1Introduction"},
-      //{ scene: Scene, name: "2Scene" },
-      { scene: WiderstandsVersteck, name: "3WV" }
+      { id: "Re:Intro", scene: ReIntroduction, name: "1Re:Intro"},
+      { scene: Intro, name: "2Intro" },
+      { scene: WiderstandsVersteck, name: "3WV" },
+      { scene: HauptVersteck, name: "4HV" },
+
+      { scene: TrueEnding, name: "9TrueEnding" },
       //{ id: "Ende", scene: End, name: "Introduction to FS"},
     
     ];

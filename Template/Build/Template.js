@@ -1,14 +1,22 @@
 "use strict";
 var Template;
 (function (Template) {
-    async function Introduction() {
+    async function ReIntroduction() {
         console.log("1 Pre Intro Scene starting");
+        if (Template.y > 0 && Template.y != 7) {
+            //ganzes Re:intro szenario hier.
+        }
+        if (Template.y == 7) {
+            //Die todsünden abgeschlossen, aufpassen, selber tod zählt auch den todwert hoch. Hier also maybe für jeden tod verschiedene werte festlegen und alle einzelon abfragen
+            //Real ending.
+            return "9TrueEnding"; //jumps to scene 9
+        }
     }
-    Template.Introduction = Introduction;
+    Template.ReIntroduction = ReIntroduction;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
-    async function Scene() {
+    async function Intro() {
         console.log("2 Intro Scene starting");
         //Texte
         let text = {
@@ -17,9 +25,10 @@ var Template;
                 T0001: "You will be judged infront of the Eternities of the everliving astral World.",
                 T0002: ".....",
                 T0003: "You were found guilty by the ten commandments.",
-                T0004: "You will suffer in Hell",
-                T0005: "You will suffer...",
-                T0006: "You will..."
+                T1003: "You shall be judged and tested in a trial.",
+                T0004: "Suffer in Hell",
+                T0005: "Suffer...",
+                T0006: "..."
             }
         };
         //Actual timeline
@@ -30,12 +39,11 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002 + ".....");
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0003);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T1003); //added als hinweis.
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0004);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0005);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0006);
         await Template.ƒS.Sound.fade(Template.sound.backgroundtheme, 0, 1);
-        //await ƒS.Character.animate(characters.aisaka, characters.aisaka.pose.happy, fromLeftToRight());
-        //await ƒS.Character.hide(characters.aisaka);
         let firstDialogueElementOptions = {
             iSayDot1: "...",
             iSayDot2: "...",
@@ -54,14 +62,8 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
                 break;
         }
-        //await ƒS.Speech.tell(characters.aisaka, text.aisaka.T0001);
-        //Inventory Befehle
-        //ƒS.Inventory.add(items.pen);
-        //await ƒS.Inventory.open();
-        //await ƒS.Inventory.close();
-        // Menü
     }
-    Template.Scene = Scene;
+    Template.Intro = Intro;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -96,7 +98,7 @@ var Template;
             },
         };
         // für Platzhalter für komisches Zeug
-        let x = 0;
+        //let x: number = 0;
         let askAgain = true;
         let mageDead = false; //smage dead?
         /* would like multiple transitions for gewitter effekt :( look discord for ref by jirka 12.03*/
@@ -132,22 +134,22 @@ var Template;
             switch (firstDialogueElement) {
                 case firstDialogueElementOptions.iSayDot1:
                     await Template.ƒS.Speech.tell(Template.characters.smage, text.smage.T0010);
-                    x++;
+                    Template.x++;
                     break;
                 case firstDialogueElementOptions.iSayDot2:
                     //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positions.center);
                     await Template.ƒS.Speech.tell(Template.characters.smage, text.smage.T0011);
-                    x++;
+                    Template.x++;
                     await Template.ƒS.Speech.tell(Template.characters.general, text.general.T0011);
                     break;
                 case firstDialogueElementOptions.iSayDot3:
                     await Template.ƒS.Speech.tell(Template.characters.smage, text.smage.T0012);
-                    x++;
+                    Template.x++;
                     await Template.ƒS.Speech.tell(Template.characters.general, text.general.T0010);
                     break;
                 case firstDialogueElementOptions.iSayDot4:
                     await Template.ƒS.Speech.tell(Template.characters.smage, text.smage.T0013);
-                    x++;
+                    Template.x++;
                     break;
                 case firstDialogueElementOptions.iSayDot5:
                     await Template.ƒS.Speech.tell(Template.characters.smage, text.smage.T0014);
@@ -156,31 +158,176 @@ var Template;
             }
         }
         //asking all will cost you tho, lol
-        if (x == 4 || x > 4) {
+        if (Template.x == 4 || Template.x > 4) {
             mageDead = true;
-            x = 0; //reset x because why not
         }
         if (mageDead) { //she dead - tree
             console.log("Mage died");
-            await Template.ƒS.Speech.tell(Template.characters.general, "We have to go NOW, this is not a joke!");
+            await Template.ƒS.Speech.tell(Template.characters.general, "???, we have to go NOW, this is not a joke!");
+            //change smages name to new Name???
             await Template.ƒS.Speech.tell(Template.characters.general, "One scout is missing and that brings up the topic, what the fuck is already out there");
             await Template.ƒS.Speech.tell(Template.characters.smage, "Thats not good...");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Is this really Hell?");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "This seems so unreal, but the Air is heavy and its way too warm");
+            await Template.ƒS.Sound.fade(Template.sound.wvtheme, 0, 1);
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Suddenly you see a drop of what seems to be acid fall to the ground and burn the dirt beneath it.");
+            await Template.ƒS.Sound.play(Template.sound.wvthemeBad, 0.1, true);
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Above you an absolute monstrosity of what seems to be a misformed Dog is looking with one of it's big Eyeballs");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Terrible fear strikes you, what is this creature? How can something look so disgusting?!");
+            await Template.ƒS.Speech.tell(Template.characters.smage, "??? Ahhhhhh theres one already hereeeee!!");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "The small Mage grabs her Staff and points it towards the hellish Creature and whispers something you don't seem to understand.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Out of nowhere a Beam of ice shoots out of the Tip from the little mages Staff.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "The creature gets hit and falls to the ground, whimpering in sounds of agony until finally breathing its last breath.");
+            await Template.ƒS.Speech.tell(Template.characters.general, "Fuck, it's already to late, ??? cover us, we have to run!!");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "The redhaired girl grabs your arm and nearly rips it off as she seems to drag your unwilling body behind her.");
+            await Template.ƒS.Speech.tell(Template.characters.general, "All because you wouldn't fucking listen... GO! We need to move!!");
+            await Template.ƒS.Speech.tell(Template.characters.smage, "Captain watchout!!");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "As you try to escape, one of these hell dogs seems to appear out of nowhere.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "while spotting the first, another one is already running alongside you, in matter of seconds you are surrounded");
+            await Template.ƒS.Speech.tell(Template.characters.smage, "Shields up!!");
+            await Template.ƒS.Speech.tell(Template.characters.general, "God fucking damnit!");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "The redhaired girl grabs you tight, draws her shield and points it towards the sky.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "You can't move, but you glance at the small mage that has been left behind to cover us.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "A bright light shines from her staff, attracting the attention of every single helldog around her.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "In a big cracking thunder sound she smashes the staff into the ground!");
+            await Template.ƒS.Sound.play(Template.sound.boom, 0.3, true);
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Bitterfreezing cold surrounds you in a matter of seconds, you seem to hear a sound of rain... rain in hell?!");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "As you come to realise, a huge storm of icespikes is raining with enourmes speed from the sky.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Whining after whining you hear the countless Helldogs around you fall to the ground...");
+            await Template.ƒS.Speech.tell(Template.characters.general, "You dumb idiot...");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "The redhaired girl lowers her shield, takes a quick look around and grabs tight.");
+            await Template.ƒS.Speech.tell(Template.characters.general, "Now is our time to run.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Finally catching your breath, you understand and run, following the redhaired girls path.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "One last time you turn around, daring a glance at the powerful little mage who seemed to have saved you twice.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Only to notice a girl laying on ground, seemingly unconscious.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "There are Helldogs surrounding her slowly as you scream for the redhaired girl.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "While noticing she is already looking towards your direction, tears running down her determined Eyes.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "She knew. You should've known. It's your fault...");
+            let secondDialogueElementOptions = {
+                iSayDot1: "Run back and help her.",
+                iSayDot2: "Stick to the plan",
+            };
+            let secondDialogueElement = await Template.ƒS.Menu.getInput(secondDialogueElementOptions, "WVDialogueOption");
+            switch (secondDialogueElement) {
+                case secondDialogueElementOptions.iSayDot1:
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "With full determination you run back, trying to save the girl that saved you.");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "Yet when you arrived, a horde of helldogs stare at you.");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "Terrified by the view of severed bodyparts spreading across the ground");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "Having a look at the monster appearing right in front of you, chewing on what seems to be an arm, you collapse to the ground.");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "This isn't fair. A pointless Trial.");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "Broken.");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "YOU DIED");
+                    Template.y++;
+                    window.addEventListener("load", Template.start); //does this work?? bruh this works. Genius.
+                    break;
+                case secondDialogueElementOptions.iSayDot2:
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "Emptyheaded and overwhelmed you do what you've been told.");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "You run...");
+                    await Template.ƒS.Sound.fade(Template.sound.wvthemeBad, 0, 1);
+                    break;
+            }
         }
         if (!mageDead) { //she aint dead - tree
             console.log("Mage diedn't");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "The Air is thick and hard to breath, as you look around yourself you notice the intense heat around you.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Is this really Hell?");
-            await Template.ƒS.Speech.tell(Template.characters.general, "Okay let's go, follow the route of those sticks in the ground.");
+            await Template.ƒS.Speech.tell(Template.characters.general, "Okay ???, let's go, follow the route of those sticks in the ground.");
             await Template.ƒS.Speech.tell(Template.characters.general, "We have to escape quietly, the scouts already saw some minor Demons coming close to us.");
+            //change smages name to new Name???
             await Template.ƒS.Speech.tell(Template.characters.smage, "Minor demons are still pretty scary if I might add that. They're smaller but way faster.");
             await Template.ƒS.Speech.tell(Template.characters.smage, "Aaaaand that's why we have to escape quietly, we cant outrun them.");
+            await Template.ƒS.Speech.tell(Template.characters.smage, "By the way, what's your name?");
+            //inputfield for PName here, how?
+            Template.dataForSave.PName = await Template.ƒS.Speech.getInput();
+            await Template.ƒS.Speech.tell(Template.characters.smage, "Ohhh " + Template.dataForSave.PName + " is a cute name");
+            await Template.ƒS.Speech.tell(Template.characters.smage, "My Name is ???");
+            await Template.ƒS.Speech.tell(Template.characters.smage, "Before we go, I have a small gift for you, take this.");
+            await Template.ƒS.Speech.tell(Template.characters.smage, "It took alot of work so please don't lose it okay?");
+            Template.ƒS.Inventory.add(Template.items.rose);
+            Template.ƒS.Inventory.add(Template.items.rose);
+            Template.ƒS.Inventory.add(Template.items.rose);
+            Template.ƒS.Inventory.add(Template.items.rose);
+            Template.ƒS.Inventory.add(Template.items.rose);
+            Template.ƒS.Inventory.add(Template.items.rose);
+            Template.ƒS.Inventory.add(Template.items.rose);
+            Template.ƒS.Inventory.add(Template.items.rose);
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Quietly under the orders of ??? the whole group sneaks towards the headquarters...");
+        }
+        //await ƒS.Character.show(characters.general, characters.general.pose.base, ƒS.positionPercent(30, 90));
+        //await ƒS.update();
+    }
+    Template.WiderstandsVersteck = WiderstandsVersteck;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function HauptVersteck() {
+        console.log("4 HV Scene starting");
+        //Texte
+        let text = {
+            narrator: {
+                T0001: "",
+                T0002: "",
+                T0003: "",
+                T0004: "",
+            },
+            smage: {
+                T0001: "",
+                T0002: "",
+                T0003: "",
+                T0004: "",
+            },
+            general: {
+                T0001: "",
+                T0002: "",
+                T0003: "",
+                T0004: "",
+            },
+        };
+        // für Platzhalter für komisches Zeug
+        let mageDead; //mage dead?
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "After a quite long time you arrive at what seems to be an hidden entrance.");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Mara moves a stone aside you waves you to go ahead.");
+        await Template.ƒS.Speech.tell(Template.characters.general, "We have arrived. Go ahead.");
+        //inbetween fehlen kommentare von small mage, if shes not dead.
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "...");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "After a rather long and difficult small cave you stand before a lively place.");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "People talking and enjoying themselves, sounds of metal clinging, a lively bazaar, this doesn't look like hell.");
+        await Template.ƒS.Speech.tell(Template.characters.general, "You will need some proper training, go to the barracks to learn something useful.");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Mara leaves you behind and seems to walk to a tent reserved for her.");
+        //first dialogue option to ask questions
+        let firstDialogueElementOptions = {
+            iSayDot1: "Talk to Mara",
+            iSayDot2: "Go check out the barracks",
+        };
+        let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementOptions, "WVDialogueOption");
+        switch (firstDialogueElement) {
+            case firstDialogueElementOptions.iSayDot1:
+                break;
+            case firstDialogueElementOptions.iSayDot2:
+                //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positions.center);
+                break;
+        }
+        //asking all will cost you tho, lol
+        if (Template.x == 4 || Template.x > 4) {
+            mageDead = true;
+        }
+        if (mageDead) { //she dead - tree
+            console.log("Mage still dead");
+        }
+        if (!mageDead) { //she aint dead - tree
+            console.log("Mage still did diedn't");
         }
         await Template.ƒS.Character.show(Template.characters.general, Template.characters.general.pose.base, Template.ƒS.positionPercent(30, 90));
         await Template.ƒS.update();
     }
-    Template.WiderstandsVersteck = WiderstandsVersteck;
+    Template.HauptVersteck = HauptVersteck;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function TrueEnding() {
+        console.log("9 TrueEnding Scene starting");
+    }
+    Template.TrueEnding = TrueEnding;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -219,9 +366,11 @@ var Template;
         //music
         backgroundtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
         introtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
-        wvtheme: "./Assets/Music/Vampires/Persian Battle.mp3",
+        wvtheme: "./Assets/Music/Vampires/Haunted Mansion.mp3",
+        wvthemeBad: "./Assets/Music/Vampires/GodzillaVsKong.mp3",
         //sound
-        click: ""
+        click: "",
+        boom: "",
     };
     Template.locations = {
         introduction: {
@@ -253,12 +402,16 @@ var Template;
         }
     };
     Template.items = {
-        pen: {
-            name: "Roter Buntstift",
-            description: "Ein Bunter Stift der Rot ist.",
-            image: ""
+        rose: {
+            name: "Rose",
+            description: "Eine seltsam leuchtende Rose",
+            image: "./Assets/Items/rose.jpg"
         }
     };
+    //Platzhalter für global use
+    Template.x = 0; //counter für gestellte fragen in 3wv.ts == smage dead? x>3 means dead.
+    Template.y = 0; //Deathcounter
+    Template.z = 0;
     // Menü Zusatz
     let inGameMenu = {
         //buttons, die man angezeigt haben möchte & strings dienen zur css-gestaltung
@@ -289,6 +442,25 @@ var Template;
             // break;
         }
     }
+    // shortcuts to open and close the inventory, kinda useless
+    document.addEventListener("keydown", hndKeypressForInventory);
+    async function hndKeypressForInventory(_event) {
+        switch (_event.code) {
+            case Template.ƒ.KEYBOARD_CODE.I:
+                console.log("open inventory");
+                await Template.ƒS.Inventory.open();
+                break;
+            case Template.ƒ.KEYBOARD_CODE.ESC:
+                console.log("close inventory");
+                await Template.ƒS.Inventory.open();
+                let roseclick = await Template.ƒS.Inventory.open();
+                if (roseclick[0] == "Rose") {
+                    Template.ƒS.Inventory.add(Template.items.rose);
+                }
+                Template.ƒS.Inventory.close();
+                break;
+        }
+    }
     // Unterscheidung zwischen Open Menu und Closed Menu
     document.addEventListener("keydown", hndKeyPress);
     async function hndKeyPress(_event) {
@@ -315,7 +487,9 @@ var Template;
                 break;
         }
     }
-    Template.dataForSave = {};
+    Template.dataForSave = {
+        PName: "",
+    };
     function fromLeftToRight() {
         return {
             start: { translation: Template.ƒS.positions.bottomleft, rotation: -20, scaling: new Template.ƒS.Position(0.5, 1.5), color: Template.ƒS.Color.CSS("white", 0) },
@@ -327,14 +501,19 @@ var Template;
     Template.fromLeftToRight = fromLeftToRight;
     window.addEventListener("load", start);
     function start(_event) {
-        console.log("FudgeStory template starting NOW");
+        console.log("Sequenzreihe startet jetzt. Splish Splash your opinion is trash");
+        if (Template.y == 1) {
+            console.log("######### Second run. #########");
+        }
         //Menü
         gameMenu = Template.ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
         //Szenenreihenfolge
         let scenes = [
-            { id: "Einfuehrung", scene: Template.Introduction, name: "1Introduction" },
-            //{ scene: Scene, name: "2Scene" },
-            { scene: Template.WiderstandsVersteck, name: "3WV" }
+            { id: "Re:Intro", scene: Template.ReIntroduction, name: "1Re:Intro" },
+            { scene: Template.Intro, name: "2Intro" },
+            { scene: Template.WiderstandsVersteck, name: "3WV" },
+            { scene: Template.HauptVersteck, name: "4HV" },
+            { scene: Template.TrueEnding, name: "9TrueEnding" },
             //{ id: "Ende", scene: End, name: "Introduction to FS"},
         ];
         let uiElement = document.querySelector("[type=interface]");
@@ -342,5 +521,6 @@ var Template;
         // start the sequence
         Template.ƒS.Progress.go(scenes);
     }
+    Template.start = start;
 })(Template || (Template = {}));
 //# sourceMappingURL=Template.js.map

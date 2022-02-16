@@ -1,5 +1,5 @@
 namespace Template {
-  export async function Scene(): ƒS.SceneReturn {
+  export async function Intro(): ƒS.SceneReturn {
     console.log("2 Intro Scene starting");
 //Texte
     let text = {
@@ -8,9 +8,10 @@ namespace Template {
           T0001: "You will be judged infront of the Eternities of the everliving astral World.",
           T0002: ".....",
           T0003: "You were found guilty by the ten commandments.",
-          T0004: "You will suffer in Hell",
-          T0005: "You will suffer...",
-          T0006: "You will..."
+          T1003: "You shall be judged and tested in a trial.",
+          T0004: "Suffer in Hell",
+          T0005: "Suffer...",
+          T0006: "..."
 
       }
   };
@@ -25,12 +26,11 @@ namespace Template {
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0002 + ".....");
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0003);
+    await ƒS.Speech.tell(characters.narrator, text.narrator.T1003); //added als hinweis.
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0005);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0006);
     await ƒS.Sound.fade(sound.backgroundtheme, 0, 1);
-    //await ƒS.Character.animate(characters.aisaka, characters.aisaka.pose.happy, fromLeftToRight());
-    //await ƒS.Character.hide(characters.aisaka);
 
 
     let firstDialogueElementOptions = {
@@ -55,19 +55,6 @@ namespace Template {
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
         break;
     }
-
-
-    //await ƒS.Speech.tell(characters.aisaka, text.aisaka.T0001);
-
-    //Inventory Befehle
-    //ƒS.Inventory.add(items.pen);
-    //await ƒS.Inventory.open();
-    //await ƒS.Inventory.close();
-
-
-    // Menü
-
-
 
   }
 }
