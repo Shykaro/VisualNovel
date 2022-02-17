@@ -116,13 +116,15 @@ namespace Template {
         console.log("Mage died");   
         
         await ƒS.Speech.tell(characters.general, "???, we have to go NOW, this is not a joke!");
+        await ƒS.Speech.tell(characters.smage, "Come to think of it, what's");
+        dataForSave.PName = await ƒS.Speech.getInput();
         //change smages name to new Name???
 
         await ƒS.Speech.tell(characters.general, "One scout is missing and that brings up the topic, what the fuck is already out there");
         await ƒS.Speech.tell(characters.smage, "Thats not good...");
 
-        await ƒS.Speech.tell(characters.narrator, "Is this really Hell?");
-        await ƒS.Speech.tell(characters.narrator, "This seems so unreal, but the Air is heavy and its way too warm");
+        await ƒS.Speech.tell(characters.consciousness, "Is this really Hell?");
+        await ƒS.Speech.tell(characters.consciousness, "This seems so unreal, but the Air is heavy and its way too warm");
         await ƒS.Sound.fade(sound.wvtheme, 0, 1);
         await ƒS.Speech.tell(characters.narrator, "Suddenly you see a drop of what seems to be acid fall to the ground and burn the dirt beneath it.");
         await ƒS.Sound.play(sound.wvthemeBad, 0.1, true);
@@ -154,14 +156,14 @@ namespace Template {
         await ƒS.Speech.tell(characters.narrator, "Whining after whining you hear the countless Helldogs around you fall to the ground...");
 
         await ƒS.Speech.tell(characters.general, "You dumb idiot...");
-        await ƒS.Speech.tell(characters.narrator, "The redhaired girl lowers her shield, takes a quick look around and grabs tight.");
+        await ƒS.Speech.tell(characters.narrator, "The redhaired girl lowers her shield, takes a quick look around and grabs your arm with sheer strength.");
         await ƒS.Speech.tell(characters.general, "Now is our time to run.");
         await ƒS.Speech.tell(characters.narrator, "Finally catching your breath, you understand and run, following the redhaired girls path.");
         await ƒS.Speech.tell(characters.narrator, "One last time you turn around, daring a glance at the powerful little mage who seemed to have saved you twice.");
         await ƒS.Speech.tell(characters.narrator, "Only to notice a girl laying on ground, seemingly unconscious.");
         await ƒS.Speech.tell(characters.narrator, "There are Helldogs surrounding her slowly as you scream for the redhaired girl.");
         await ƒS.Speech.tell(characters.narrator, "While noticing she is already looking towards your direction, tears running down her determined Eyes.");
-        await ƒS.Speech.tell(characters.narrator, "She knew. You should've known. It's your fault...");
+        await ƒS.Speech.tell(characters.consciousness, "She knew. You should've known. It's your fault...");
 
         let secondDialogueElementOptions = {
           iSayDot1: "Run back and help her.",
@@ -175,7 +177,7 @@ namespace Template {
             await ƒS.Speech.tell(characters.narrator, "Yet when you arrived, a horde of helldogs stare at you.");
             await ƒS.Speech.tell(characters.narrator, "Terrified by the view of severed bodyparts spreading across the ground");
             await ƒS.Speech.tell(characters.narrator, "Having a look at the monster appearing right in front of you, chewing on what seems to be an arm, you collapse to the ground.");
-            await ƒS.Speech.tell(characters.narrator, "This isn't fair. A pointless Trial.");
+            await ƒS.Speech.tell(characters.consciousness, "This isn't fair. A pointless Trial.");
             await ƒS.Speech.tell(characters.narrator, "Broken.");
 
             await ƒS.Speech.tell(characters.narrator, "YOU DIED");
@@ -198,7 +200,7 @@ namespace Template {
         console.log("Mage diedn't"); 
 
         await ƒS.Speech.tell(characters.narrator, "The Air is thick and hard to breath, as you look around yourself you notice the intense heat around you.");
-        await ƒS.Speech.tell(characters.narrator, "Is this really Hell?");
+        await ƒS.Speech.tell(characters.consciousness, "Is this really Hell?");
         
         await ƒS.Speech.tell(characters.general, "Okay ???, let's go, follow the route of those sticks in the ground.");
         await ƒS.Speech.tell(characters.general, "We have to escape quietly, the scouts already saw some minor Demons coming close to us.");

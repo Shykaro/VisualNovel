@@ -62,7 +62,14 @@ declare namespace Template {
         };
     };
     let characters: {
+        unknown: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+        };
         narrator: {
+            name: string;
+        };
+        consciousness: {
             name: string;
         };
         general: {
@@ -73,6 +80,13 @@ declare namespace Template {
             };
         };
         smage: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                base: string;
+            };
+        };
+        scout: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
@@ -92,6 +106,7 @@ declare namespace Template {
     let z: number;
     let dataForSave: {
         PName: string;
+        Skill: number;
     };
     function fromLeftToRight(): ƒS.AnimationDefinition;
     function start(_event: Event): void;

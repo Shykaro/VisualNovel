@@ -57,8 +57,16 @@ namespace Template {
   };
 
   export let characters = {
+
+    unknown: {
+      name: "???",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+    },
     narrator: {
       name: ""
+    },
+    consciousness: {
+      name: "Consciousness"
     },
     general: {
       name: "General",
@@ -67,13 +75,21 @@ namespace Template {
         base: "./Assets/Character/HumanChars/General.gif",
       }
     },
-      smage: {
-        name: "SmallMage",
-        origin: ƒS.ORIGIN.BOTTOMCENTER,
-        pose: {
-          base: "./Assets/Character/HumanChars/General.gif",
-        }
+    smage: {
+      name: "SmallMage",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        base: "./Assets/Character/HumanChars/General.gif",
+      }
+    },
+    scout: {
+      name: "Scout",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        base: "./Assets/Character/HumanChars/General.gif",
+      }
     }
+    
   };
 
   export let items = {
@@ -184,6 +200,7 @@ namespace Template {
 
   export let dataForSave = {  
       PName: "",
+      Skill: 0,
     
   };
 

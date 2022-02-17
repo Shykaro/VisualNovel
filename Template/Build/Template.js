@@ -164,11 +164,13 @@ var Template;
         if (mageDead) { //she dead - tree
             console.log("Mage died");
             await Template.ƒS.Speech.tell(Template.characters.general, "???, we have to go NOW, this is not a joke!");
+            await Template.ƒS.Speech.tell(Template.characters.smage, "Come to think of it, what's");
+            Template.dataForSave.PName = await Template.ƒS.Speech.getInput();
             //change smages name to new Name???
             await Template.ƒS.Speech.tell(Template.characters.general, "One scout is missing and that brings up the topic, what the fuck is already out there");
             await Template.ƒS.Speech.tell(Template.characters.smage, "Thats not good...");
-            await Template.ƒS.Speech.tell(Template.characters.narrator, "Is this really Hell?");
-            await Template.ƒS.Speech.tell(Template.characters.narrator, "This seems so unreal, but the Air is heavy and its way too warm");
+            await Template.ƒS.Speech.tell(Template.characters.consciousness, "Is this really Hell?");
+            await Template.ƒS.Speech.tell(Template.characters.consciousness, "This seems so unreal, but the Air is heavy and its way too warm");
             await Template.ƒS.Sound.fade(Template.sound.wvtheme, 0, 1);
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Suddenly you see a drop of what seems to be acid fall to the ground and burn the dirt beneath it.");
             await Template.ƒS.Sound.play(Template.sound.wvthemeBad, 0.1, true);
@@ -195,14 +197,14 @@ var Template;
             await Template.ƒS.Speech.tell(Template.characters.narrator, "As you come to realise, a huge storm of icespikes is raining with enourmes speed from the sky.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Whining after whining you hear the countless Helldogs around you fall to the ground...");
             await Template.ƒS.Speech.tell(Template.characters.general, "You dumb idiot...");
-            await Template.ƒS.Speech.tell(Template.characters.narrator, "The redhaired girl lowers her shield, takes a quick look around and grabs tight.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "The redhaired girl lowers her shield, takes a quick look around and grabs your arm with sheer strength.");
             await Template.ƒS.Speech.tell(Template.characters.general, "Now is our time to run.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Finally catching your breath, you understand and run, following the redhaired girls path.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "One last time you turn around, daring a glance at the powerful little mage who seemed to have saved you twice.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Only to notice a girl laying on ground, seemingly unconscious.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "There are Helldogs surrounding her slowly as you scream for the redhaired girl.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "While noticing she is already looking towards your direction, tears running down her determined Eyes.");
-            await Template.ƒS.Speech.tell(Template.characters.narrator, "She knew. You should've known. It's your fault...");
+            await Template.ƒS.Speech.tell(Template.characters.consciousness, "She knew. You should've known. It's your fault...");
             let secondDialogueElementOptions = {
                 iSayDot1: "Run back and help her.",
                 iSayDot2: "Stick to the plan",
@@ -214,7 +216,7 @@ var Template;
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "Yet when you arrived, a horde of helldogs stare at you.");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "Terrified by the view of severed bodyparts spreading across the ground");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "Having a look at the monster appearing right in front of you, chewing on what seems to be an arm, you collapse to the ground.");
-                    await Template.ƒS.Speech.tell(Template.characters.narrator, "This isn't fair. A pointless Trial.");
+                    await Template.ƒS.Speech.tell(Template.characters.consciousness, "This isn't fair. A pointless Trial.");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "Broken.");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "YOU DIED");
                     Template.y++;
@@ -230,7 +232,7 @@ var Template;
         if (!mageDead) { //she aint dead - tree
             console.log("Mage diedn't");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "The Air is thick and hard to breath, as you look around yourself you notice the intense heat around you.");
-            await Template.ƒS.Speech.tell(Template.characters.narrator, "Is this really Hell?");
+            await Template.ƒS.Speech.tell(Template.characters.consciousness, "Is this really Hell?");
             await Template.ƒS.Speech.tell(Template.characters.general, "Okay ???, let's go, follow the route of those sticks in the ground.");
             await Template.ƒS.Speech.tell(Template.characters.general, "We have to escape quietly, the scouts already saw some minor Demons coming close to us.");
             //change smages name to new Name???
@@ -282,9 +284,16 @@ var Template;
                 T0003: "",
                 T0004: "",
             },
+            scout: {
+                T0001: ""
+            }
         };
         // für Platzhalter für komisches Zeug
         let mageDead; //mage dead?
+        let askAgain = true;
+        if (Template.x == 4 || Template.x > 4) {
+            mageDead = true;
+        }
         await Template.ƒS.Speech.tell(Template.characters.narrator, "After a quite long time you arrive at what seems to be an hidden entrance.");
         await Template.ƒS.Speech.tell(Template.characters.narrator, "Mara moves a stone aside you waves you to go ahead.");
         await Template.ƒS.Speech.tell(Template.characters.general, "We have arrived. Go ahead.");
@@ -299,23 +308,132 @@ var Template;
             iSayDot1: "Talk to Mara",
             iSayDot2: "Go check out the barracks",
         };
+        let secondDialogueElementOptions = {
+            iSayDot1: "Talk to the Scout",
+            iSayDot2: "Go check out the barracks",
+        };
+        let thirdDialogueElementOptions = {
+            iSayDot1: "Who are you?",
+            iSayDot2: "What kind of creatures were those things back then?",
+            iSayDot3: "Do you think she will be okay?",
+            iSayDot4: "Leave to the barracks.",
+            iSayDot5: "Get some rest...",
+        };
+        let forthDialogueElementOptions = {
+            iSayDot1: "",
+            iSayDot2: "",
+            iSayDot3: "",
+        };
+        let fifthDialogueElementOptions = {
+            iSayDot1: "",
+            iSayDot2: "",
+        };
         let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementOptions, "WVDialogueOption");
+        let secondDialogueElement = await Template.ƒS.Menu.getInput(secondDialogueElementOptions, "WVDialogueOption");
+        let thirdDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementOptions, "WVDialogueOption");
+        let forthDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementOptions, "WVDialogueOption");
+        let fifthDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementOptions, "WVDialogueOption");
         switch (firstDialogueElement) {
-            case firstDialogueElementOptions.iSayDot1:
+            case firstDialogueElementOptions.iSayDot1: //talk to Mara
+                await Template.ƒS.Speech.tell(Template.characters.narrator, "You follow Mara to her tent, maybe you can get some more info on what is going on here.");
+                if (mageDead) { //smage dead - talking to Mara tree
+                    console.log("Mage still dead");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "As you enter the tent, you're met by a fierce and unwelcomed look.");
+                    await Template.ƒS.Speech.tell(Template.characters.general, "Please leave, I dont have the nerves or time for you at the moment.");
+                    await Template.ƒS.Speech.tell(Template.characters.consciousness, "Seems like you should go do something else. Infront of the tent was the scout, maybe I should talk to her or go to the barracks...");
+                    //choose for second person to talk to, or go to barracks
+                    switch (secondDialogueElement) {
+                        case secondDialogueElementOptions.iSayDot1: //talk to scout
+                            await Template.ƒS.Speech.tell(Template.characters.narrator, "The Scout infront of the tent looks somewhat relaxed.");
+                            await Template.ƒS.Speech.tell(Template.characters.scout, "Wassup?");
+                            while (askAgain) { //talk to scout
+                                switch (thirdDialogueElement) {
+                                    case thirdDialogueElementOptions.iSayDot1: //Who are you
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "So... I am the Scout and my Name is ???. Generally speaking I try to warn you guys when some of those Hellpuppies show up.");
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "I also know the terrain pretty well, so if you want to smuggle something. I am your Guy. Didn't hear that from me of course.");
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "If you dont want to lose a tongue, if you know what I mean. Haha- just kidding. Unless?...");
+                                        await Template.ƒS.Speech.tell(Template.characters.consciousness, "ok...");
+                                        break;
+                                    case thirdDialogueElementOptions.iSayDot2: //What creatures were those
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "You mean the Demons that teared up ??? ? We call 'em minor Demons, since they and dogs look kind of similar, we sometimes refer to them as Hellhounds.");
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "They are pretty fast so keep that in mind, usually you won't be able to outrun them. What ??? did really saved our asses today.");
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "If you think those are scary, oh man, wait for the Demonwalker, those things are a whole other class for themselves.");
+                                        await Template.ƒS.Speech.tell(Template.characters.consciousness, "It gets worse than those Hellhounds?... Oh god....");
+                                        break;
+                                    case thirdDialogueElementOptions.iSayDot3: //Will Mara be okay?
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "Who? Mara? Oh yea she's gonna be fine. She went through way worse.");
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "Though I do have to say that ??? was a great loss. Sure hope you were worth it.");
+                                        await Template.ƒS.Speech.tell(Template.characters.consciousness, "oh... am I special?");
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "You have that empty look in your eyes, yes you're special. There's a reason we seperated you from your way down to the depths of hell.");
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "Your entry performance just wasn't really, optimal I'd say.");
+                                        await Template.ƒS.Speech.tell(Template.characters.scout, "Listen here, Hell is Hell, people die but we fight for the greater cause. We are all ready to die the second we joined this organization.");
+                                        break;
+                                    case thirdDialogueElementOptions.iSayDot4: //go to barracks
+                                        await Template.ƒS.Speech.tell(Template.characters.consciousness, "Maybe I get some more info at the barracks.");
+                                        await Template.ƒS.Speech.tell(Template.characters.consciousness, "A bit of sparing wouldn't hurt either...");
+                                        await Template.ƒS.Speech.tell(Template.characters.unknown, "Hey there! I didn't see you here before, up for some training?");
+                                        await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
+                                        await Template.ƒS.Speech.tell(Template.characters.unknown, "Let's see what you can do!");
+                                        //timeskip clash effect here
+                                        await Template.ƒS.Speech.tell(Template.characters.unknown, "Oh you're quite good with the sword, some nice agility. Let's do one more!");
+                                        //timeskip clash effect here
+                                        await Template.ƒS.Speech.tell(Template.characters.unknown, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                                        await Template.ƒS.Speech.tell(Template.characters.unknown, "Lets end it here for now, rest a bit, I will get us some tea.");
+                                        askAgain = false;
+                                        break;
+                                    case thirdDialogueElementOptions.iSayDot5: //Chill around
+                                        await Template.ƒS.Speech.tell(Template.characters.consciousness, "I need some rest after all of this geez...");
+                                        await Template.ƒS.Speech.tell(Template.characters.consciousness, "I am sure Mara will wake me up if she needs something.");
+                                        await Template.ƒS.Speech.tell(Template.characters.narrator, "You lean yourself against a big boulder around the corner and doze off...");
+                                        await Template.ƒS.Speech.tell(Template.characters.narrator, ".....");
+                                        askAgain = false;
+                                        break;
+                                }
+                            }
+                            // ############################### end of dead mage choice tree ###############################
+                            break;
+                        case secondDialogueElementOptions.iSayDot2: //go to barracks
+                            await Template.ƒS.Speech.tell(Template.characters.consciousness, "Maybe I get some more info at the barracks.");
+                            await Template.ƒS.Speech.tell(Template.characters.consciousness, "A bit of sparing wouldn't hurt either...");
+                            await Template.ƒS.Speech.tell(Template.characters.unknown, "Hey there! I didn't see you here before, up for some training?");
+                            await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
+                            await Template.ƒS.Speech.tell(Template.characters.unknown, "Let's see what you can do!");
+                            //timeskip clash effect here
+                            await Template.ƒS.Speech.tell(Template.characters.unknown, "Oh you're quite good with the sword, some nice agility. Let's do one more!");
+                            //timeskip clash effect here
+                            await Template.ƒS.Speech.tell(Template.characters.unknown, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                            await Template.ƒS.Speech.tell(Template.characters.unknown, "Lets end it here for now, rest a bit, I will get us some tea.");
+                            break;
+                    }
+                }
+                if (!mageDead) { //smage aint dead - mara talk tree
+                    console.log("Mage still did diedn't");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, "As you enter the tent, you're met by a serious yet friendly smile.");
+                    await Template.ƒS.Speech.tell(Template.characters.general, "You did quite well wunderkind, we have a lot to do.");
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, Template.characters.smage + " is standing next to her with a huge proud look on her face.");
+                    await Template.ƒS.Speech.tell(Template.characters.consciousness, "This could've gone terribly wrong.");
+                    switch (forthDialogueElement) {
+                        case forthDialogueElementOptions.iSayDot1: //go to smage
+                            break;
+                        case forthDialogueElementOptions.iSayDot2: //go to scout
+                            break;
+                        case forthDialogueElementOptions.iSayDot3: //go to barracks
+                            break;
+                    }
+                }
                 break;
-            case firstDialogueElementOptions.iSayDot2:
-                //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positions.center);
+            case firstDialogueElementOptions.iSayDot2: // go to barracks
+                await Template.ƒS.Speech.tell(Template.characters.consciousness, "Maybe I get some more info at the barracks.");
+                await Template.ƒS.Speech.tell(Template.characters.consciousness, "A bit of sparing wouldn't hurt either...");
+                await Template.ƒS.Speech.tell(Template.characters.unknown, "Hey there! I didn't see you here before, up for some training?");
+                await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
+                await Template.ƒS.Speech.tell(Template.characters.unknown, "Let's see what you can do!");
+                //timeskip clash effect here
+                await Template.ƒS.Speech.tell(Template.characters.unknown, "Oh you're quite good with the sword, some nice agility. Let's do one more!");
+                //timeskip clash effect here
+                await Template.ƒS.Speech.tell(Template.characters.unknown, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                await Template.ƒS.Speech.tell(Template.characters.unknown, "Lets end it here for now, rest a bit, I will get us some tea.");
                 break;
-        }
-        //asking all will cost you tho, lol
-        if (Template.x == 4 || Template.x > 4) {
-            mageDead = true;
-        }
-        if (mageDead) { //she dead - tree
-            console.log("Mage still dead");
-        }
-        if (!mageDead) { //she aint dead - tree
-            console.log("Mage still did diedn't");
         }
         await Template.ƒS.Character.show(Template.characters.general, Template.characters.general.pose.base, Template.ƒS.positionPercent(30, 90));
         await Template.ƒS.update();
@@ -383,8 +501,15 @@ var Template;
         }
     };
     Template.characters = {
+        unknown: {
+            name: "???",
+            origin: Template.ƒS.ORIGIN.BOTTOMCENTER,
+        },
         narrator: {
             name: ""
+        },
+        consciousness: {
+            name: "Consciousness"
         },
         general: {
             name: "General",
@@ -395,6 +520,13 @@ var Template;
         },
         smage: {
             name: "SmallMage",
+            origin: Template.ƒS.ORIGIN.BOTTOMCENTER,
+            pose: {
+                base: "./Assets/Character/HumanChars/General.gif",
+            }
+        },
+        scout: {
+            name: "Scout",
             origin: Template.ƒS.ORIGIN.BOTTOMCENTER,
             pose: {
                 base: "./Assets/Character/HumanChars/General.gif",
@@ -489,6 +621,7 @@ var Template;
     }
     Template.dataForSave = {
         PName: "",
+        Skill: 0,
     };
     function fromLeftToRight() {
         return {
