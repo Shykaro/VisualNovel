@@ -42,14 +42,14 @@ speech {
     /* adjustable font for speech text */
     font-size: 18px;
     font-family: 'Bebas Neue', sans-serif;
-    font-style: oblique;
-    font-weight: 800;
 }
 
 speech name {
     display: block;
     margin-bottom: 20px;
+    font-style: oblique;
     color: rgb(209, 217, 224);
+    font-weight: 800;
 }
 
 speech content {

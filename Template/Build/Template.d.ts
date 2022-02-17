@@ -86,7 +86,28 @@ declare namespace Template {
                 base: string;
             };
         };
+        bmage: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                base: string;
+            };
+        };
+        assassin: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                base: string;
+            };
+        };
         scout: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                base: string;
+            };
+        };
+        trainer: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
@@ -104,10 +125,13 @@ declare namespace Template {
     let x: number;
     let y: number;
     let z: number;
+    const delay_5sec: ƒS.Signal;
     let dataForSave: {
         PName: string;
         Skill: number;
     };
-    function fromLeftToRight(): ƒS.AnimationDefinition;
+    function fromLeftToLeft(): ƒS.AnimationDefinition;
+    function fromRightToRight(): ƒS.AnimationDefinition;
+    function BackToNormal(): ƒS.AnimationDefinition;
     function start(_event: Event): void;
 }

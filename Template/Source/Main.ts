@@ -42,7 +42,7 @@ namespace Template {
 
     //sound
     click: "",
-    boom: "",
+    boom: ""
   };
 
   export let locations = {
@@ -60,7 +60,7 @@ namespace Template {
 
     unknown: {
       name: "???",
-      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      origin: ƒS.ORIGIN.BOTTOMCENTER
     },
     narrator: {
       name: ""
@@ -72,21 +72,42 @@ namespace Template {
       name: "General",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        base: "./Assets/Character/HumanChars/General.gif",
+        base: "./Assets/Character/UsedChars/generalS.png"
       }
     },
     smage: {
-      name: "SmallMage",
+      name: "Small Mage",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        base: "./Assets/Character/HumanChars/General.gif",
+        base: "./Assets/Character/UsedChars/smageS.png"
+      }
+    },
+    bmage: {
+      name: "Big Mage",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        base: "./Assets/Character/UsedChars/bmageS.png"
+      }
+    },
+    assassin: {
+      name: "Assassin",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        base: "./Assets/Character/UsedChars/assassingS.png"
       }
     },
     scout: {
       name: "Scout",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        base: "./Assets/Character/HumanChars/General.gif",
+        base: "./Assets/Character/UsedChars/scoutS.png"
+      }
+    },
+    trainer: {
+      name: "Trainer",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        base: "./Assets/Character/UsedChars/trainerS.png"
       }
     }
     
@@ -120,10 +141,10 @@ namespace Template {
   // true ist offenes Menü, false ist zu.
   let menu: boolean = true;
 
-  async function buttonFunctionalities(_option:string): Promise<void> {
+  async function buttonFunctionalities(_option: string): Promise<void> {
     console.log(_option);
 
-    switch (_option){
+    switch (_option) {
       case inGameMenu.save:
         await ƒS.Progress.save();
         break;
@@ -165,7 +186,7 @@ namespace Template {
 
   // Unterscheidung zwischen Open Menu und Closed Menu
   document.addEventListener("keydown", hndKeyPress);
-  async function hndKeyPress(_event:KeyboardEvent): Promise<void> {
+  async function hndKeyPress(_event: KeyboardEvent): Promise<void> {
     switch (_event.code) {
       case ƒ.KEYBOARD_CODE.F8:
         console.log("Save");
@@ -195,23 +216,45 @@ namespace Template {
 
 
 
+  //delay //await delay_5sec; in scene.ts
+  export const delay_5sec: ƒS.Signal = ƒS.Progress.defineSignal([() => ƒS.Progress.delay(5)]);
 
-  
+
+
 
   export let dataForSave = {  
       PName: "",
-      Skill: 0,
+      Skill: 0
     
   };
 
 
-  export function fromLeftToRight(): ƒS.AnimationDefinition {
+  //Animations
+  export function fromLeftToLeft(): ƒS.AnimationDefinition {
     return{
-      start: {translation: ƒS.positions.bottomleft, rotation: -20, scaling: new ƒS.Position(0.5, 1.5), color: ƒS.Color.CSS("white", 0)},
-      end: {translation: ƒS.positions.bottomleft, rotation: 20, scaling: new ƒS.Position(1.5, 0.5), color: ƒS.Color.CSS("red") },
+      start: {translation: ƒS.positionPercent( 30, 70), color: ƒS.Color.CSS("white")},
+      end: {translation: ƒS.positionPercent( 0, 70), color: ƒS.Color.CSS("white", 0)},
       duration: 1,
-      playmode: ƒS.ANIMATION_PLAYMODE.LOOP
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
   };
+}
+
+  export function fromRightToRight(): ƒS.AnimationDefinition {
+    return{
+      start: {translation: ƒS.positionPercent( 70, 70), color: ƒS.Color.CSS("white")},
+      end: {translation: ƒS.positionPercent( 100, 70), color: ƒS.Color.CSS("white", 0)},
+      duration: 1,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+  };
+}
+
+  export function BackToNormal(): ƒS.AnimationDefinition {
+  return{
+    start: {color: ƒS.Color.CSS("white", 0)},
+    end: {color: ƒS.Color.CSS("white")},
+    duration: 1,
+    playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+};
 }
 
 
@@ -235,11 +278,11 @@ namespace Template {
     //Szenenreihenfolge
     let scenes: ƒS.Scenes = [
       { id: "Re:Intro", scene: ReIntroduction, name: "1Re:Intro"},
-      { scene: Intro, name: "2Intro" },
+      //{ scene: Intro, name: "2Intro" },
       { scene: WiderstandsVersteck, name: "3WV" },
       { scene: HauptVersteck, name: "4HV" },
 
-      { scene: TrueEnding, name: "9TrueEnding" },
+      { scene: TrueEnding, name: "9TrueEnding" }
       //{ id: "Ende", scene: End, name: "Introduction to FS"},
     
     ];

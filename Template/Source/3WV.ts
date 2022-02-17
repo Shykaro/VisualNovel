@@ -48,12 +48,16 @@ namespace Template {
       //await ƒS.Character.show(characters.aisaka, characters.aisaka.pose.angry, ƒS.positionPercent(30, 100));
 
       // 70 für rechten Char, 30 für linken Char
-      await ƒS.Character.show(characters.smage, characters.smage.pose.base, ƒS.positionPercent(70, 90));
+      await ƒS.Character.show(characters.smage, characters.smage.pose.base, ƒS.positionPercent(70, 70));
       await ƒS.update();
 
       //Introduction von smage und general
       await ƒS.Speech.tell(characters.smage, text.smage.T0001);
       await ƒS.Speech.tell(characters.smage, text.smage.T0002);
+      
+      await ƒS.Character.show(characters.general, characters.general.pose.base, ƒS.positionPercent(30, 70));
+      await ƒS.update();
+
       await ƒS.Speech.tell(characters.general, text.general.T0001);
       await ƒS.Speech.tell(characters.smage, text.smage.T0003);
       await ƒS.Speech.tell(characters.general, text.general.T0002);
@@ -116,17 +120,30 @@ namespace Template {
         console.log("Mage died");   
         
         await ƒS.Speech.tell(characters.general, "???, we have to go NOW, this is not a joke!");
-        await ƒS.Speech.tell(characters.smage, "Come to think of it, what's");
+        await ƒS.Speech.tell(characters.smage, "Alrighty boss! Come to think of it, what's your Name?");
         dataForSave.PName = await ƒS.Speech.getInput();
         //change smages name to new Name???
 
-        await ƒS.Speech.tell(characters.general, "One scout is missing and that brings up the topic, what the fuck is already out there");
+        await ƒS.Speech.tell(characters.general, "One scout is missing and that brings up the question, what the fuck is already out there");
         await ƒS.Speech.tell(characters.smage, "Thats not good...");
 
+        await ƒS.Speech.tell(characters.smage, "Before we have to go, I have a small gift for you, take this.");
+        await ƒS.Speech.tell(characters.smage, "It took alot of work so please don't lose it okay?");
+        ƒS.Inventory.add(items.rose);
+        ƒS.Inventory.add(items.rose);
+        ƒS.Inventory.add(items.rose);
+        ƒS.Inventory.add(items.rose);
+        ƒS.Inventory.add(items.rose);
+        ƒS.Inventory.add(items.rose);
+        ƒS.Inventory.add(items.rose);
+        ƒS.Inventory.add(items.rose);
+
+        await ƒS.Speech.tell(characters.consciousness, "A Rose from the small mage. This is a bit much to process, what is going on here?");
+
         await ƒS.Speech.tell(characters.consciousness, "Is this really Hell?");
-        await ƒS.Speech.tell(characters.consciousness, "This seems so unreal, but the Air is heavy and its way too warm");
+        await ƒS.Speech.tell(characters.consciousness, "This seems so unreal, but the air is heavy and its way too warm");
         await ƒS.Sound.fade(sound.wvtheme, 0, 1);
-        await ƒS.Speech.tell(characters.narrator, "Suddenly you see a drop of what seems to be acid fall to the ground and burn the dirt beneath it.");
+        await ƒS.Speech.tell(characters.narrator, "Suddenly you see a drop of what seems to be acid fall to the ground next to you and burn the dirt beneath it.");
         await ƒS.Sound.play(sound.wvthemeBad, 0.1, true);
         await ƒS.Speech.tell(characters.narrator, "Above you an absolute monstrosity of what seems to be a misformed Dog is looking with one of it's big Eyeballs");
         await ƒS.Speech.tell(characters.narrator, "Terrible fear strikes you, what is this creature? How can something look so disgusting?!");
@@ -138,15 +155,35 @@ namespace Template {
 
         await ƒS.Speech.tell(characters.general, "Fuck, it's already to late, ??? cover us, we have to run!!");
         await ƒS.Speech.tell(characters.narrator, "The redhaired girl grabs your arm and nearly rips it off as she seems to drag your unwilling body behind her.");
+        
+        await ƒS.Character.animate(characters.smage, characters.smage.pose.base, fromRightToRight());
+        await ƒS.Character.hide(characters.smage);
+        await ƒS.update(1);
+        
+
         await ƒS.Speech.tell(characters.general, "All because you wouldn't fucking listen... GO! We need to move!!");
 
-        await ƒS.Speech.tell(characters.smage, "Captain watchout!!");
-        await ƒS.Speech.tell(characters.narrator, "As you try to escape, one of these hell dogs seems to appear out of nowhere.");
-        await ƒS.Speech.tell(characters.narrator, "while spotting the first, another one is already running alongside you, in matter of seconds you are surrounded");
+        
+        await ƒS.Character.show(characters.smage, characters.smage.pose.base, ƒS.positionPercent(70, 70));
+        await ƒS.Character.animate(characters.smage, characters.smage.pose.base, BackToNormal());
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.smage, "Captain watchout!!");   
+        await ƒS.Character.hide(characters.smage);
+        await ƒS.update(1);
 
+        await ƒS.Speech.tell(characters.narrator, "As you try to escape, one of these hell dogs seems to appear out of nowhere.");
+
+        await ƒS.Speech.tell(characters.narrator, "while spotting the first, another one is already running alongside you, in matter of seconds you are surrounded");
+        await ƒS.Character.show(characters.smage, characters.smage.pose.base, ƒS.positionPercent(70, 70));
+        await ƒS.update(1);
         await ƒS.Speech.tell(characters.smage, "Shields up!!");
+        await ƒS.Character.hide(characters.smage);
+        await ƒS.update(1);
+
         await ƒS.Speech.tell(characters.general, "God fucking damnit!");
         await ƒS.Speech.tell(characters.narrator, "The redhaired girl grabs you tight, draws her shield and points it towards the sky.");
+        await ƒS.Character.hide(characters.general);
+        await ƒS.update(1);
         await ƒS.Speech.tell(characters.narrator, "You can't move, but you glance at the small mage that has been left behind to cover us.");
         await ƒS.Speech.tell(characters.narrator, "A bright light shines from her staff, attracting the attention of every single helldog around her.");
         await ƒS.Speech.tell(characters.narrator, "In a big cracking thunder sound she smashes the staff into the ground!");
@@ -204,6 +241,8 @@ namespace Template {
         
         await ƒS.Speech.tell(characters.general, "Okay ???, let's go, follow the route of those sticks in the ground.");
         await ƒS.Speech.tell(characters.general, "We have to escape quietly, the scouts already saw some minor Demons coming close to us.");
+        await ƒS.Character.animate(characters.general, characters.general.pose.base, fromLeftToLeft());
+
         //change smages name to new Name???
         await ƒS.Speech.tell(characters.smage, "Minor demons are still pretty scary if I might add that. They're smaller but way faster.");
         await ƒS.Speech.tell(characters.smage, "Aaaaand that's why we have to escape quietly, we cant outrun them.");
@@ -214,18 +253,10 @@ namespace Template {
         await ƒS.Speech.tell(characters.smage, "Ohhh " + dataForSave.PName + " is a cute name");
         await ƒS.Speech.tell(characters.smage, "My Name is ???");
 
-        await ƒS.Speech.tell(characters.smage, "Before we go, I have a small gift for you, take this.");
-        await ƒS.Speech.tell(characters.smage, "It took alot of work so please don't lose it okay?");
-        ƒS.Inventory.add(items.rose);
-        ƒS.Inventory.add(items.rose);
-        ƒS.Inventory.add(items.rose);
-        ƒS.Inventory.add(items.rose);
-        ƒS.Inventory.add(items.rose);
-        ƒS.Inventory.add(items.rose);
-        ƒS.Inventory.add(items.rose);
-        ƒS.Inventory.add(items.rose);
+        
 
         await ƒS.Speech.tell(characters.narrator, "Quietly under the orders of ??? the whole group sneaks towards the headquarters...");
+        await ƒS.Character.animate(characters.smage, characters.smage.pose.base, fromRightToRight());
 
       }
 
