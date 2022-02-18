@@ -981,7 +981,7 @@ var Template;
         rose: {
             name: "Rose",
             description: "Eine seltsam leuchtende Rose",
-            image: "./Assets/Items/rose.jpg"
+            image: "./Assets/Items/rose.png"
         }
     };
     //Platzhalter für global use
