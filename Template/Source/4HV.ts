@@ -39,7 +39,7 @@ namespace Template {
       await ƒS.update(1);
 
       await ƒS.Speech.tell(characters.narrator, "After a quite long time you arrive at what seems to be an hidden entrance.");
-      await ƒS.Speech.tell(characters.narrator, "Mara moves a stone aside you waves you to go ahead.");
+      await ƒS.Speech.tell(characters.narrator, "Mara moves a stone aside and waves at you to go ahead.");
       await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
       await ƒS.Speech.tell(characters.mara, "We have arrived. Go ahead.");
       await ƒS.update(1);
@@ -49,7 +49,7 @@ namespace Template {
       //inbetween fehlen kommentare von small mage, if shes not dead.
 
       await ƒS.Speech.tell(characters.narrator, "...");
-      await ƒS.Speech.tell(characters.narrator, "After a rather long and difficult small cave you stand before a lively place.");
+      await ƒS.Speech.tell(characters.narrator, "After a rather long and difficult journey through a small cave, you stand before a lively place.");
       await ƒS.Speech.tell(characters.narrator, "People talking and enjoying themselves, sounds of metal clinging, a lively bazaar, this doesn't look like hell.");
       await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
       await ƒS.Speech.tell(characters.mara, "You will need some proper training, go to the barracks to learn something useful.");
@@ -123,7 +123,7 @@ namespace Template {
             await ƒS.Character.hide(characters.mara);
             await ƒS.update(1);
 
-            await ƒS.Speech.tell(characters.consciousness, "Seems like you should go do something else. Infront of the tent was the Assassin, maybe I should talk to her or go to the barracks...");
+            await ƒS.Speech.tell(characters.consciousness, "Seems like you should go do something else. Infront of the tent was the Assassin, maybe I should talk to him or go to the barracks...");
             //choose for second person to talk to, or go to barracks
             let secondDialogueElement = await ƒS.Menu.getInput(secondDialogueElementOptions, "NormalButtonDialogue");          //after Mara talk, mage is dead
             switch (secondDialogueElement) {
@@ -184,7 +184,7 @@ namespace Template {
                       await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                       await ƒS.update(1);
                       await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
-                      await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                      await ƒS.Speech.tell(characters.trainer, "Let's end it here for now, rest a bit, I will get us some tea.");
                       await ƒS.Character.hide(characters.trainer);
                       await ƒS.update(1);
                       //Skill++
@@ -229,7 +229,7 @@ namespace Template {
                 await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                 await ƒS.update(1);
                 await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
-                await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                await ƒS.Speech.tell(characters.trainer, "Let's end it here for now, rest a bit, I will get us some tea.");
                 await ƒS.Character.hide(characters.trainer);
                 await ƒS.update(1);
                 //Skill++
@@ -241,7 +241,7 @@ namespace Template {
 
           if (!mageDead) {                 //smage aint dead - mara talk tree
             console.log("Mage still did diedn't"); 
-
+            await ƒS.Speech.tell(characters.narrator, "A serious yet friendly looking assassin in front of the tent seems to observe you.");
             await ƒS.Speech.tell(characters.narrator, "As you enter the tent, you're met by a serious yet friendly smile.");
             await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
             await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
@@ -250,7 +250,7 @@ namespace Template {
             await ƒS.Character.hide(characters.mara);
             await ƒS.update(1);
             await ƒS.Speech.tell(characters.narrator, characters.pia.name + " is standing next to her with a huge proud look on her face.");
-            await ƒS.Speech.tell(characters.consciousness, "This could've gone terribly wrong.");
+            await ƒS.Speech.tell(characters.consciousness, "This whole ordeal from there could've gone terribly wrong...");
 
               //need more Mara talk, how
             let forthDialogueElement = await ƒS.Menu.getInput(forthDialogueElementOptions, "NormalButtonDialogue"); //after mara talk mage not dead tree
@@ -270,8 +270,8 @@ namespace Template {
                 await ƒS.Speech.tell(characters.pia, "You see, none of us can hold on to an artifact too long without going insane. So we need super important guys like you.");
                 await ƒS.Speech.tell(characters.pia, "We're all after the same goal here, salvation. So just stick to us and this horror will be of short notice.");
                 await ƒS.Speech.tell(characters.pia, "And whatever happens, I will protect you! You can always count on me ok? We got this!");
-                await ƒS.Speech.tell(characters.pia, "Though I'd advise you to look by at the barracks, train a bit so you get used to fighting if the situation will go not as planned.");
-                await ƒS.Speech.tell(characters.pia, "But under Boss' management, everything should go smoooooth. Boss has some kind of meeting which I have to attend. See you later!");
+                await ƒS.Speech.tell(characters.pia, "Though I'd advise you to look by at the barracks, train a bit so you get used to fighting if the situation will not go as planned.");
+                await ƒS.Speech.tell(characters.pia, "But under Boss' management, everything should go smooooothly. Boss has some kind of meeting which I have to attend. See you later!");
                 await ƒS.Character.animate(characters.pia, characters.pia.pose.base, fromRightToRight());
                 await ƒS.Character.hide(characters.mara);
                 await ƒS.update(1);
@@ -301,7 +301,7 @@ namespace Template {
                 await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                 await ƒS.update(1);
                 await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
-                await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                await ƒS.Speech.tell(characters.trainer, "Let's end it here for now, rest a bit, I will get us some tea.");
                 await ƒS.Character.hide(characters.trainer);
                 await ƒS.update(1);
                 //Skill++
@@ -352,7 +352,7 @@ namespace Template {
                       await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                       await ƒS.update(1);
                       await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
-                      await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                      await ƒS.Speech.tell(characters.trainer, "Let's end it here for now, rest a bit, I will get us some tea.");
                       await ƒS.Character.hide(characters.trainer);
                       await ƒS.update(1);
                       //Skill++
@@ -395,7 +395,7 @@ namespace Template {
                 await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                 await ƒS.update(1);
                 await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
-                await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                await ƒS.Speech.tell(characters.trainer, "Let's end it here for now, rest a bit, I will get us some tea.");
                 await ƒS.Character.hide(characters.trainer);
                 await ƒS.update(1);
                 //Skill++
@@ -429,7 +429,7 @@ namespace Template {
           await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
           await ƒS.update(1);
           await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
-          await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+          await ƒS.Speech.tell(characters.trainer, "Let's end it here for now, rest a bit, I will get us some tea.");
           await ƒS.Character.hide(characters.trainer);
           await ƒS.update(1);
           //Skill++
@@ -439,8 +439,7 @@ namespace Template {
       //bang sound insert here
       await ƒS.Speech.tell(characters.narrator, "A loud bang occurs");
 
-      await ƒS.Speech.tell(characters.narrator, "################## Alpha Test Over ################");
-      await ƒS.Speech.tell(characters.narrator, "################## Press f5 :) ################");
+
 
 
 

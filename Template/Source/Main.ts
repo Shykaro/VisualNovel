@@ -30,6 +30,11 @@ namespace Template {
       duration: 3, //länge der Transition
       alpha: "./Transitions/Arcane2.png",  //Pfad zur greyscaled alpha map
       edge: 1
+    },
+    steps: {
+      duration: 5, //länge der Transition
+      alpha: "./Transitions/Steps.png",  //Pfad zur greyscaled alpha map
+      edge: 0.5
     }
   };
 
@@ -158,7 +163,7 @@ namespace Template {
     rose: {
       name: "Rose",
       description: "Eine seltsam leuchtende Rose",
-      image: "./Assets/Items/rose.jpg",
+      image: "./Assets/Items/rose.jpg"
       
     }
   };
@@ -168,21 +173,21 @@ namespace Template {
   export let y: number = 0; //Anzahl der Runs bzw Tode
   export let z: number = 0;
 
-  export let EndingACheck: String = "0"; //Maximal 1 sollte auf 1 stehen wenn Re:Intro ausgelöst wird. Wird via local storage benutzt um nach neustart das letzte abgeschlossene Ending zu bestimmen
-  export let EndingBCheck: String = "0";
-  export let EndingCCheck: String = "0";
-  export let EndingDCheck: String = "0";
-  export let EndingECheck: String = "0";
-  export let EndingFCheck: String = "0";
-  export let EndingGCheck: String = "0";
+  export let endingACheck: String = "0"; //Maximal 1 sollte auf 1 stehen wenn Re:Intro ausgelöst wird. Wird via local storage benutzt um nach neustart das letzte abgeschlossene Ending zu bestimmen
+  export let endingBCheck: String = "0";
+  export let endingCCheck: String = "0";
+  export let endingDCheck: String = "0";
+  export let endingECheck: String = "0";
+  export let endingFCheck: String = "0";
+  export let endingGCheck: String = "0";
 
-  export let EndingA: String; //Bei zeit auf array ändern, wird benutzt um anzuzeigen wie viele aller endings schon abgeschlossen wurden
-  export let EndingB: String;
-  export let EndingC: String;
-  export let EndingD: String;
-  export let EndingE: String;
-  export let EndingF: String;
-  export let EndingG: String;
+  export let endingA: String; //Bei zeit auf array ändern, wird benutzt um anzuzeigen wie viele aller endings schon abgeschlossen wurden
+  export let endingB: String;
+  export let endingC: String;
+  export let endingD: String;
+  export let endingE: String;
+  export let endingF: String;
+  export let endingG: String;
 
 
   // Menü Zusatz
@@ -283,8 +288,9 @@ namespace Template {
   export let dataForSave = {  
       PName: "",
       scoreRyu: 0,
-      scoreForRyu: "",
+      scoreForRyu: ""
   };
+
 
 
   //Animations
@@ -304,6 +310,15 @@ namespace Template {
       duration: 1,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
   };
+}
+
+  export function CharNotTalking(): ƒS.AnimationDefinition {
+  return{
+    start: {color: ƒS.Color.CSS("white", 100)},
+    end: {color: ƒS.Color.CSS("white", 80)},
+    duration: 1,
+    playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+};
 }
 
   export function BackToNormal(): ƒS.AnimationDefinition {
@@ -339,6 +354,7 @@ namespace Template {
       { scene: Intro, name: "2Intro" },
       { scene: WiderstandsVersteck, name: "3WV" },
       { scene: HauptVersteck, name: "4HV" },
+      { scene: Artifact, name: "5Art" },
 
       { scene: TrueEnding, name: "9TrueEnding" }
       //{ id: "Ende", scene: End, name: "Introduction to FS"},

@@ -45,6 +45,11 @@ declare namespace Template {
             alpha: string;
             edge: number;
         };
+        steps: {
+            duration: number;
+            alpha: string;
+            edge: number;
+        };
     };
     let sound: {
         backgroundtheme: string;
@@ -169,20 +174,20 @@ declare namespace Template {
     let x: number;
     let y: number;
     let z: number;
-    let EndingACheck: String;
-    let EndingBCheck: String;
-    let EndingCCheck: String;
-    let EndingDCheck: String;
-    let EndingECheck: String;
-    let EndingFCheck: String;
-    let EndingGCheck: String;
-    let EndingA: String;
-    let EndingB: String;
-    let EndingC: String;
-    let EndingD: String;
-    let EndingE: String;
-    let EndingF: String;
-    let EndingG: String;
+    let endingACheck: String;
+    let endingBCheck: String;
+    let endingCCheck: String;
+    let endingDCheck: String;
+    let endingECheck: String;
+    let endingFCheck: String;
+    let endingGCheck: String;
+    let endingA: String;
+    let endingB: String;
+    let endingC: String;
+    let endingD: String;
+    let endingE: String;
+    let endingF: String;
+    let endingG: String;
     const delay_5sec: ƒS.Signal;
     let dataForSave: {
         PName: string;
@@ -191,6 +196,7 @@ declare namespace Template {
     };
     function fromLeftToLeft(): ƒS.AnimationDefinition;
     function fromRightToRight(): ƒS.AnimationDefinition;
+    function CharNotTalking(): ƒS.AnimationDefinition;
     function BackToNormal(): ƒS.AnimationDefinition;
     function start(_event: Event): void;
 }

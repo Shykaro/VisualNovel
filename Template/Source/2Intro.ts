@@ -4,7 +4,7 @@ namespace Template {
 //Texte
     let text = {
       narrator: {
-          T0000: "You Died.",
+          T0000: "You died.",
           T0001: "You will be judged infront of the Eternities of the everliving Astral World.",
           T0002: ".....",
           T0003: "You were found guilty by the ten commandments.",
@@ -12,7 +12,7 @@ namespace Template {
           T0004: "Suffer in Hell",
           T0005: "Suffer...",
           T0006: "..."
-          
+
       }
   };
 
@@ -22,6 +22,9 @@ namespace Template {
     await ƒS.update(1);
     await delay_5sec;
 
+    await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
+    await delay_5sec;
+    
     await ƒS.Location.show(locations.blackscreen);
     await ƒS.update(1);
 
@@ -29,6 +32,8 @@ namespace Template {
 
     await ƒS.update(transition.cut.duration, transition.cut.alpha, transition.cut.edge);
     await ƒS.Sound.play(sound.backgroundtheme, 0.1, true);
+
+
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0000);
 
     //dataForSave.scoreRyu += 50; OBSOLET

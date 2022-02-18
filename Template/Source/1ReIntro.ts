@@ -13,36 +13,36 @@ namespace Template {
       EndingGCheck = 0;
       */
 
-      EndingACheck = localStorage.getItem("EndingACheck");
-      EndingA = localStorage.getItem("EndingA");
+      endingACheck = localStorage.getItem("EndingACheck");
+      endingA = localStorage.getItem("EndingA");
 
-      if (EndingACheck == "1") {
+      if (endingACheck == "1") {
         //ganzes Re:intro szenario hier. Hochmuts Todsünde.
         await ƒS.Speech.tell(characters.narrator, "The Sin of Pride let's people think higher of themselves as they should.");
         await ƒS.Speech.tell(characters.narrator, "Never overestimate yourself.");
       }
 
-      if (EndingBCheck == "1") {
+      if (endingBCheck == "1") {
         //ganzes Re:intro szenario hier.
       }
 
-      if (EndingCCheck == "1") {
+      if (endingCCheck == "1") {
         //ganzes Re:intro szenario hier.
       }
 
-      if (EndingDCheck == "1") {
+      if (endingDCheck == "1") {
         //ganzes Re:intro szenario hier.
       }
 
-      if (EndingECheck == "1") {
+      if (endingECheck == "1") {
         //ganzes Re:intro szenario hier.
       }
 
-      if (EndingFCheck == "1") {
+      if (endingFCheck == "1") {
         //ganzes Re:intro szenario hier.
       }
 
-      if (EndingGCheck == "1") {
+      if (endingGCheck == "1") {
         //ganzes Re:intro szenario hier.
       }
 
@@ -51,7 +51,7 @@ namespace Template {
 
 
       //ggf. bei zeit auf i schleife mit array abfrage für tode abändern.
-      if (EndingA == "1" && EndingB == "1" && EndingC == "1" && EndingD == "1" && EndingE == "1" && EndingF == "1" && EndingG == "1") {
+      if (endingA == "1" && endingB == "1" && endingC == "1" && endingD == "1" && endingE == "1" && endingF == "1" && endingG == "1") {
         //Die todsünden abgeschlossen, aufpassen, selber tod zählt auch den todwert hoch. Hier also maybe für jeden tod verschiedene werte festlegen und alle einzelon abfragen
         //Real ending.
         return "9TrueEnding"; //jumps to scene 9
