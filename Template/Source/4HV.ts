@@ -40,8 +40,8 @@ namespace Template {
 
       await ƒS.Speech.tell(characters.narrator, "After a quite long time you arrive at what seems to be an hidden entrance.");
       await ƒS.Speech.tell(characters.narrator, "Mara moves a stone aside you waves you to go ahead.");
-      await ƒS.Speech.tell(characters.mara, "We have arrived. Go ahead.");
       await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
+      await ƒS.Speech.tell(characters.mara, "We have arrived. Go ahead.");
       await ƒS.update(1);
       await ƒS.Character.hide(characters.mara);
       await ƒS.update(1);
@@ -51,8 +51,8 @@ namespace Template {
       await ƒS.Speech.tell(characters.narrator, "...");
       await ƒS.Speech.tell(characters.narrator, "After a rather long and difficult small cave you stand before a lively place.");
       await ƒS.Speech.tell(characters.narrator, "People talking and enjoying themselves, sounds of metal clinging, a lively bazaar, this doesn't look like hell.");
-      await ƒS.Speech.tell(characters.mara, "You will need some proper training, go to the barracks to learn something useful.");
       await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
+      await ƒS.Speech.tell(characters.mara, "You will need some proper training, go to the barracks to learn something useful.");
       await ƒS.update(1);
       await ƒS.Character.animate(characters.mara, characters.mara.pose.base, fromLeftToLeft());
 
@@ -218,7 +218,7 @@ namespace Template {
             console.log("Mage still did diedn't"); 
 
             await ƒS.Speech.tell(characters.narrator, "As you enter the tent, you're met by a serious yet friendly smile.");
-            await ƒS.Character.animate(characters.smage, characters.pia.pose.base, BackToNormal());
+            await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
             await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
             await ƒS.Speech.tell(characters.mara, "You did quite well wunderkind, we have a lot to do.");
             await ƒS.update(1);
@@ -247,12 +247,12 @@ namespace Template {
                 await ƒS.Speech.tell(characters.pia, "And whatever happens, I will protect you! You can always count on me ok? We got this!");
                 await ƒS.Speech.tell(characters.pia, "Though I'd advise you to look by at the barracks, train a bit so you get used to fighting if the situation will go not as planned.");
                 await ƒS.Speech.tell(characters.pia, "But under Boss' management, everything should go smoooooth. Boss has some kind of meeting which I have to attend. See you later!");
-                await ƒS.Character.animate(characters.smage, characters.pia.pose.base, fromRightToRight());
+                await ƒS.Character.animate(characters.pia, characters.pia.pose.base, fromRightToRight());
                 await ƒS.Character.hide(characters.mara);
                 await ƒS.update(1);
-                await ƒS.Character.animate(characters.smage, characters.pia.pose.base, BackToNormal());
+                await ƒS.Character.animate(characters.pia, characters.pia.pose.base, BackToNormal());
                 await ƒS.Speech.tell(characters.consciousness, "Wow, that was quite a lot to process...");
-                await ƒS.Speech.tell(characters.narrator, "Everyone seems busy, you make your way to the barracks as " + characters.smage + " has adviced you.");
+                await ƒS.Speech.tell(characters.narrator, "Everyone seems busy, you make your way to the barracks as " + characters.pia + " has adviced you.");
                 await ƒS.Speech.tell(characters.consciousness, "Training is not a bad idea after all.");
 
                 //Going to barracks, cut jump

@@ -276,10 +276,13 @@ namespace Template {
 
       }
 
+      await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
+      await ƒS.Character.animate(characters.pia, characters.pia.pose.base, BackToNormal());
       await ƒS.Character.hide(characters.smage);
       await ƒS.Character.hide(characters.pia);
       await ƒS.Character.hide(characters.general);
       await ƒS.Character.hide(characters.mara);
+      await ƒS.update(1);
       //await ƒS.Character.show(characters.general, characters.general.pose.base, ƒS.positionPercent(30, 90));
       //await ƒS.update();
 
