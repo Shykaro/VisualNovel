@@ -13,7 +13,7 @@ namespace Template {
       smage: {
         T0001: "Boss i did it!!",
         T0002: "I intercepted the beam and got him out of there!",
-        T0003: "My name Pia this will be a bit much but we have to-",
+        T0003: "My name is Pia, this will be a bit much but we have to-",
         T0010: "I intercepted your soul from the beam of death in the Sky and therefore saved you from the Hands of Satan hehe.",
         T0011: "Iam Pia as i already said, and the rest and I call our little organization the forth Magi.",
         T0012: "Quite literally in Hell.",
@@ -188,7 +188,7 @@ namespace Template {
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.mara, "God fucking damnit!");
         await ƒS.Speech.tell(characters.narrator, "The redhaired girl grabs you tight, draws her shield and points it towards the sky.");
-        await ƒS.Character.hide(characters.mara);
+        await ƒS.Character.hide(characters.general);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.narrator, "You can't move, but you glance at the small mage that has been left behind to cover us.");
         await ƒS.Speech.tell(characters.narrator, "A bright light shines from her staff, attracting the attention of every single helldog around her.");
@@ -226,6 +226,11 @@ namespace Template {
             await ƒS.Speech.tell(characters.narrator, "YOU DIED");
 
             //Checkblock for deathcounter and ending checks.
+            //localStorage.setItem('Deathcounter');
+            localStorage.setItem("EndingACheck", "1");
+            localStorage.setItem("EndingA", "1");
+            window.location.reload(); //Force reload
+            /*
             y++;
             EndingACheck = 1;
             EndingBCheck = 0;
@@ -234,8 +239,9 @@ namespace Template {
             EndingECheck = 0;
             EndingFCheck = 0;
             EndingGCheck = 0;
+            */
 
-            window.addEventListener("load", start); //does this work?? bruh this works. Genius.
+            //window.addEventListener("load", start); //does this work?? bruh this works. Genius... NVM IT DOES NOT, BIG MISTAKE
             console.log("!!!!!!!!!!!!!!!!! THIS SHOULD NOT STAND HERE !!!!!!!!!!!!!!!!!!!! CHECK 3WV.ts RESTART !!!!!!!!!!!!!!!!!!!!!!!!!")
 
             break;

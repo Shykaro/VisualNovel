@@ -251,7 +251,7 @@ namespace Template {
                 await ƒS.Character.hide(characters.mara);
                 await ƒS.update(1);
                 await ƒS.Speech.tell(characters.consciousness, "Wow, that was quite a lot to process...");
-                await ƒS.Speech.tell(characters.narrator, "Everyone seems busy, you make your way to the barracks as " + characters.pia + " has adviced you.");
+                await ƒS.Speech.tell(characters.narrator, "Everyone seems busy, you make your way to the barracks as " + characters.pia.name + " has adviced you.");
                 await ƒS.Speech.tell(characters.consciousness, "Training is not a bad idea after all.");
 
                 //Going to barracks, cut jump

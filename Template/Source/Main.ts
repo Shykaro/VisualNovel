@@ -123,14 +123,14 @@ namespace Template {
       name: "Assassin",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        base: "./Assets/Character/UsedChars/assassingS.png"
+        base: "./Assets/Character/UsedChars/assassinS.png"
       }
     },
     jessy: { //name reveal für assassin
       name: "Assassin",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        base: "./Assets/Character/UsedChars/assassingS.png"
+        base: "./Assets/Character/UsedChars/assassinS.png"
       }
     },
     scout: {
@@ -164,21 +164,21 @@ namespace Template {
   export let y: number = 0; //Anzahl der Runs bzw Tode
   export let z: number = 0;
 
-  export let EndingACheck: number = 0; //Maximal 1 sollte auf 1 stehen wenn Re:Intro ausgelöst wird.
-  export let EndingBCheck: number = 0;
-  export let EndingCCheck: number = 0;
-  export let EndingDCheck: number = 0;
-  export let EndingECheck: number = 0;
-  export let EndingFCheck: number = 0;
-  export let EndingGCheck: number = 0;
+  export let EndingACheck: String = "0"; //Maximal 1 sollte auf 1 stehen wenn Re:Intro ausgelöst wird. Wird via local storage benutzt um nach neustart das letzte abgeschlossene Ending zu bestimmen
+  export let EndingBCheck: String = "0";
+  export let EndingCCheck: String = "0";
+  export let EndingDCheck: String = "0";
+  export let EndingECheck: String = "0";
+  export let EndingFCheck: String = "0";
+  export let EndingGCheck: String = "0";
 
-  export let EndingA: number = 0; //Bei zeit auf array ändern
-  export let EndingB: number = 0;
-  export let EndingC: number = 0;
-  export let EndingD: number = 0;
-  export let EndingE: number = 0;
-  export let EndingF: number = 0;
-  export let EndingG: number = 0;
+  export let EndingA: String = "0"; //Bei zeit auf array ändern, wird benutzt um anzuzeigen wie viele aller endings schon abgeschlossen wurden
+  export let EndingB: String = "0";
+  export let EndingC: String = "0";
+  export let EndingD: String = "0";
+  export let EndingE: String = "0";
+  export let EndingF: String = "0";
+  export let EndingG: String = "0";
 
 
   // Menü Zusatz

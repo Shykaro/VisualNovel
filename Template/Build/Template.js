@@ -4,29 +4,6 @@ var Template;
     async function ReIntroduction() {
         console.log("1 Pre Intro Scene starting");
         //diese Szene wird nur angezeigt wenn man bereits einmal gestorben ist und von vorne spielt.
-        if (Template.EndingACheck == 1) {
-            //ganzes Re:intro szenario hier. Hochmuts Todsünde.
-            await Template.ƒS.Speech.tell(Template.characters.narrator, "The Sin of Pride let's people think higher of themselves as they should.");
-            await Template.ƒS.Speech.tell(Template.characters.narrator, "Never overestimate yourself.");
-        }
-        if (Template.EndingBCheck == 1) {
-            //ganzes Re:intro szenario hier.
-        }
-        if (Template.EndingCCheck == 1) {
-            //ganzes Re:intro szenario hier.
-        }
-        if (Template.EndingDCheck == 1) {
-            //ganzes Re:intro szenario hier.
-        }
-        if (Template.EndingECheck == 1) {
-            //ganzes Re:intro szenario hier.
-        }
-        if (Template.EndingFCheck == 1) {
-            //ganzes Re:intro szenario hier.
-        }
-        if (Template.EndingGCheck == 1) {
-            //ganzes Re:intro szenario hier.
-        }
         /* Checkblock.
         EndingACheck = 0;
         EndingBCheck = 0;
@@ -36,8 +13,33 @@ var Template;
         EndingFCheck = 0;
         EndingGCheck = 0;
         */
+        Template.EndingACheck = localStorage.getItem("EndingACheck");
+        Template.EndingA = localStorage.getItem("EndingA");
+        if (Template.EndingACheck == "1") {
+            //ganzes Re:intro szenario hier. Hochmuts Todsünde.
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "The Sin of Pride let's people think higher of themselves as they should.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Never overestimate yourself.");
+        }
+        if (Template.EndingBCheck == "1") {
+            //ganzes Re:intro szenario hier.
+        }
+        if (Template.EndingCCheck == "1") {
+            //ganzes Re:intro szenario hier.
+        }
+        if (Template.EndingDCheck == "1") {
+            //ganzes Re:intro szenario hier.
+        }
+        if (Template.EndingECheck == "1") {
+            //ganzes Re:intro szenario hier.
+        }
+        if (Template.EndingFCheck == "1") {
+            //ganzes Re:intro szenario hier.
+        }
+        if (Template.EndingGCheck == "1") {
+            //ganzes Re:intro szenario hier.
+        }
         //ggf. bei zeit auf i schleife mit array abfrage für tode abändern.
-        if (Template.EndingA > 0 && Template.EndingB > 0 && Template.EndingC > 0 && Template.EndingD > 0 && Template.EndingE > 0 && Template.EndingF > 0 && Template.EndingG > 0) {
+        if (Template.EndingA == "1" && Template.EndingB == "1" && Template.EndingC == "1" && Template.EndingD == "1" && Template.EndingE == "1" && Template.EndingF == "1" && Template.EndingG == "1") {
             //Die todsünden abgeschlossen, aufpassen, selber tod zählt auch den todwert hoch. Hier also maybe für jeden tod verschiedene werte festlegen und alle einzelon abfragen
             //Real ending.
             return "9TrueEnding"; //jumps to scene 9
@@ -111,7 +113,7 @@ var Template;
             smage: {
                 T0001: "Boss i did it!!",
                 T0002: "I intercepted the beam and got him out of there!",
-                T0003: "My name Pia this will be a bit much but we have to-",
+                T0003: "My name is Pia, this will be a bit much but we have to-",
                 T0010: "I intercepted your soul from the beam of death in the Sky and therefore saved you from the Hands of Satan hehe.",
                 T0011: "Iam Pia as i already said, and the rest and I call our little organization the forth Magi.",
                 T0012: "Quite literally in Hell.",
@@ -251,7 +253,7 @@ var Template;
             await Template.ƒS.update(1);
             await Template.ƒS.Speech.tell(Template.characters.mara, "God fucking damnit!");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "The redhaired girl grabs you tight, draws her shield and points it towards the sky.");
-            await Template.ƒS.Character.hide(Template.characters.mara);
+            await Template.ƒS.Character.hide(Template.characters.general);
             await Template.ƒS.update(1);
             await Template.ƒS.Speech.tell(Template.characters.narrator, "You can't move, but you glance at the small mage that has been left behind to cover us.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "A bright light shines from her staff, attracting the attention of every single helldog around her.");
@@ -284,15 +286,21 @@ var Template;
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "Broken.");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "YOU DIED");
                     //Checkblock for deathcounter and ending checks.
-                    Template.y++;
-                    Template.EndingACheck = 1;
-                    Template.EndingBCheck = 0;
-                    Template.EndingCCheck = 0;
-                    Template.EndingDCheck = 0;
-                    Template.EndingECheck = 0;
-                    Template.EndingFCheck = 0;
-                    Template.EndingGCheck = 0;
-                    window.addEventListener("load", Template.start); //does this work?? bruh this works. Genius.
+                    //localStorage.setItem('Deathcounter');
+                    localStorage.setItem("EndingACheck", "1");
+                    localStorage.setItem("EndingA", "1");
+                    window.location.reload(); //Force reload
+                    /*
+                    y++;
+                    EndingACheck = 1;
+                    EndingBCheck = 0;
+                    EndingCCheck = 0;
+                    EndingDCheck = 0;
+                    EndingECheck = 0;
+                    EndingFCheck = 0;
+                    EndingGCheck = 0;
+                    */
+                    //window.addEventListener("load", start); //does this work?? bruh this works. Genius... NVM IT DOES NOT, BIG MISTAKE
                     console.log("!!!!!!!!!!!!!!!!! THIS SHOULD NOT STAND HERE !!!!!!!!!!!!!!!!!!!! CHECK 3WV.ts RESTART !!!!!!!!!!!!!!!!!!!!!!!!!");
                     break;
                 case secondDialogueElementOptions.iSayDot2:
@@ -551,7 +559,7 @@ var Template;
                             await Template.ƒS.Character.hide(Template.characters.mara);
                             await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "Wow, that was quite a lot to process...");
-                            await Template.ƒS.Speech.tell(Template.characters.narrator, "Everyone seems busy, you make your way to the barracks as " + Template.characters.pia + " has adviced you.");
+                            await Template.ƒS.Speech.tell(Template.characters.narrator, "Everyone seems busy, you make your way to the barracks as " + Template.characters.pia.name + " has adviced you.");
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "Training is not a bad idea after all.");
                             //Going to barracks, cut jump
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Hey there! I didn't see you here before, up for some training?");
@@ -810,14 +818,14 @@ var Template;
             name: "Assassin",
             origin: Template.ƒS.ORIGIN.BOTTOMCENTER,
             pose: {
-                base: "./Assets/Character/UsedChars/assassingS.png"
+                base: "./Assets/Character/UsedChars/assassinS.png"
             }
         },
         jessy: {
             name: "Assassin",
             origin: Template.ƒS.ORIGIN.BOTTOMCENTER,
             pose: {
-                base: "./Assets/Character/UsedChars/assassingS.png"
+                base: "./Assets/Character/UsedChars/assassinS.png"
             }
         },
         scout: {
@@ -846,20 +854,20 @@ var Template;
     Template.x = 0; //counter für gestellte fragen in 3wv.ts == smage dead? x>3 means dead.
     Template.y = 0; //Anzahl der Runs bzw Tode
     Template.z = 0;
-    Template.EndingACheck = 0; //Maximal 1 sollte auf 1 stehen wenn Re:Intro ausgelöst wird.
-    Template.EndingBCheck = 0;
-    Template.EndingCCheck = 0;
-    Template.EndingDCheck = 0;
-    Template.EndingECheck = 0;
-    Template.EndingFCheck = 0;
-    Template.EndingGCheck = 0;
-    Template.EndingA = 0; //Bei zeit auf array ändern
-    Template.EndingB = 0;
-    Template.EndingC = 0;
-    Template.EndingD = 0;
-    Template.EndingE = 0;
-    Template.EndingF = 0;
-    Template.EndingG = 0;
+    Template.EndingACheck = "0"; //Maximal 1 sollte auf 1 stehen wenn Re:Intro ausgelöst wird. Wird via local storage benutzt um nach neustart das letzte abgeschlossene Ending zu bestimmen
+    Template.EndingBCheck = "0";
+    Template.EndingCCheck = "0";
+    Template.EndingDCheck = "0";
+    Template.EndingECheck = "0";
+    Template.EndingFCheck = "0";
+    Template.EndingGCheck = "0";
+    Template.EndingA = "0"; //Bei zeit auf array ändern, wird benutzt um anzuzeigen wie viele aller endings schon abgeschlossen wurden
+    Template.EndingB = "0";
+    Template.EndingC = "0";
+    Template.EndingD = "0";
+    Template.EndingE = "0";
+    Template.EndingF = "0";
+    Template.EndingG = "0";
     // Menü Zusatz
     let inGameMenu = {
         //buttons, die man angezeigt haben möchte & strings dienen zur css-gestaltung
