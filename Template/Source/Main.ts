@@ -66,6 +66,10 @@ namespace Template {
       name: "Cave",
       background: "./Assets/Background/DarkCave.png"
     },
+    keys: {
+      name: "Keys",
+      background: "./Assets/Extras/Explain.png"
+    },
     Lava: {
       name: "FlowingLava",
       background: "./Assets/Background/FlowingLava.gif"
@@ -278,8 +282,8 @@ namespace Template {
 
   export let dataForSave = {  
       PName: "",
-      Skill: 0
-    
+      scoreRyu: 0,
+      scoreForRyu: "",
   };
 
 

@@ -75,6 +75,10 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        keys: {
+            name: string;
+            background: string;
+        };
         Lava: {
             name: string;
             background: string;
@@ -182,7 +186,8 @@ declare namespace Template {
     const delay_5sec: ƒS.Signal;
     let dataForSave: {
         PName: string;
-        Skill: number;
+        scoreRyu: number;
+        scoreForRyu: string;
     };
     function fromLeftToLeft(): ƒS.AnimationDefinition;
     function fromRightToRight(): ƒS.AnimationDefinition;

@@ -65,11 +65,22 @@ var Template;
             }
         };
         //Actual timeline
+        await Template.ƒS.Location.show(Template.locations.keys);
+        await Template.ƒS.update(1);
+        await Template.delay_5sec;
+        await Template.ƒS.Location.show(Template.locations.blackscreen);
+        await Template.ƒS.update(1);
         await Template.ƒS.Location.show(Template.locations.introduction);
         await Template.ƒS.update(Template.transition.cut.duration, Template.transition.cut.alpha, Template.transition.cut.edge);
         await Template.ƒS.Sound.play(Template.sound.backgroundtheme, 0.1, true);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
+        //dataForSave.scoreRyu += 50; OBSOLET
+        //dataForSave.scoreForRyu = "You earned 50 points on Ryus bar",
+        //document.getElementsByName("scoreRyu").forEach(meterStuff => meterStuff.hidden = true);
+        //document.getElementsByName("scoreForRyu").forEach(meterStuff => meterStuff.hidden = true);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
+        //document.getElementsByName("scoreRyu").forEach(meterStuff => meterStuff.hidden = false);
+        //document.getElementsByName("scoreForRyu").forEach(meterStuff => meterStuff.hidden = false);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002 + ".....");
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0003);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T1003); //added als hinweis.
@@ -483,8 +494,21 @@ var Template;
                                         await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                                         //timeskip clash effect here
+                                        await Template.ƒS.Location.show(Template.locations.blackscreen);
+                                        await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                                        await Template.ƒS.update(1);
+                                        await Template.ƒS.Location.show(Template.locations.tempel);
+                                        await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                                        await Template.ƒS.update(1);
+                                        //this good timeskip?
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Oh you're quite good with the sword, some nice agility. Let's do one more!");
                                         //timeskip clash effect here
+                                        await Template.ƒS.Location.show(Template.locations.blackscreen);
+                                        await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                                        await Template.ƒS.update(1);
+                                        await Template.ƒS.Location.show(Template.locations.tempel);
+                                        await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                                        await Template.ƒS.update(1);
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                                         await Template.ƒS.Character.hide(Template.characters.trainer);
@@ -514,8 +538,20 @@ var Template;
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                             //timeskip clash effect here
+                            await Template.ƒS.Location.show(Template.locations.blackscreen);
+                            await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                            await Template.ƒS.update(1);
+                            await Template.ƒS.Location.show(Template.locations.tempel);
+                            await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Oh you're quite good with the sword, some nice agility. Let's do one more!");
                             //timeskip clash effect here
+                            await Template.ƒS.Location.show(Template.locations.blackscreen);
+                            await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                            await Template.ƒS.update(1);
+                            await Template.ƒS.Location.show(Template.locations.tempel);
+                            await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                             await Template.ƒS.Character.hide(Template.characters.trainer);
@@ -568,8 +604,20 @@ var Template;
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                             //timeskip clash effect here
+                            await Template.ƒS.Location.show(Template.locations.blackscreen);
+                            await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                            await Template.ƒS.update(1);
+                            await Template.ƒS.Location.show(Template.locations.tempel);
+                            await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Oh you're quite good with the sword, some nice agility. Let's do one more!");
                             //timeskip clash effect here
+                            await Template.ƒS.Location.show(Template.locations.blackscreen);
+                            await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                            await Template.ƒS.update(1);
+                            await Template.ƒS.Location.show(Template.locations.tempel);
+                            await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                             await Template.ƒS.Character.hide(Template.characters.trainer);
@@ -606,8 +654,20 @@ var Template;
                                         await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                                         //timeskip clash effect here
+                                        await Template.ƒS.Location.show(Template.locations.blackscreen);
+                                        await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                                        await Template.ƒS.update(1);
+                                        await Template.ƒS.Location.show(Template.locations.tempel);
+                                        await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                                        await Template.ƒS.update(1);
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Oh you're quite good with the sword, some nice agility. Let's do one more!");
                                         //timeskip clash effect here
+                                        await Template.ƒS.Location.show(Template.locations.blackscreen);
+                                        await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                                        await Template.ƒS.update(1);
+                                        await Template.ƒS.Location.show(Template.locations.tempel);
+                                        await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                                        await Template.ƒS.update(1);
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                                         await Template.ƒS.Character.hide(Template.characters.trainer);
@@ -636,8 +696,20 @@ var Template;
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                             //timeskip clash effect here
+                            await Template.ƒS.Location.show(Template.locations.blackscreen);
+                            await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                            await Template.ƒS.update(1);
+                            await Template.ƒS.Location.show(Template.locations.tempel);
+                            await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Oh you're quite good with the sword, some nice agility. Let's do one more!");
                             //timeskip clash effect here
+                            await Template.ƒS.Location.show(Template.locations.blackscreen);
+                            await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                            await Template.ƒS.update(1);
+                            await Template.ƒS.Location.show(Template.locations.tempel);
+                            await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                             await Template.ƒS.Character.hide(Template.characters.trainer);
@@ -654,8 +726,20 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                 await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                 //timeskip clash effect here
+                await Template.ƒS.Location.show(Template.locations.blackscreen);
+                await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                await Template.ƒS.update(1);
+                await Template.ƒS.Location.show(Template.locations.tempel);
+                await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                await Template.ƒS.update(1);
                 await Template.ƒS.Speech.tell(Template.characters.trainer, "Oh you're quite good with the sword, some nice agility. Let's do one more!");
                 //timeskip clash effect here
+                await Template.ƒS.Location.show(Template.locations.blackscreen);
+                await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+                await Template.ƒS.update(1);
+                await Template.ƒS.Location.show(Template.locations.tempel);
+                await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+                await Template.ƒS.update(1);
                 await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                 await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                 await Template.ƒS.Character.hide(Template.characters.trainer);
@@ -762,6 +846,10 @@ var Template;
         cave: {
             name: "Cave",
             background: "./Assets/Background/DarkCave.png"
+        },
+        keys: {
+            name: "Keys",
+            background: "./Assets/Extras/Explain.png"
         },
         Lava: {
             name: "FlowingLava",
@@ -947,7 +1035,8 @@ var Template;
     Template.delay_5sec = Template.ƒS.Progress.defineSignal([() => Template.ƒS.Progress.delay(5)]);
     Template.dataForSave = {
         PName: "",
-        Skill: 0
+        scoreRyu: 0,
+        scoreForRyu: "",
     };
     //Animations
     function fromLeftToLeft() {

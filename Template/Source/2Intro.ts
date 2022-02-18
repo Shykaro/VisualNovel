@@ -17,13 +17,31 @@ namespace Template {
   };
 
 //Actual timeline
-    
+  
+    await ƒS.Location.show(locations.keys);
+    await ƒS.update(1);
+    await delay_5sec;
+
+    await ƒS.Location.show(locations.blackscreen);
+    await ƒS.update(1);
+
     await ƒS.Location.show(locations.introduction);
-    
+
     await ƒS.update(transition.cut.duration, transition.cut.alpha, transition.cut.edge);
     await ƒS.Sound.play(sound.backgroundtheme, 0.1, true);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0000);
+
+    //dataForSave.scoreRyu += 50; OBSOLET
+    //dataForSave.scoreForRyu = "You earned 50 points on Ryus bar",
+
+    //document.getElementsByName("scoreRyu").forEach(meterStuff => meterStuff.hidden = true);
+    //document.getElementsByName("scoreForRyu").forEach(meterStuff => meterStuff.hidden = true);
+
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
+
+    //document.getElementsByName("scoreRyu").forEach(meterStuff => meterStuff.hidden = false);
+    //document.getElementsByName("scoreForRyu").forEach(meterStuff => meterStuff.hidden = false);
+
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0002 + ".....");
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0003);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T1003); //added als hinweis.
@@ -31,6 +49,7 @@ namespace Template {
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0005);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0006);
     await ƒS.Sound.fade(sound.backgroundtheme, 0, 1);
+
 
 
     let firstDialogueElementOptions = {
