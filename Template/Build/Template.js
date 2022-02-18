@@ -318,6 +318,10 @@ var Template;
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Quietly under the orders of Mara the whole group sneaks towards the headquarters...");
             await Template.ƒS.Character.animate(Template.characters.smage, Template.characters.smage.pose.base, Template.fromRightToRight());
         }
+        await Template.ƒS.Character.hide(Template.characters.smage);
+        await Template.ƒS.Character.hide(Template.characters.pia);
+        await Template.ƒS.Character.hide(Template.characters.general);
+        await Template.ƒS.Character.hide(Template.characters.mara);
         //await ƒS.Character.show(characters.general, characters.general.pose.base, ƒS.positionPercent(30, 90));
         //await ƒS.update();
     }
@@ -357,14 +361,24 @@ var Template;
         if (Template.x == 4 || Template.x > 4) {
             mageDead = true;
         }
+        await Template.ƒS.Location.show(Template.locations.tempel);
+        await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+        await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.narrator, "After a quite long time you arrive at what seems to be an hidden entrance.");
         await Template.ƒS.Speech.tell(Template.characters.narrator, "Mara moves a stone aside you waves you to go ahead.");
         await Template.ƒS.Speech.tell(Template.characters.mara, "We have arrived. Go ahead.");
+        await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
+        await Template.ƒS.update(1);
+        await Template.ƒS.Character.hide(Template.characters.mara);
+        await Template.ƒS.update(1);
         //inbetween fehlen kommentare von small mage, if shes not dead.
         await Template.ƒS.Speech.tell(Template.characters.narrator, "...");
         await Template.ƒS.Speech.tell(Template.characters.narrator, "After a rather long and difficult small cave you stand before a lively place.");
         await Template.ƒS.Speech.tell(Template.characters.narrator, "People talking and enjoying themselves, sounds of metal clinging, a lively bazaar, this doesn't look like hell.");
         await Template.ƒS.Speech.tell(Template.characters.mara, "You will need some proper training, go to the barracks to learn something useful.");
+        await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
+        await Template.ƒS.update(1);
+        await Template.ƒS.Character.animate(Template.characters.mara, Template.characters.mara.pose.base, Template.fromLeftToLeft());
         await Template.ƒS.Speech.tell(Template.characters.narrator, "Mara leaves you behind and seems to walk to a tent reserved for her.");
         //first dialogue option to ask questions
         let firstDialogueElementOptions = {
@@ -411,6 +425,11 @@ var Template;
                     console.log("Mage still dead");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "As you enter the tent, you're met by a fierce and unwelcomed look.");
                     await Template.ƒS.Speech.tell(Template.characters.mara, "Please leave, I dont have the nerves or time for you at the moment.");
+                    await Template.ƒS.Character.animate(Template.characters.mara, Template.characters.mara.pose.base, Template.BackToNormal());
+                    await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Character.hide(Template.characters.mara);
+                    await Template.ƒS.update(1);
                     await Template.ƒS.Speech.tell(Template.characters.consciousness, "Seems like you should go do something else. Infront of the tent was the Assassin, maybe I should talk to her or go to the barracks...");
                     //choose for second person to talk to, or go to barracks
                     let secondDialogueElement = await Template.ƒS.Menu.getInput(secondDialogueElementOptions, "NormalButtonDialogue"); //after Mara talk, mage is dead
@@ -418,6 +437,8 @@ var Template;
                         case secondDialogueElementOptions.iSayDot1: //talk to assassin
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "The Assassin infront of the tent looks somewhat relaxed.");
                             await Template.ƒS.Speech.tell(Template.characters.assassin, "Wassup?");
+                            await Template.ƒS.Character.show(Template.characters.jessy, Template.characters.jessy.pose.base, Template.ƒS.positionPercent(70, 70));
+                            await Template.ƒS.update(1);
                             askAgain = true;
                             while (askAgain) { //talk to assassin repeat
                                 let thirdDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementOptions, "NormalButtonDialogue"); //talk to assassin repeat
@@ -443,9 +464,13 @@ var Template;
                                         await Template.ƒS.Speech.tell(Template.characters.jessy, "Listen here, Hell is Hell, people die but we fight for the greater cause. We are all ready to die the second we joined this organization.");
                                         break;
                                     case thirdDialogueElementOptions.iSayDot4: //go to barracks
+                                        await Template.ƒS.Character.hide(Template.characters.jessy);
+                                        await Template.ƒS.update(1);
                                         await Template.ƒS.Speech.tell(Template.characters.consciousness, "Maybe I get some more info at the barracks.");
                                         await Template.ƒS.Speech.tell(Template.characters.consciousness, "A bit of sparing wouldn't hurt either...");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Hey there! I didn't see you here before, up for some training?");
+                                        await Template.ƒS.Character.show(Template.characters.trainer, Template.characters.trainer.pose.base, Template.ƒS.positionPercent(30, 70));
+                                        await Template.ƒS.update(1);
                                         await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                                         //timeskip clash effect here
@@ -453,10 +478,14 @@ var Template;
                                         //timeskip clash effect here
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                                        await Template.ƒS.Character.hide(Template.characters.trainer);
+                                        await Template.ƒS.update(1);
                                         //Skill++
                                         askAgain = false;
                                         break;
                                     case thirdDialogueElementOptions.iSayDot5: //Chill around
+                                        await Template.ƒS.Character.hide(Template.characters.jessy);
+                                        await Template.ƒS.update(1);
                                         await Template.ƒS.Speech.tell(Template.characters.consciousness, "I need some rest after all of this geez...");
                                         await Template.ƒS.Speech.tell(Template.characters.consciousness, "I am sure Mara will wake me up if she needs something.");
                                         await Template.ƒS.Speech.tell(Template.characters.narrator, "You lean yourself against a big boulder around the corner and doze off...");
@@ -471,6 +500,8 @@ var Template;
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "Maybe I get some more info at the barracks.");
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "A bit of sparing wouldn't hurt either...");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Hey there! I didn't see you here before, up for some training?");
+                            await Template.ƒS.Character.show(Template.characters.trainer, Template.characters.trainer.pose.base, Template.ƒS.positionPercent(30, 70));
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                             //timeskip clash effect here
@@ -478,6 +509,8 @@ var Template;
                             //timeskip clash effect here
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                            await Template.ƒS.Character.hide(Template.characters.trainer);
+                            await Template.ƒS.update(1);
                             //Skill++
                             break;
                     }
@@ -486,14 +519,20 @@ var Template;
                     console.log("Mage still did diedn't");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "As you enter the tent, you're met by a serious yet friendly smile.");
                     await Template.ƒS.Speech.tell(Template.characters.mara, "You did quite well wunderkind, we have a lot to do.");
-                    await Template.ƒS.Speech.tell(Template.characters.narrator, Template.characters.smage + " is standing next to her with a huge proud look on her face.");
+                    await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Character.hide(Template.characters.mara);
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Speech.tell(Template.characters.narrator, Template.characters.pia.name + " is standing next to her with a huge proud look on her face.");
                     await Template.ƒS.Speech.tell(Template.characters.consciousness, "This could've gone terribly wrong.");
                     //need more Mara talk, how
                     let forthDialogueElement = await Template.ƒS.Menu.getInput(forthDialogueElementOptions, "NormalButtonDialogue"); //after mara talk mage not dead tree
                     switch (forthDialogueElement) {
-                        case forthDialogueElementOptions.iSayDot1: //go to smage
+                        case forthDialogueElementOptions.iSayDot1: //go to smage PIA
                             //++ Einfluss, via meter??
                             await Template.ƒS.Speech.tell(Template.characters.pia, "Hi there! Hope you're doing good, must've been quite a bit much for you.");
+                            await Template.ƒS.Character.show(Template.characters.pia, Template.characters.pia.pose.base, Template.ƒS.positionPercent(70, 70));
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.pia, "So basically let me tell you a bit about our organization and goals.");
                             await Template.ƒS.Speech.tell(Template.characters.pia, "We're currently located in Labeb, the safetown for all stranded souls in this Hell.");
                             await Template.ƒS.Speech.tell(Template.characters.pia, "And if you didn't already catch it, yes we're indeed in Hell. Quite lovely isn't it?");
@@ -506,11 +545,17 @@ var Template;
                             await Template.ƒS.Speech.tell(Template.characters.pia, "And whatever happens, I will protect you! You can always count on me ok? We got this!");
                             await Template.ƒS.Speech.tell(Template.characters.pia, "Though I'd advise you to look by at the barracks, train a bit so you get used to fighting if the situation will go not as planned.");
                             await Template.ƒS.Speech.tell(Template.characters.pia, "But under Boss' management, everything should go smoooooth. Boss has some kind of meeting which I have to attend. See you later!");
+                            await Template.ƒS.Character.animate(Template.characters.smage, Template.characters.pia.pose.base, Template.fromRightToRight());
+                            await Template.ƒS.Character.hide(Template.characters.mara);
+                            await Template.ƒS.update(1);
+                            await Template.ƒS.Character.animate(Template.characters.smage, Template.characters.pia.pose.base, Template.BackToNormal());
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "Wow, that was quite a lot to process...");
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "Everyone seems busy, you make your way to the barracks as " + Template.characters.smage + " has adviced you.");
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "Training is not a bad idea after all.");
                             //Going to barracks, cut jump
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Hey there! I didn't see you here before, up for some training?");
+                            await Template.ƒS.Character.show(Template.characters.trainer, Template.characters.trainer.pose.base, Template.ƒS.positionPercent(30, 70));
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                             //timeskip clash effect here
@@ -518,12 +563,16 @@ var Template;
                             //timeskip clash effect here
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                            await Template.ƒS.Character.hide(Template.characters.trainer);
+                            await Template.ƒS.update(1);
                             //Skill++
                             break;
                         case forthDialogueElementOptions.iSayDot2: //go to assassin
                             askAgain = true;
                             while (askAgain) { //Talk to assassing repeat
                                 let thirdALTDialogueElement = await Template.ƒS.Menu.getInput(thirdALTDialogueElementOptions, "NormalButtonDialogue");
+                                await Template.ƒS.Character.show(Template.characters.jessy, Template.characters.jessy.pose.base, Template.ƒS.positionPercent(70, 70));
+                                await Template.ƒS.update(1);
                                 switch (thirdALTDialogueElement) {
                                     case thirdALTDialogueElementOptions.iSayDot1: //Who are you
                                         await Template.ƒS.Speech.tell(Template.characters.assassin, "So... I am the Assassin and my Name is Jessy. Generally speaking I try to kill some of those Hellpuppies before you show up.");
@@ -538,9 +587,13 @@ var Template;
                                         await Template.ƒS.Speech.tell(Template.characters.consciousness, "Theres different beasts?!... Oh god....");
                                         break;
                                     case thirdALTDialogueElementOptions.iSayDot3: //go to barracks
+                                        await Template.ƒS.Character.hide(Template.characters.jessy);
+                                        await Template.ƒS.update(1);
                                         await Template.ƒS.Speech.tell(Template.characters.consciousness, "Maybe I get to know some people at the barracks.");
                                         await Template.ƒS.Speech.tell(Template.characters.consciousness, "A bit of sparing wouldn't hurt either...");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Hey there! I didn't see you here before, up for some training?");
+                                        await Template.ƒS.Character.show(Template.characters.trainer, Template.characters.trainer.pose.base, Template.ƒS.positionPercent(30, 70));
+                                        await Template.ƒS.update(1);
                                         await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                                         //timeskip clash effect here
@@ -548,10 +601,14 @@ var Template;
                                         //timeskip clash effect here
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                                        await Template.ƒS.Character.hide(Template.characters.trainer);
+                                        await Template.ƒS.update(1);
                                         //Skill++
                                         askAgain = false;
                                         break;
                                     case thirdALTDialogueElementOptions.iSayDot4: //Chill around
+                                        await Template.ƒS.Character.hide(Template.characters.jessy);
+                                        await Template.ƒS.update(1);
                                         await Template.ƒS.Speech.tell(Template.characters.consciousness, "I need some rest after all of this geez...");
                                         await Template.ƒS.Speech.tell(Template.characters.consciousness, "I am sure Mara will wake me up if she needs something.");
                                         await Template.ƒS.Speech.tell(Template.characters.narrator, "You lean yourself against a big boulder around the corner and doze off...");
@@ -565,6 +622,8 @@ var Template;
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "Maybe I get some more info at the barracks.");
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "A bit of sparing wouldn't hurt either...");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Hey there! I didn't see you here before, up for some training?");
+                            await Template.ƒS.Character.show(Template.characters.trainer, Template.characters.trainer.pose.base, Template.ƒS.positionPercent(30, 70));
+                            await Template.ƒS.update(1);
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                             //timeskip clash effect here
@@ -572,6 +631,8 @@ var Template;
                             //timeskip clash effect here
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                            await Template.ƒS.Character.hide(Template.characters.trainer);
+                            await Template.ƒS.update(1);
                             //Skill++
                             break;
                     }
@@ -588,6 +649,9 @@ var Template;
                 //timeskip clash effect here
                 await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
                 await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
+                await Template.ƒS.Character.hide(Template.characters.trainer);
+                await Template.ƒS.update(1);
+                //Skill++
                 break;
         }
         //bang sound insert here
