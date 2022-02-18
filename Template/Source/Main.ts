@@ -91,8 +91,22 @@ namespace Template {
         base: "./Assets/Character/UsedChars/generalS.png"
       }
     },
+    mara: { //name reveal für general
+      name: "Mara",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        base: "./Assets/Character/UsedChars/generalS.png"
+      }
+    },
     smage: {
       name: "Small Mage",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        base: "./Assets/Character/UsedChars/smageS.png"
+      }
+    },
+    pia: { //name reveal für smage
+      name: "Pia",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
         base: "./Assets/Character/UsedChars/smageS.png"
@@ -106,6 +120,13 @@ namespace Template {
       }
     },
     assassin: {
+      name: "Assassin",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        base: "./Assets/Character/UsedChars/assassingS.png"
+      }
+    },
+    jessy: { //name reveal für assassin
       name: "Assassin",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
@@ -311,7 +332,7 @@ namespace Template {
     //Szenenreihenfolge
     let scenes: ƒS.Scenes = [
       { id: "Re:Intro", scene: ReIntroduction, name: "1Re:Intro"},
-      //{ scene: Intro, name: "2Intro" },
+      { scene: Intro, name: "2Intro" },
       { scene: WiderstandsVersteck, name: "3WV" },
       { scene: HauptVersteck, name: "4HV" },
 

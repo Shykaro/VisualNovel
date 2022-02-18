@@ -98,7 +98,21 @@ declare namespace Template {
                 base: string;
             };
         };
+        mara: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                base: string;
+            };
+        };
         smage: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                base: string;
+            };
+        };
+        pia: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
@@ -113,6 +127,13 @@ declare namespace Template {
             };
         };
         assassin: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                base: string;
+            };
+        };
+        jessy: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
