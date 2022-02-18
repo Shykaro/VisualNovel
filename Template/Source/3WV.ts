@@ -5,7 +5,7 @@ namespace Template {
       //Texte
       let text = {
       narrator: {
-          T0001: "",
+          T0001: ".....",
           T0002: "",
           T0003: "",
           T0004: "",
@@ -37,10 +37,18 @@ namespace Template {
       let mageDead: boolean = false; //smage dead?
 
 
-  /* would like multiple transitions for gewitter effekt :( look discord for ref by jirka 12.03*/
-      await ƒS.Location.show(locations.bedroom);
+  /* would like multiple transitions for gewitter effekt :( look discord for ref by jirka 12.02*/
+      await ƒS.Location.show(locations.openfield);
       await ƒS.update(transition.donner1.duration, transition.donner1.alpha, transition.donner1.edge);
-      await ƒS.update();
+      await ƒS.update(1);
+
+      await ƒS.Location.show(locations.blackscreen);
+      await ƒS.update(transition.arcane.duration, transition.arcane.alpha, transition.arcane.edge);
+      await ƒS.update(1);
+
+      await ƒS.Location.show(locations.openfield);
+      await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
+      await ƒS.update(1);
       //await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
       //await ƒS.update(transition.donner3.duration, transition.donner3.alpha, transition.donner3.edge);
       //await ƒS.update(transition.arcane.duration, transition.arcane.alpha, transition.arcane.edge);
@@ -77,7 +85,7 @@ namespace Template {
       
       //you can ask all questions if u want to
       while (askAgain) {
-      let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementOptions, "WVDialogueOption");
+      let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementOptions, "NormalButtonDialogue");
   
       switch (firstDialogueElement) {
         case firstDialogueElementOptions.iSayDot1:
@@ -206,7 +214,7 @@ namespace Template {
           iSayDot1: "Run back and help her.",
           iSayDot2: "Stick to the plan",
         };
-        let secondDialogueElement = await ƒS.Menu.getInput(secondDialogueElementOptions, "WVDialogueOption");
+        let secondDialogueElement = await ƒS.Menu.getInput(secondDialogueElementOptions, "NormalButtonDialogue");
 
         switch (secondDialogueElement) {
           case secondDialogueElementOptions.iSayDot1:
@@ -248,8 +256,8 @@ namespace Template {
         await ƒS.Speech.tell(characters.smage, "Aaaaand that's why we have to escape quietly, we cant outrun them.");
 
         await ƒS.Speech.tell(characters.smage, "By the way, what's your name?");
-        //inputfield for PName here, how?
         dataForSave.PName = await ƒS.Speech.getInput();
+
         await ƒS.Speech.tell(characters.smage, "Ohhh " + dataForSave.PName + " is a cute name");
         await ƒS.Speech.tell(characters.smage, "My Name is ???");
 

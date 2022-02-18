@@ -11,6 +11,9 @@ declare namespace Template {
     function HauptVersteck(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function Artifact(): ƒS.SceneReturn;
+}
+declare namespace Template {
     function TrueEnding(): ƒS.SceneReturn;
 }
 declare namespace Template {
@@ -56,7 +59,23 @@ declare namespace Template {
             name: string;
             background: string;
         };
-        bedroom: {
+        openfield: {
+            name: string;
+            background: string;
+        };
+        blackscreen: {
+            name: string;
+            background: string;
+        };
+        tempel: {
+            name: string;
+            background: string;
+        };
+        cave: {
+            name: string;
+            background: string;
+        };
+        Lava: {
             name: string;
             background: string;
         };
@@ -125,6 +144,20 @@ declare namespace Template {
     let x: number;
     let y: number;
     let z: number;
+    let EndingACheck: number;
+    let EndingBCheck: number;
+    let EndingCCheck: number;
+    let EndingDCheck: number;
+    let EndingECheck: number;
+    let EndingFCheck: number;
+    let EndingGCheck: number;
+    let EndingA: number;
+    let EndingB: number;
+    let EndingC: number;
+    let EndingD: number;
+    let EndingE: number;
+    let EndingF: number;
+    let EndingG: number;
     const delay_5sec: ƒS.Signal;
     let dataForSave: {
         PName: string;

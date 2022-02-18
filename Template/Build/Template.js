@@ -3,10 +3,12 @@ var Template;
 (function (Template) {
     async function ReIntroduction() {
         console.log("1 Pre Intro Scene starting");
+        //diese Szene wird nur angezeigt wenn man bereits einmal gestorben ist und von vorne spielt.
         if (Template.y > 0 && Template.y != 7) {
             //ganzes Re:intro szenario hier.
         }
-        if (Template.y == 7) {
+        //ggf. bei zeit auf i schleife mit array abfrage für tode abändern.
+        if (Template.EndingA > 0 && Template.EndingB > 0 && Template.EndingC > 0 && Template.EndingD > 0 && Template.EndingE > 0 && Template.EndingF > 0 && Template.EndingG > 0) {
             //Die todsünden abgeschlossen, aufpassen, selber tod zählt auch den todwert hoch. Hier also maybe für jeden tod verschiedene werte festlegen und alle einzelon abfragen
             //Real ending.
             return "9TrueEnding"; //jumps to scene 9
@@ -72,7 +74,7 @@ var Template;
         //Texte
         let text = {
             narrator: {
-                T0001: "",
+                T0001: ".....",
                 T0002: "",
                 T0003: "",
                 T0004: "",
@@ -101,10 +103,16 @@ var Template;
         //let x: number = 0;
         let askAgain = true;
         let mageDead = false; //smage dead?
-        /* would like multiple transitions for gewitter effekt :( look discord for ref by jirka 12.03*/
-        await Template.ƒS.Location.show(Template.locations.bedroom);
+        /* would like multiple transitions for gewitter effekt :( look discord for ref by jirka 12.02*/
+        await Template.ƒS.Location.show(Template.locations.openfield);
         await Template.ƒS.update(Template.transition.donner1.duration, Template.transition.donner1.alpha, Template.transition.donner1.edge);
-        await Template.ƒS.update();
+        await Template.ƒS.update(1);
+        await Template.ƒS.Location.show(Template.locations.blackscreen);
+        await Template.ƒS.update(Template.transition.arcane.duration, Template.transition.arcane.alpha, Template.transition.arcane.edge);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Location.show(Template.locations.openfield);
+        await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+        await Template.ƒS.update(1);
         //await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
         //await ƒS.update(transition.donner3.duration, transition.donner3.alpha, transition.donner3.edge);
         //await ƒS.update(transition.arcane.duration, transition.arcane.alpha, transition.arcane.edge);
@@ -132,7 +140,7 @@ var Template;
         };
         //you can ask all questions if u want to
         while (askAgain) {
-            let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementOptions, "WVDialogueOption");
+            let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementOptions, "NormalButtonDialogue");
             switch (firstDialogueElement) {
                 case firstDialogueElementOptions.iSayDot1:
                     await Template.ƒS.Speech.tell(Template.characters.smage, text.smage.T0010);
@@ -236,7 +244,7 @@ var Template;
                 iSayDot1: "Run back and help her.",
                 iSayDot2: "Stick to the plan",
             };
-            let secondDialogueElement = await Template.ƒS.Menu.getInput(secondDialogueElementOptions, "WVDialogueOption");
+            let secondDialogueElement = await Template.ƒS.Menu.getInput(secondDialogueElementOptions, "NormalButtonDialogue");
             switch (secondDialogueElement) {
                 case secondDialogueElementOptions.iSayDot1:
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "With full determination you run back, trying to save the girl that saved you.");
@@ -267,7 +275,6 @@ var Template;
             await Template.ƒS.Speech.tell(Template.characters.smage, "Minor demons are still pretty scary if I might add that. They're smaller but way faster.");
             await Template.ƒS.Speech.tell(Template.characters.smage, "Aaaaand that's why we have to escape quietly, we cant outrun them.");
             await Template.ƒS.Speech.tell(Template.characters.smage, "By the way, what's your name?");
-            //inputfield for PName here, how?
             Template.dataForSave.PName = await Template.ƒS.Speech.getInput();
             await Template.ƒS.Speech.tell(Template.characters.smage, "Ohhh " + Template.dataForSave.PName + " is a cute name");
             await Template.ƒS.Speech.tell(Template.characters.smage, "My Name is ???");
@@ -357,7 +364,7 @@ var Template;
             iSayDot1: "",
             iSayDot2: "",
         };
-        let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementOptions, "MaraORBarracks");
+        let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementOptions, "NormalButtonDialogue"); //Mara or barracks                          
         //let fifthDialogueElement = await ƒS.Menu.getInput(fifthDialogueElementOptions, "WVDialogueOption");
         //let sixthDialogueElement = await ƒS.Menu.getInput(sixthDialogueElementOptions, "WVDialogueOption");
         switch (firstDialogueElement) {
@@ -369,14 +376,14 @@ var Template;
                     await Template.ƒS.Speech.tell(Template.characters.general, "Please leave, I dont have the nerves or time for you at the moment.");
                     await Template.ƒS.Speech.tell(Template.characters.consciousness, "Seems like you should go do something else. Infront of the tent was the Assassin, maybe I should talk to her or go to the barracks...");
                     //choose for second person to talk to, or go to barracks
-                    let secondDialogueElement = await Template.ƒS.Menu.getInput(secondDialogueElementOptions, "AfterMaraAssassinORBarracks"); //after Mara talk, mage is dead
+                    let secondDialogueElement = await Template.ƒS.Menu.getInput(secondDialogueElementOptions, "NormalButtonDialogue"); //after Mara talk, mage is dead
                     switch (secondDialogueElement) {
                         case secondDialogueElementOptions.iSayDot1: //talk to assassin
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "The Assassin infront of the tent looks somewhat relaxed.");
                             await Template.ƒS.Speech.tell(Template.characters.assassin, "Wassup?");
                             askAgain = true;
                             while (askAgain) { //talk to assassin repeat
-                                let thirdDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementOptions, "TalkToAssassinRepeat");
+                                let thirdDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementOptions, "NormalButtonDialogue"); //talk to assassin repeat
                                 switch (thirdDialogueElement) {
                                     case thirdDialogueElementOptions.iSayDot1: //Who are you
                                         await Template.ƒS.Speech.tell(Template.characters.assassin, "So... I am the Assassin and my Name is ???. Generally speaking I try to warn you guys when some of those Hellpuppies show up.");
@@ -445,7 +452,7 @@ var Template;
                     await Template.ƒS.Speech.tell(Template.characters.narrator, Template.characters.smage + " is standing next to her with a huge proud look on her face.");
                     await Template.ƒS.Speech.tell(Template.characters.consciousness, "This could've gone terribly wrong.");
                     //need more Mara talk, how
-                    let forthDialogueElement = await Template.ƒS.Menu.getInput(forthDialogueElementOptions, "TalkToMageORAssassinOrBarracks,AfterMara"); //after mara talk mage not dead tree
+                    let forthDialogueElement = await Template.ƒS.Menu.getInput(forthDialogueElementOptions, "NormalButtonDialogue"); //after mara talk mage not dead tree
                     switch (forthDialogueElement) {
                         case forthDialogueElementOptions.iSayDot1: //go to smage
                             //++ Einfluss, via meter??
@@ -479,7 +486,7 @@ var Template;
                         case forthDialogueElementOptions.iSayDot2: //go to assassin
                             askAgain = true;
                             while (askAgain) { //Talk to assassing repeat
-                                let thirdALTDialogueElement = await Template.ƒS.Menu.getInput(thirdALTDialogueElementOptions, "TalkToAssassinRepeatSmageAlive");
+                                let thirdALTDialogueElement = await Template.ƒS.Menu.getInput(thirdALTDialogueElementOptions, "NormalButtonDialogue");
                                 switch (thirdALTDialogueElement) {
                                     case thirdALTDialogueElementOptions.iSayDot1: //Who are you
                                         await Template.ƒS.Speech.tell(Template.characters.assassin, "So... I am the Assassin and my Name is ???. Generally speaking I try to warn you guys when some of those Hellpuppies show up.");
@@ -553,6 +560,13 @@ var Template;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
+    async function Artifact() {
+        console.log("5 Artifact Scene starting");
+    }
+    Template.Artifact = Artifact;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
     async function TrueEnding() {
         console.log("9 TrueEnding Scene starting");
     }
@@ -587,7 +601,7 @@ var Template;
         },
         arcane: {
             duration: 3,
-            alpha: "./Transitions/Arcane.jpg",
+            alpha: "./Transitions/Arcane2.png",
             edge: 1
         }
     };
@@ -606,9 +620,25 @@ var Template;
             name: "Intro",
             background: "./Assets/Background/Intro.jpg"
         },
-        bedroom: {
-            name: "Bedroom",
-            background: "./Assets/Background/MountainCastle.png"
+        openfield: {
+            name: "Openfield",
+            background: "./Assets/Background/Ruins.png"
+        },
+        blackscreen: {
+            name: "Blackscreen",
+            background: "./Assets/Background/Blackscreen.jpg"
+        },
+        tempel: {
+            name: "Tempel",
+            background: "./Assets/Background/TempelBG.png"
+        },
+        cave: {
+            name: "Cave",
+            background: "./Assets/Background/DarkCave.png"
+        },
+        Lava: {
+            name: "FlowingLava",
+            background: "./Assets/Background/FlowingLava.gif"
         }
     };
     Template.characters = {
@@ -669,13 +699,27 @@ var Template;
         rose: {
             name: "Rose",
             description: "Eine seltsam leuchtende Rose",
-            image: "./Assets/Items/rose.jpg"
+            image: "./Assets/Items/rose.jpg",
         }
     };
     //Platzhalter für global use
     Template.x = 0; //counter für gestellte fragen in 3wv.ts == smage dead? x>3 means dead.
-    Template.y = 0; //Deathcounter
+    Template.y = 0; //Anzahl der Runs bzw Tode
     Template.z = 0;
+    Template.EndingACheck = 0; //Maximal 1 sollte auf 1 stehen wenn Re:Intro ausgelöst wird.
+    Template.EndingBCheck = 0;
+    Template.EndingCCheck = 0;
+    Template.EndingDCheck = 0;
+    Template.EndingECheck = 0;
+    Template.EndingFCheck = 0;
+    Template.EndingGCheck = 0;
+    Template.EndingA = 0; //Bei zeit auf array ändern
+    Template.EndingB = 0;
+    Template.EndingC = 0;
+    Template.EndingD = 0;
+    Template.EndingE = 0;
+    Template.EndingF = 0;
+    Template.EndingG = 0;
     // Menü Zusatz
     let inGameMenu = {
         //buttons, die man angezeigt haben möchte & strings dienen zur css-gestaltung
@@ -788,8 +832,8 @@ var Template;
     window.addEventListener("load", start);
     function start(_event) {
         console.log("Sequenzreihe startet jetzt. Splish Splash your opinion is trash");
-        if (Template.y == 1) {
-            console.log("######### Second run. #########");
+        if (Template.y > 0) {
+            console.log("######### " + Template.y + " time of run. #########");
         }
         //Menü
         gameMenu = Template.ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");

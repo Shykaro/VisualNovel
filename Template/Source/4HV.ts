@@ -90,7 +90,7 @@ namespace Template {
 
 
       
-      let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementOptions, "MaraORBarracks");                           
+      let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementOptions, "NormalButtonDialogue"); //Mara or barracks                          
       
       //let fifthDialogueElement = await ƒS.Menu.getInput(fifthDialogueElementOptions, "WVDialogueOption");
       
@@ -108,14 +108,14 @@ namespace Template {
 
             await ƒS.Speech.tell(characters.consciousness, "Seems like you should go do something else. Infront of the tent was the Assassin, maybe I should talk to her or go to the barracks...");
             //choose for second person to talk to, or go to barracks
-            let secondDialogueElement = await ƒS.Menu.getInput(secondDialogueElementOptions, "AfterMaraAssassinORBarracks");          //after Mara talk, mage is dead
+            let secondDialogueElement = await ƒS.Menu.getInput(secondDialogueElementOptions, "NormalButtonDialogue");          //after Mara talk, mage is dead
             switch (secondDialogueElement) {
               case secondDialogueElementOptions.iSayDot1: //talk to assassin
                 await ƒS.Speech.tell(characters.narrator, "The Assassin infront of the tent looks somewhat relaxed.");
                 await ƒS.Speech.tell(characters.assassin, "Wassup?");
                 askAgain = true;
                 while (askAgain) { //talk to assassin repeat
-                  let thirdDialogueElement = await ƒS.Menu.getInput(thirdDialogueElementOptions, "TalkToAssassinRepeat");
+                  let thirdDialogueElement = await ƒS.Menu.getInput(thirdDialogueElementOptions, "NormalButtonDialogue"); //talk to assassin repeat
                   switch (thirdDialogueElement) {
                     case thirdDialogueElementOptions.iSayDot1: //Who are you
                       await ƒS.Speech.tell(characters.assassin, "So... I am the Assassin and my Name is ???. Generally speaking I try to warn you guys when some of those Hellpuppies show up.");
@@ -192,7 +192,7 @@ namespace Template {
             await ƒS.Speech.tell(characters.consciousness, "This could've gone terribly wrong.");
 
               //need more Mara talk, how
-            let forthDialogueElement = await ƒS.Menu.getInput(forthDialogueElementOptions, "TalkToMageORAssassinOrBarracks,AfterMara"); //after mara talk mage not dead tree
+            let forthDialogueElement = await ƒS.Menu.getInput(forthDialogueElementOptions, "NormalButtonDialogue"); //after mara talk mage not dead tree
             switch (forthDialogueElement) { 
               case forthDialogueElementOptions.iSayDot1: //go to smage
                 //++ Einfluss, via meter??
@@ -227,7 +227,7 @@ namespace Template {
               case forthDialogueElementOptions.iSayDot2: //go to assassin
                 askAgain = true;
                 while (askAgain) { //Talk to assassing repeat
-                  let thirdALTDialogueElement = await ƒS.Menu.getInput(thirdALTDialogueElementOptions, "TalkToAssassinRepeatSmageAlive");
+                  let thirdALTDialogueElement = await ƒS.Menu.getInput(thirdALTDialogueElementOptions, "NormalButtonDialogue");
                   switch (thirdALTDialogueElement) {
                     case thirdALTDialogueElementOptions.iSayDot1: //Who are you
                       await ƒS.Speech.tell(characters.assassin, "So... I am the Assassin and my Name is ???. Generally speaking I try to warn you guys when some of those Hellpuppies show up.");

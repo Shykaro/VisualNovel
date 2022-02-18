@@ -28,7 +28,7 @@ namespace Template {
     },
     arcane: {
       duration: 3, //länge der Transition
-      alpha: "./Transitions/Arcane.jpg",  //Pfad zur greyscaled alpha map
+      alpha: "./Transitions/Arcane2.png",  //Pfad zur greyscaled alpha map
       edge: 1
     }
   };
@@ -50,9 +50,25 @@ namespace Template {
       name: "Intro",
       background: "./Assets/Background/Intro.jpg"
     },
-    bedroom: {
-      name: "Bedroom",
-      background: "./Assets/Background/MountainCastle.png"
+    openfield: {
+      name: "Openfield",
+      background: "./Assets/Background/Ruins.png"
+    },
+    blackscreen: {
+      name: "Blackscreen",
+      background: "./Assets/Background/Blackscreen.jpg"
+    },
+    tempel: {
+      name: "Tempel",
+      background: "./Assets/Background/TempelBG.png"
+    },
+    cave: {
+      name: "Cave",
+      background: "./Assets/Background/DarkCave.png"
+    },
+    Lava: {
+      name: "FlowingLava",
+      background: "./Assets/Background/FlowingLava.gif"
     }
   };
 
@@ -117,14 +133,31 @@ namespace Template {
     rose: {
       name: "Rose",
       description: "Eine seltsam leuchtende Rose",
-      image: "./Assets/Items/rose.jpg"
+      image: "./Assets/Items/rose.jpg",
+      
     }
   };
 
   //Platzhalter für global use
   export let x: number = 0; //counter für gestellte fragen in 3wv.ts == smage dead? x>3 means dead.
-  export let y: number = 0; //Deathcounter
+  export let y: number = 0; //Anzahl der Runs bzw Tode
   export let z: number = 0;
+
+  export let EndingACheck: number = 0; //Maximal 1 sollte auf 1 stehen wenn Re:Intro ausgelöst wird.
+  export let EndingBCheck: number = 0;
+  export let EndingCCheck: number = 0;
+  export let EndingDCheck: number = 0;
+  export let EndingECheck: number = 0;
+  export let EndingFCheck: number = 0;
+  export let EndingGCheck: number = 0;
+
+  export let EndingA: number = 0; //Bei zeit auf array ändern
+  export let EndingB: number = 0;
+  export let EndingC: number = 0;
+  export let EndingD: number = 0;
+  export let EndingE: number = 0;
+  export let EndingF: number = 0;
+  export let EndingG: number = 0;
 
 
   // Menü Zusatz
@@ -268,8 +301,8 @@ namespace Template {
 
     console.log("Sequenzreihe startet jetzt. Splish Splash your opinion is trash");
 
-    if (y == 1) {
-      console.log("######### Second run. #########");
+    if (y > 0) {
+      console.log("######### " + y + " time of run. #########");
     }
 
     //Menü
