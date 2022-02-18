@@ -425,7 +425,7 @@ var Template;
                 if (mageDead) { //smage dead - talking to Mara tree
                     console.log("Mage still dead");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "As you enter the tent, you're met by a fierce and unwelcomed look.");
-                    await Template.ƒS.Character.animate(Template.characters.mara, Template.characters.mara.pose.base, Template.BackToNormal());
+                    //await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
                     await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
                     await Template.ƒS.Speech.tell(Template.characters.mara, "Please leave, I dont have the nerves or time for you at the moment.");
                     await Template.ƒS.update(1);
@@ -519,7 +519,7 @@ var Template;
                 if (!mageDead) { //smage aint dead - mara talk tree
                     console.log("Mage still did diedn't");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "As you enter the tent, you're met by a serious yet friendly smile.");
-                    await Template.ƒS.Character.animate(Template.characters.mara, Template.characters.mara.pose.base, Template.BackToNormal());
+                    //await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
                     await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
                     await Template.ƒS.Speech.tell(Template.characters.mara, "You did quite well wunderkind, we have a lot to do.");
                     await Template.ƒS.update(1);
