@@ -14,7 +14,7 @@ namespace Template {
         T0001: "Boss i did it!!",
         T0002: "I intercepted the beam and got him out of there!",
         T0003: "My name is Pia, this will be a bit much but we have to-",
-        T0010: "I intercepted your soul from the beam of death in the Sky and therefore saved you from the Hands of Satan hehe.",
+        T0010: "I intercepted your soul from the beam of death in the Sky and therefore saved you from the hands of Satan hehe.",
         T0011: "Iam Pia as i already said, and the rest and I call our little organization the forth Magi.",
         T0012: "Quite literally in Hell.",
         T0013: "It's hell, alot to explain but we should really go!",
@@ -195,7 +195,7 @@ namespace Template {
         await ƒS.Speech.tell(characters.narrator, "In a big cracking thunder sound she smashes the staff into the ground!");
         await ƒS.Sound.play(sound.boom, 0.3, true);
         await ƒS.Speech.tell(characters.narrator, "Bitterfreezing cold surrounds you in a matter of seconds, you seem to hear a sound of rain... rain in hell?!");
-        await ƒS.Speech.tell(characters.narrator, "As you come to realise, a huge storm of icespikes is raining with enourmes speed from the sky.");
+        await ƒS.Speech.tell(characters.narrator, "As you come to realise, a huge storm of icespikes is raining with enormous speed from the sky.");
         await ƒS.Speech.tell(characters.narrator, "Whining after whining you hear the countless Helldogs around you fall to the ground...");
 
         await ƒS.Speech.tell(characters.mara, "You dumb idiot...");
@@ -203,7 +203,7 @@ namespace Template {
         await ƒS.Speech.tell(characters.mara, "Now is our time to run.");
         await ƒS.Speech.tell(characters.narrator, "Finally catching your breath, you understand and run, following the redhaired girls path.");
         await ƒS.Speech.tell(characters.narrator, "One last time you turn around, daring a glance at the powerful little mage who seemed to have saved you twice.");
-        await ƒS.Speech.tell(characters.narrator, "Only to notice a girl laying on ground, seemingly unconscious.");
+        await ƒS.Speech.tell(characters.narrator, "Only to notice a girl laying on the ground, seemingly unconscious.");
         await ƒS.Speech.tell(characters.narrator, "There are Helldogs surrounding her slowly as you scream for the redhaired girl.");
         await ƒS.Speech.tell(characters.narrator, "While noticing she is already looking towards your direction, tears running down her determined Eyes.");
         await ƒS.Speech.tell(characters.consciousness, "She knew. You should've known. It's your fault...");

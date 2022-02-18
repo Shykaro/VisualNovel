@@ -183,7 +183,7 @@ namespace Template {
                       await ƒS.Location.show(locations.tempel);
                       await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                       await ƒS.update(1);
-                      await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                      await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                       await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                       await ƒS.Character.hide(characters.trainer);
                       await ƒS.update(1);
@@ -228,7 +228,7 @@ namespace Template {
                 await ƒS.Location.show(locations.tempel);
                 await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                 await ƒS.update(1);
-                await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                 await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                 await ƒS.Character.hide(characters.trainer);
                 await ƒS.update(1);
@@ -300,7 +300,7 @@ namespace Template {
                 await ƒS.Location.show(locations.tempel);
                 await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                 await ƒS.update(1);
-                await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                 await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                 await ƒS.Character.hide(characters.trainer);
                 await ƒS.update(1);
@@ -351,7 +351,7 @@ namespace Template {
                       await ƒS.Location.show(locations.tempel);
                       await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                       await ƒS.update(1);
-                      await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                      await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                       await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                       await ƒS.Character.hide(characters.trainer);
                       await ƒS.update(1);
@@ -394,7 +394,7 @@ namespace Template {
                 await ƒS.Location.show(locations.tempel);
                 await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
                 await ƒS.update(1);
-                await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                 await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                 await ƒS.Character.hide(characters.trainer);
                 await ƒS.update(1);
@@ -409,6 +409,8 @@ namespace Template {
           await ƒS.Speech.tell(characters.consciousness, "A bit of sparing wouldn't hurt either...");
 
           await ƒS.Speech.tell(characters.trainer, "Hey there! I didn't see you here before, up for some training?");
+          await ƒS.Character.show(characters.trainer, characters.trainer.pose.base, ƒS.positionPercent(30, 70));
+          await ƒS.update(1);
           await ƒS.Speech.tell(characters.narrator, "The soldier looking guy hands you a shortsword.");
           await ƒS.Speech.tell(characters.trainer, "Let's see what you can do!");
           //timeskip clash effect here
@@ -426,7 +428,7 @@ namespace Template {
           await ƒS.Location.show(locations.tempel);
           await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
           await ƒS.update(1);
-          await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+          await ƒS.Speech.tell(characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
           await ƒS.Speech.tell(characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
           await ƒS.Character.hide(characters.trainer);
           await ƒS.update(1);

@@ -55,7 +55,7 @@ var Template;
         let text = {
             narrator: {
                 T0000: "You Died.",
-                T0001: "You will be judged infront of the Eternities of the everliving astral World.",
+                T0001: "You will be judged infront of the Eternities of the everliving Astral World.",
                 T0002: ".....",
                 T0003: "You were found guilty by the ten commandments.",
                 T1003: "You shall be judged and tested in a trial.",
@@ -125,7 +125,7 @@ var Template;
                 T0001: "Boss i did it!!",
                 T0002: "I intercepted the beam and got him out of there!",
                 T0003: "My name is Pia, this will be a bit much but we have to-",
-                T0010: "I intercepted your soul from the beam of death in the Sky and therefore saved you from the Hands of Satan hehe.",
+                T0010: "I intercepted your soul from the beam of death in the Sky and therefore saved you from the hands of Satan hehe.",
                 T0011: "Iam Pia as i already said, and the rest and I call our little organization the forth Magi.",
                 T0012: "Quite literally in Hell.",
                 T0013: "It's hell, alot to explain but we should really go!",
@@ -271,14 +271,14 @@ var Template;
             await Template.ƒS.Speech.tell(Template.characters.narrator, "In a big cracking thunder sound she smashes the staff into the ground!");
             await Template.ƒS.Sound.play(Template.sound.boom, 0.3, true);
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Bitterfreezing cold surrounds you in a matter of seconds, you seem to hear a sound of rain... rain in hell?!");
-            await Template.ƒS.Speech.tell(Template.characters.narrator, "As you come to realise, a huge storm of icespikes is raining with enourmes speed from the sky.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "As you come to realise, a huge storm of icespikes is raining with enormous speed from the sky.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Whining after whining you hear the countless Helldogs around you fall to the ground...");
             await Template.ƒS.Speech.tell(Template.characters.mara, "You dumb idiot...");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "The redhaired girl lowers her shield, takes a quick look around and grabs your arm with sheer strength.");
             await Template.ƒS.Speech.tell(Template.characters.mara, "Now is our time to run.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Finally catching your breath, you understand and run, following the redhaired girls path.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "One last time you turn around, daring a glance at the powerful little mage who seemed to have saved you twice.");
-            await Template.ƒS.Speech.tell(Template.characters.narrator, "Only to notice a girl laying on ground, seemingly unconscious.");
+            await Template.ƒS.Speech.tell(Template.characters.narrator, "Only to notice a girl laying on the ground, seemingly unconscious.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "There are Helldogs surrounding her slowly as you scream for the redhaired girl.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "While noticing she is already looking towards your direction, tears running down her determined Eyes.");
             await Template.ƒS.Speech.tell(Template.characters.consciousness, "She knew. You should've known. It's your fault...");
@@ -509,7 +509,7 @@ var Template;
                                         await Template.ƒS.Location.show(Template.locations.tempel);
                                         await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
                                         await Template.ƒS.update(1);
-                                        await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                                        await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                                         await Template.ƒS.Character.hide(Template.characters.trainer);
                                         await Template.ƒS.update(1);
@@ -552,7 +552,7 @@ var Template;
                             await Template.ƒS.Location.show(Template.locations.tempel);
                             await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
                             await Template.ƒS.update(1);
-                            await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                            await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                             await Template.ƒS.Character.hide(Template.characters.trainer);
                             await Template.ƒS.update(1);
@@ -618,7 +618,7 @@ var Template;
                             await Template.ƒS.Location.show(Template.locations.tempel);
                             await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
                             await Template.ƒS.update(1);
-                            await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                            await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                             await Template.ƒS.Character.hide(Template.characters.trainer);
                             await Template.ƒS.update(1);
@@ -668,7 +668,7 @@ var Template;
                                         await Template.ƒS.Location.show(Template.locations.tempel);
                                         await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
                                         await Template.ƒS.update(1);
-                                        await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                                        await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                                         await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                                         await Template.ƒS.Character.hide(Template.characters.trainer);
                                         await Template.ƒS.update(1);
@@ -710,7 +710,7 @@ var Template;
                             await Template.ƒS.Location.show(Template.locations.tempel);
                             await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
                             await Template.ƒS.update(1);
-                            await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                            await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                             await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                             await Template.ƒS.Character.hide(Template.characters.trainer);
                             await Template.ƒS.update(1);
@@ -723,6 +723,8 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.consciousness, "Maybe I get some more info at the barracks.");
                 await Template.ƒS.Speech.tell(Template.characters.consciousness, "A bit of sparing wouldn't hurt either...");
                 await Template.ƒS.Speech.tell(Template.characters.trainer, "Hey there! I didn't see you here before, up for some training?");
+                await Template.ƒS.Character.show(Template.characters.trainer, Template.characters.trainer.pose.base, Template.ƒS.positionPercent(30, 70));
+                await Template.ƒS.update(1);
                 await Template.ƒS.Speech.tell(Template.characters.narrator, "The soldier looking guy hands you a shortsword.");
                 await Template.ƒS.Speech.tell(Template.characters.trainer, "Let's see what you can do!");
                 //timeskip clash effect here
@@ -740,7 +742,7 @@ var Template;
                 await Template.ƒS.Location.show(Template.locations.tempel);
                 await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
                 await Template.ƒS.update(1);
-                await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good foodwork. Nice!");
+                await Template.ƒS.Speech.tell(Template.characters.trainer, "Seems like you were some kind of fighter in your past life, very good footwork. Nice!");
                 await Template.ƒS.Speech.tell(Template.characters.trainer, "Lets end it here for now, rest a bit, I will get us some tea.");
                 await Template.ƒS.Character.hide(Template.characters.trainer);
                 await Template.ƒS.update(1);
@@ -773,6 +775,11 @@ var Template;
                 T0001: ""
             }
         };
+        await Template.ƒS.Location.show(Template.locations.openfield);
+        await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "As you enter the tent, you're met by a fierce and unwelcomed look.");
+        await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
     }
     Template.Artifact = Artifact;
 })(Template || (Template = {}));
@@ -949,13 +956,6 @@ var Template;
     Template.EndingECheck = "0";
     Template.EndingFCheck = "0";
     Template.EndingGCheck = "0";
-    Template.EndingA = "0"; //Bei zeit auf array ändern, wird benutzt um anzuzeigen wie viele aller endings schon abgeschlossen wurden
-    Template.EndingB = "0";
-    Template.EndingC = "0";
-    Template.EndingD = "0";
-    Template.EndingE = "0";
-    Template.EndingF = "0";
-    Template.EndingG = "0";
     // Menü Zusatz
     let inGameMenu = {
         //buttons, die man angezeigt haben möchte & strings dienen zur css-gestaltung
@@ -1076,9 +1076,9 @@ var Template;
         gameMenu = Template.ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
         //Szenenreihenfolge
         let scenes = [
-            { id: "Re:Intro", scene: Template.ReIntroduction, name: "1Re:Intro" },
-            { scene: Template.Intro, name: "2Intro" },
-            { scene: Template.WiderstandsVersteck, name: "3WV" },
+            //{ id: "Re:Intro", scene: ReIntroduction, name: "1Re:Intro"},
+            //{ scene: Intro, name: "2Intro" },
+            //{ scene: WiderstandsVersteck, name: "3WV" },
             { scene: Template.HauptVersteck, name: "4HV" },
             { scene: Template.TrueEnding, name: "9TrueEnding" }
             //{ id: "Ende", scene: End, name: "Introduction to FS"},

@@ -18,6 +18,12 @@ namespace Template {
         }
     };
 
+    await ƒS.Location.show(locations.openfield);
+      await ƒS.update(transition.donner3.duration, transition.donner3.alpha, transition.donner3.edge);
+      await ƒS.update(1);
+
+    await ƒS.Speech.tell(characters.narrator, "As you enter the tent, you're met by a fierce and unwelcomed look.");
+    await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
 
 
 

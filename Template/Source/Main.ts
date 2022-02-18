@@ -176,13 +176,13 @@ namespace Template {
   export let EndingFCheck: String = "0";
   export let EndingGCheck: String = "0";
 
-  export let EndingA: String = "0"; //Bei zeit auf array ändern, wird benutzt um anzuzeigen wie viele aller endings schon abgeschlossen wurden
-  export let EndingB: String = "0";
-  export let EndingC: String = "0";
-  export let EndingD: String = "0";
-  export let EndingE: String = "0";
-  export let EndingF: String = "0";
-  export let EndingG: String = "0";
+  export let EndingA: String; //Bei zeit auf array ändern, wird benutzt um anzuzeigen wie viele aller endings schon abgeschlossen wurden
+  export let EndingB: String;
+  export let EndingC: String;
+  export let EndingD: String;
+  export let EndingE: String;
+  export let EndingF: String;
+  export let EndingG: String;
 
 
   // Menü Zusatz
@@ -335,9 +335,9 @@ namespace Template {
 
     //Szenenreihenfolge
     let scenes: ƒS.Scenes = [
-      { id: "Re:Intro", scene: ReIntroduction, name: "1Re:Intro"},
-      { scene: Intro, name: "2Intro" },
-      { scene: WiderstandsVersteck, name: "3WV" },
+      //{ id: "Re:Intro", scene: ReIntroduction, name: "1Re:Intro"},
+      //{ scene: Intro, name: "2Intro" },
+      //{ scene: WiderstandsVersteck, name: "3WV" },
       { scene: HauptVersteck, name: "4HV" },
 
       { scene: TrueEnding, name: "9TrueEnding" }

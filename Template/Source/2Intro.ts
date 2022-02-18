@@ -5,14 +5,14 @@ namespace Template {
     let text = {
       narrator: {
           T0000: "You Died.",
-          T0001: "You will be judged infront of the Eternities of the everliving astral World.",
+          T0001: "You will be judged infront of the Eternities of the everliving Astral World.",
           T0002: ".....",
           T0003: "You were found guilty by the ten commandments.",
           T1003: "You shall be judged and tested in a trial.",
           T0004: "Suffer in Hell",
           T0005: "Suffer...",
           T0006: "..."
-
+          
       }
   };
 
