@@ -276,8 +276,7 @@ namespace Template {
 
       }
 
-      await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
-      await ƒS.Character.animate(characters.pia, characters.pia.pose.base, BackToNormal());
+
       await ƒS.Character.hide(characters.smage);
       await ƒS.Character.hide(characters.pia);
       await ƒS.Character.hide(characters.general);

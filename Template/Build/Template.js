@@ -318,8 +318,6 @@ var Template;
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Quietly under the orders of Mara the whole group sneaks towards the headquarters...");
             await Template.ƒS.Character.animate(Template.characters.smage, Template.characters.smage.pose.base, Template.fromRightToRight());
         }
-        await Template.ƒS.Character.animate(Template.characters.mara, Template.characters.mara.pose.base, Template.BackToNormal());
-        await Template.ƒS.Character.animate(Template.characters.pia, Template.characters.pia.pose.base, Template.BackToNormal());
         await Template.ƒS.Character.hide(Template.characters.smage);
         await Template.ƒS.Character.hide(Template.characters.pia);
         await Template.ƒS.Character.hide(Template.characters.general);
