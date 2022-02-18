@@ -425,10 +425,10 @@ var Template;
                 if (mageDead) { //smage dead - talking to Mara tree
                     console.log("Mage still dead");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "As you enter the tent, you're met by a fierce and unwelcomed look.");
-                    //await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
                     await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
-                    await Template.ƒS.Speech.tell(Template.characters.mara, "Please leave, I dont have the nerves or time for you at the moment.");
+                    await Template.ƒS.Character.animate(Template.characters.mara, Template.characters.mara.pose.base, Template.BackToNormal());
                     await Template.ƒS.update(1);
+                    await Template.ƒS.Speech.tell(Template.characters.mara, "Please leave, I dont have the nerves or time for you at the moment.");
                     await Template.ƒS.Character.hide(Template.characters.mara);
                     await Template.ƒS.update(1);
                     await Template.ƒS.Speech.tell(Template.characters.consciousness, "Seems like you should go do something else. Infront of the tent was the Assassin, maybe I should talk to her or go to the barracks...");
@@ -519,10 +519,10 @@ var Template;
                 if (!mageDead) { //smage aint dead - mara talk tree
                     console.log("Mage still did diedn't");
                     await Template.ƒS.Speech.tell(Template.characters.narrator, "As you enter the tent, you're met by a serious yet friendly smile.");
-                    //await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
                     await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
-                    await Template.ƒS.Speech.tell(Template.characters.mara, "You did quite well wunderkind, we have a lot to do.");
+                    await Template.ƒS.Character.animate(Template.characters.mara, Template.characters.mara.pose.base, Template.BackToNormal());
                     await Template.ƒS.update(1);
+                    await Template.ƒS.Speech.tell(Template.characters.mara, "You did quite well wunderkind, we have a lot to do.");
                     await Template.ƒS.Character.hide(Template.characters.mara);
                     await Template.ƒS.update(1);
                     await Template.ƒS.Speech.tell(Template.characters.narrator, Template.characters.pia.name + " is standing next to her with a huge proud look on her face.");
