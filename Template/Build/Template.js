@@ -550,7 +550,6 @@ var Template;
                             await Template.ƒS.Character.animate(Template.characters.pia, Template.characters.pia.pose.base, Template.fromRightToRight());
                             await Template.ƒS.Character.hide(Template.characters.mara);
                             await Template.ƒS.update(1);
-                            await Template.ƒS.Character.animate(Template.characters.pia, Template.characters.pia.pose.base, Template.BackToNormal());
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "Wow, that was quite a lot to process...");
                             await Template.ƒS.Speech.tell(Template.characters.narrator, "Everyone seems busy, you make your way to the barracks as " + Template.characters.pia + " has adviced you.");
                             await Template.ƒS.Speech.tell(Template.characters.consciousness, "Training is not a bad idea after all.");
