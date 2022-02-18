@@ -335,9 +335,9 @@ namespace Template {
 
     //Szenenreihenfolge
     let scenes: ƒS.Scenes = [
-      //{ id: "Re:Intro", scene: ReIntroduction, name: "1Re:Intro"},
-      //{ scene: Intro, name: "2Intro" },
-      //{ scene: WiderstandsVersteck, name: "3WV" },
+      { id: "Re:Intro", scene: ReIntroduction, name: "1Re:Intro"},
+      { scene: Intro, name: "2Intro" },
+      { scene: WiderstandsVersteck, name: "3WV" },
       { scene: HauptVersteck, name: "4HV" },
 
       { scene: TrueEnding, name: "9TrueEnding" }

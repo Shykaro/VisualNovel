@@ -1076,9 +1076,9 @@ var Template;
         gameMenu = Template.ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
         //Szenenreihenfolge
         let scenes = [
-            //{ id: "Re:Intro", scene: ReIntroduction, name: "1Re:Intro"},
-            //{ scene: Intro, name: "2Intro" },
-            //{ scene: WiderstandsVersteck, name: "3WV" },
+            { id: "Re:Intro", scene: Template.ReIntroduction, name: "1Re:Intro" },
+            { scene: Template.Intro, name: "2Intro" },
+            { scene: Template.WiderstandsVersteck, name: "3WV" },
             { scene: Template.HauptVersteck, name: "4HV" },
             { scene: Template.TrueEnding, name: "9TrueEnding" }
             //{ id: "Ende", scene: End, name: "Introduction to FS"},
