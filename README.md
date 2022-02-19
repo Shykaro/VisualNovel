@@ -13,7 +13,7 @@
 
 # Gepacktes Konzept und Projektordner
 
-- [Zip/Rar Archiv](https://github.com/Xanderthier/VisualNovel/tree/main/Template/GepackteDateien)
+- [Zip/Rar Archiv](https://github.com/Xanderthier/VisualNovel/tree/main/GepackteDateien)
 
 
 
