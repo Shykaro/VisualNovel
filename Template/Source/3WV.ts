@@ -271,7 +271,7 @@ namespace Template {
 
         await ƒS.Speech.tell(characters.smage, "By the way, what's your name?");
         dataForSave.PName = await ƒS.Speech.getInput();
-
+        
         await ƒS.Speech.tell(characters.smage, "Ohhh " + dataForSave.PName + " is a cute name");
         await ƒS.Speech.tell(characters.pia, "My Name is Pia and the boss over there is Mara");
 

@@ -759,13 +759,16 @@ var Template;
                 Template.dataForSave.Skill = +20;
                 break;
         }
+        await Template.ƒS.Sound.fade(Template.sound.wvthemeBad, 0, 0);
+        await Template.ƒS.Sound.fade(Template.sound.wvtheme, 0, 0);
         //bang sound insert here
         await Template.ƒS.Speech.tell(Template.characters.narrator, "A loud bang occurs");
-        await Template.ƒS.Sound.play(Template.sound.boom, 0.3, false);
+        await Template.ƒS.Sound.play(Template.sound.boom, 0.4, false);
         await Template.ƒS.Location.show(Template.locations.blackscreen);
         await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
         await Template.ƒS.update(1);
-        await Template.ƒS.Sound.play(Template.sound.boom, 0.3, false);
+        await Template.ƒS.Sound.play(Template.sound.boom, 0.4, false);
+        await Template.ƒS.Sound.play(Template.sound.hvtheme, 0.2, true);
         await Template.ƒS.Speech.tell(Template.characters.narrator, "Loud screams and dust makes it hard to orientate.");
         await Template.ƒS.Location.show(Template.locations.tempel);
         await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
@@ -777,10 +780,15 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.mara, "OVER HERE " + Template.dataForSave.PName + " GODDAMNIT!!");
         await Template.ƒS.Speech.tell(Template.characters.consciousness, "Thats Mara!");
         await Template.ƒS.Speech.tell(Template.characters.narrator, "You crawl towards the sound of her Voice.");
-        await Template.ƒS.Speech.tell(Template.characters.narrator, "You reach the Team, everyone as shoked as you are.");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "You reach the Team, everyone as shocked as you are.");
+        await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
+        await Template.ƒS.Character.animate(Template.characters.mara, Template.characters.mara.pose.base, Template.BackToNormal());
+        await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.mara, "This hideout is comprimised, we have to escape!!");
         await Template.ƒS.Speech.tell(Template.characters.narrator, "Mara grabs your arm and pushes you towards a small tunnel in the Wall.");
         await Template.ƒS.Speech.tell(Template.characters.mara, "Dont look at it, GO!");
+        await Template.ƒS.Character.hide(Template.characters.mara);
+        await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.narrator, "You squeeze yourself through the tight cave.");
         await Template.ƒS.Speech.tell(Template.characters.narrator, "Letting the screams behind you.");
         await Template.ƒS.Speech.tell(Template.characters.consciousness, "Now that you realise, most of those people will be dead.");
@@ -812,11 +820,17 @@ var Template;
         await Template.ƒS.update(Template.transition.donner1.duration, Template.transition.donner1.alpha, Template.transition.donner1.edge);
         await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.narrator, "Light shines in your face as you leave the small cave through which you just escaped the horror from.");
+        await Template.ƒS.Character.animate(Template.characters.mara, Template.characters.mara.pose.base, Template.BackToNormal());
+        await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.mara, "We will have to visit someone I didn't really want to visit yet.");
         await Template.ƒS.Speech.tell(Template.characters.mara, "Well, let's go.");
+        await Template.ƒS.Character.hide(Template.characters.mara);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Sound.fade(Template.sound.hvtheme, 0, 1);
         await Template.ƒS.Location.show(Template.locations.blackscreen);
         await Template.ƒS.update(Template.transition.steps.duration, Template.transition.steps.alpha, Template.transition.steps.edge);
         await Template.ƒS.update(1);
+        await Template.ƒS.Sound.play(Template.sound.arttheme, 0.1, true);
         await Template.ƒS.Location.show(Template.locations.openfield);
         await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
         await Template.ƒS.update(1);
@@ -916,6 +930,8 @@ var Template;
         introtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
         wvtheme: "./Assets/Music/Vampires/Haunted Mansion.mp3",
         wvthemeBad: "./Assets/Music/Vampires/GodzillaVsKong.mp3",
+        hvtheme: "./Assets/Music/Vampires/Aceroc.mp3",
+        arttheme: "./Assets/Music/Vampires/TheHouseofPleasures.mp3",
         //sound
         click: "",
         boom: "./Assets/Music/boom.mp3"
@@ -1121,7 +1137,7 @@ var Template;
     //delay //await delay_5sec; in scene.ts
     Template.delay_5sec = Template.ƒS.Progress.defineSignal([() => Template.ƒS.Progress.delay(5)]);
     Template.dataForSave = {
-        PName: "",
+        PName: "Newbie",
         Einfluss: 0,
         Skill: 0
     };

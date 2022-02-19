@@ -44,6 +44,8 @@ namespace Template {
     introtheme: "./Assets/Music/Vampires/WastedBlood.mp3",
     wvtheme: "./Assets/Music/Vampires/Haunted Mansion.mp3",
     wvthemeBad: "./Assets/Music/Vampires/GodzillaVsKong.mp3",
+    hvtheme: "./Assets/Music/Vampires/Aceroc.mp3",
+    arttheme: "./Assets/Music/Vampires/TheHouseofPleasures.mp3",
 
     //sound
     click: "",
@@ -286,7 +288,7 @@ namespace Template {
 
 
   export let dataForSave = {  
-      PName: "",
+      PName: "Newbie",
       Einfluss: 0,
       Skill: 0
   };

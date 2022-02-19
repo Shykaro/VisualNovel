@@ -56,6 +56,8 @@ declare namespace Template {
         introtheme: string;
         wvtheme: string;
         wvthemeBad: string;
+        hvtheme: string;
+        arttheme: string;
         click: string;
         boom: string;
     };

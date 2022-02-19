@@ -443,13 +443,16 @@ namespace Template {
           break;
       }
 
+      await ƒS.Sound.fade(sound.wvthemeBad, 0, 0);
+      await ƒS.Sound.fade(sound.wvtheme, 0, 0);
       //bang sound insert here
       await ƒS.Speech.tell(characters.narrator, "A loud bang occurs");
-      await ƒS.Sound.play(sound.boom, 0.3, false);
+      await ƒS.Sound.play(sound.boom, 0.4, false);
       await ƒS.Location.show(locations.blackscreen);
       await ƒS.update(transition.donner3.duration, transition.donner3.alpha, transition.donner3.edge);
       await ƒS.update(1);
-      await ƒS.Sound.play(sound.boom, 0.3, false);
+      await ƒS.Sound.play(sound.boom, 0.4, false);
+      await ƒS.Sound.play(sound.hvtheme, 0.2, true);
       await ƒS.Speech.tell(characters.narrator, "Loud screams and dust makes it hard to orientate.");
       await ƒS.Location.show(locations.tempel);
       await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
@@ -463,11 +466,17 @@ namespace Template {
       await ƒS.Speech.tell(characters.consciousness, "Thats Mara!");
 
       await ƒS.Speech.tell(characters.narrator, "You crawl towards the sound of her Voice.");
-      await ƒS.Speech.tell(characters.narrator, "You reach the Team, everyone as shoked as you are.");
+      await ƒS.Speech.tell(characters.narrator, "You reach the Team, everyone as shocked as you are.");
 
+
+      await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
+      await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
+      await ƒS.update(1);
       await ƒS.Speech.tell(characters.mara, "This hideout is comprimised, we have to escape!!");
       await ƒS.Speech.tell(characters.narrator, "Mara grabs your arm and pushes you towards a small tunnel in the Wall.");
       await ƒS.Speech.tell(characters.mara, "Dont look at it, GO!");
+      await ƒS.Character.hide(characters.mara);
+      await ƒS.update(1);
 
       await ƒS.Speech.tell(characters.narrator, "You squeeze yourself through the tight cave.");
       await ƒS.Speech.tell(characters.narrator, "Letting the screams behind you.");

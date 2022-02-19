@@ -24,17 +24,24 @@ namespace Template {
       await ƒS.update(1);
 
       await ƒS.Speech.tell(characters.narrator, "Light shines in your face as you leave the small cave through which you just escaped the horror from.");
+      await ƒS.Character.animate(characters.mara, characters.mara.pose.base, BackToNormal());
+      await ƒS.update(1);
       await ƒS.Speech.tell(characters.mara, "We will have to visit someone I didn't really want to visit yet.");
       await ƒS.Speech.tell(characters.mara, "Well, let's go.");
+      await ƒS.Character.hide(characters.mara);
+      await ƒS.update(1);
+      await ƒS.Sound.fade(sound.hvtheme, 0, 1);
 
       await ƒS.Location.show(locations.blackscreen);
       await ƒS.update(transition.steps.duration, transition.steps.alpha, transition.steps.edge);
       await ƒS.update(1);
+      await ƒS.Sound.play(sound.arttheme, 0.1, true);
       await ƒS.Location.show(locations.openfield);
       await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
       await ƒS.update(1);
 
-
+      
+      
       await ƒS.Speech.tell(characters.narrator, "After a long journey on foot, you and the remaining survivors arrive at an old ruined mansion.");
       await ƒS.Speech.tell(characters.narrator, "No lifesigns hint of someone living in this ruin...");
       await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
