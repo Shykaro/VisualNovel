@@ -8,7 +8,7 @@
 
 - [Sourcecode](https://github.com/Xanderthier/VisualNovel/tree/main/Template)
 - [Konzeptdateien](https://github.com/Xanderthier/VisualNovel/tree/main/Template/Konzeption)
-- [ReadmeDatei](https://github.com/Xanderthier/VisualNovel/blob/main/README.md)
+- [Bewertungskriterien](https://github.com/Xanderthier/VisualNovel/blob/main/README.md)
 
 
 # Gepacktes Konzept und Projektordner
