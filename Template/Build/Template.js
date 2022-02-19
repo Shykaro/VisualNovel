@@ -271,7 +271,7 @@ var Template;
             await Template.ƒS.Speech.tell(Template.characters.narrator, "You can't move, but you glance at the small mage that has been left behind to cover us.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "A bright light shines from her staff, attracting the attention of every single helldog around her.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "In a big cracking thunder sound she smashes the staff into the ground!");
-            await Template.ƒS.Sound.play(Template.sound.boom, 0.3, true);
+            //await ƒS.Sound.play(sound.boom, 0.3, true);
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Bitter freezing cold surrounds you in a matter of seconds, you seem to hear a sound of rain... rain in hell?!");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "As you come to realise, a huge storm of ice spikes is raining with enormous speed from the sky.");
             await Template.ƒS.Speech.tell(Template.characters.narrator, "Whining after whining, you hear the countless Helldogs around you fall to the ground...");
@@ -754,6 +754,31 @@ var Template;
         }
         //bang sound insert here
         await Template.ƒS.Speech.tell(Template.characters.narrator, "A loud bang occurs");
+        await Template.ƒS.Sound.play(Template.sound.boom, 0.3, false);
+        await Template.ƒS.Location.show(Template.locations.blackscreen);
+        await Template.ƒS.update(Template.transition.donner3.duration, Template.transition.donner3.alpha, Template.transition.donner3.edge);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Sound.play(Template.sound.boom, 0.3, false);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Loud screams and dust makes it hard to orientate.");
+        await Template.ƒS.Location.show(Template.locations.tempel);
+        await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "After a short while, you see a huge hole in the upper part of the Cave.");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Flooding with Demons that fly through it.");
+        await Template.ƒS.Speech.tell(Template.characters.mara, "OVER HERE!!");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Through the chaos you notice someone familiar screaming.");
+        await Template.ƒS.Speech.tell(Template.characters.mara, "OVER HERE " + Template.dataForSave.PName + " GODDAMNIT!!");
+        await Template.ƒS.Speech.tell(Template.characters.consciousness, "Thats Mara!");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "You crawl towards the sound of her Voice.");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "You reach the Team, everyone as shoked as you are.");
+        await Template.ƒS.Speech.tell(Template.characters.mara, "This hideout is comprimised, we have to escape!!");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Mara grabs your arm and pushes you towards a small tunnel in the Wall.");
+        await Template.ƒS.Speech.tell(Template.characters.mara, "Dont look at it, GO!");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "You squeeze yourself through the tight cave.");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Letting the screams behind you.");
+        await Template.ƒS.Speech.tell(Template.characters.consciousness, "Now that you realise, most of those people will be dead.");
+        await Template.ƒS.Speech.tell(Template.characters.consciousness, "Who did this? How did it come to this? I thought the hideout was a safeplace?!");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "...");
     }
     Template.HauptVersteck = HauptVersteck;
 })(Template || (Template = {}));
@@ -764,13 +789,13 @@ var Template;
         //Texte bzw. used characters in this scene.
         let text = {
             narrator: {
-                T0001: "",
+                T0001: ""
             },
             smage: {
-                T0001: "",
+                T0001: ""
             },
             general: {
-                T0001: "",
+                T0001: ""
             },
             assassin: {
                 T0001: ""
@@ -779,7 +804,16 @@ var Template;
         await Template.ƒS.Location.show(Template.locations.openfield);
         await Template.ƒS.update(Template.transition.donner1.duration, Template.transition.donner1.alpha, Template.transition.donner1.edge);
         await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.narrator, "After a long journey on foot, you and the remaining survivors arrive at the old ruined house.");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Light shines in your face as you leave the small cave through which you just escaped the horror from.");
+        await Template.ƒS.Speech.tell(Template.characters.mara, "We will have to visit someone I didn't really want to visit yet.");
+        await Template.ƒS.Speech.tell(Template.characters.mara, "Well, let's go.");
+        await Template.ƒS.Location.show(Template.locations.blackscreen);
+        await Template.ƒS.update(Template.transition.steps.duration, Template.transition.steps.alpha, Template.transition.steps.edge);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Location.show(Template.locations.openfield);
+        await Template.ƒS.update(Template.transition.donner2.duration, Template.transition.donner2.alpha, Template.transition.donner2.edge);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "After a long journey on foot, you and the remaining survivors arrive at an old ruined mansion.");
         await Template.ƒS.Speech.tell(Template.characters.narrator, "No lifesigns hint of someone living in this ruin...");
         await Template.ƒS.Character.show(Template.characters.mara, Template.characters.mara.pose.base, Template.ƒS.positionPercent(30, 70));
         await Template.ƒS.update(1);
@@ -812,7 +846,14 @@ var Template;
         await Template.ƒS.update(Template.transition.steps.duration, Template.transition.steps.alpha, Template.transition.steps.edge);
         await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.narrator, "To be continued...");
-        await Template.ƒS.Speech.tell(Template.characters.narrator, "################## Press f5 for different run :) ################");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "################## Credits ################");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Music by Ivan Duch - https://ivanduch.itch.io/");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Explosion from https://pixabay.com/de/sound-effects/big-impact-7054/");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Some Pictures used from https://pixabay.com/");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Characters modified from https://oceansdream.itch.io/");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Backgrounds modified from https://ansimuz.itch.io/");
+        await Template.ƒS.Speech.tell(Template.characters.narrator, "Thank you for playing! Have a wonderful day!");
+        await Template.delay_5sec;
     }
     Template.Artifact = Artifact;
 })(Template || (Template = {}));
@@ -870,7 +911,7 @@ var Template;
         wvthemeBad: "./Assets/Music/Vampires/GodzillaVsKong.mp3",
         //sound
         click: "",
-        boom: ""
+        boom: "./Assets/Music/boom.mp3"
     };
     Template.locations = {
         introduction: {

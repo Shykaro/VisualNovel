@@ -47,7 +47,7 @@ namespace Template {
 
     //sound
     click: "",
-    boom: ""
+    boom: "./Assets/Music/boom.mp3"
   };
 
   export let locations = {

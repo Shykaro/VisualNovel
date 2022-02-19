@@ -438,6 +438,36 @@ namespace Template {
 
       //bang sound insert here
       await ƒS.Speech.tell(characters.narrator, "A loud bang occurs");
+      await ƒS.Sound.play(sound.boom, 0.3, false);
+      await ƒS.Location.show(locations.blackscreen);
+      await ƒS.update(transition.donner3.duration, transition.donner3.alpha, transition.donner3.edge);
+      await ƒS.update(1);
+      await ƒS.Sound.play(sound.boom, 0.3, false);
+      await ƒS.Speech.tell(characters.narrator, "Loud screams and dust makes it hard to orientate.");
+      await ƒS.Location.show(locations.tempel);
+      await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
+      await ƒS.update(1);
+      await ƒS.Speech.tell(characters.narrator, "After a short while, you see a huge hole in the upper part of the Cave.");
+      await ƒS.Speech.tell(characters.narrator, "Flooding with Demons that fly through it.");
+
+      await ƒS.Speech.tell(characters.mara, "OVER HERE!!");
+      await ƒS.Speech.tell(characters.narrator, "Through the chaos you notice someone familiar screaming.");
+      await ƒS.Speech.tell(characters.mara, "OVER HERE " + dataForSave.PName + " GODDAMNIT!!");
+      await ƒS.Speech.tell(characters.consciousness, "Thats Mara!");
+
+      await ƒS.Speech.tell(characters.narrator, "You crawl towards the sound of her Voice.");
+      await ƒS.Speech.tell(characters.narrator, "You reach the Team, everyone as shoked as you are.");
+
+      await ƒS.Speech.tell(characters.mara, "This hideout is comprimised, we have to escape!!");
+      await ƒS.Speech.tell(characters.narrator, "Mara grabs your arm and pushes you towards a small tunnel in the Wall.");
+      await ƒS.Speech.tell(characters.mara, "Dont look at it, GO!");
+
+      await ƒS.Speech.tell(characters.narrator, "You squeeze yourself through the tight cave.");
+      await ƒS.Speech.tell(characters.narrator, "Letting the screams behind you.");
+      await ƒS.Speech.tell(characters.consciousness, "Now that you realise, most of those people will be dead.");
+      await ƒS.Speech.tell(characters.consciousness, "Who did this? How did it come to this? I thought the hideout was a safeplace?!");
+      await ƒS.Speech.tell(characters.narrator, "...");
+
 
 
 

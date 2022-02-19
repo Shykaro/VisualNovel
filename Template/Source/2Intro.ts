@@ -24,7 +24,7 @@ namespace Template {
 
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
     await delay_5sec;
-    
+
     await ƒS.Location.show(locations.blackscreen);
     await ƒS.update(1);
 

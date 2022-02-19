@@ -5,24 +5,37 @@ namespace Template {
         //Texte bzw. used characters in this scene.
       let text = {
         narrator: {
-            T0001: "",
+            T0001: ""
         },
         smage: {
-            T0001: "",
+            T0001: ""
         },
         general: {
-            T0001: "",
+            T0001: ""
         },
         assassin: {
             T0001: ""
         }
     };
 
+
       await ƒS.Location.show(locations.openfield);
       await ƒS.update(transition.donner1.duration, transition.donner1.alpha, transition.donner1.edge);
       await ƒS.update(1);
 
-      await ƒS.Speech.tell(characters.narrator, "After a long journey on foot, you and the remaining survivors arrive at the old ruined house.");
+      await ƒS.Speech.tell(characters.narrator, "Light shines in your face as you leave the small cave through which you just escaped the horror from.");
+      await ƒS.Speech.tell(characters.mara, "We will have to visit someone I didn't really want to visit yet.");
+      await ƒS.Speech.tell(characters.mara, "Well, let's go.");
+
+      await ƒS.Location.show(locations.blackscreen);
+      await ƒS.update(transition.steps.duration, transition.steps.alpha, transition.steps.edge);
+      await ƒS.update(1);
+      await ƒS.Location.show(locations.openfield);
+      await ƒS.update(transition.donner2.duration, transition.donner2.alpha, transition.donner2.edge);
+      await ƒS.update(1);
+
+
+      await ƒS.Speech.tell(characters.narrator, "After a long journey on foot, you and the remaining survivors arrive at an old ruined mansion.");
       await ƒS.Speech.tell(characters.narrator, "No lifesigns hint of someone living in this ruin...");
       await ƒS.Character.show(characters.mara, characters.mara.pose.base, ƒS.positionPercent(30, 70));
       await ƒS.update(1);
@@ -56,7 +69,14 @@ namespace Template {
       await ƒS.update(1);
 
       await ƒS.Speech.tell(characters.narrator, "To be continued...");
-      await ƒS.Speech.tell(characters.narrator, "################## Press f5 for different run :) ################");
+      await ƒS.Speech.tell(characters.narrator, "################## Credits ################");
+      await ƒS.Speech.tell(characters.narrator, "Music by Ivan Duch - https://ivanduch.itch.io/");
+      await ƒS.Speech.tell(characters.narrator, "Explosion from https://pixabay.com/de/sound-effects/big-impact-7054/");
+      await ƒS.Speech.tell(characters.narrator, "Some Pictures used from https://pixabay.com/");
+      await ƒS.Speech.tell(characters.narrator, "Characters modified from https://oceansdream.itch.io/");
+      await ƒS.Speech.tell(characters.narrator, "Backgrounds modified from https://ansimuz.itch.io/");
+      await ƒS.Speech.tell(characters.narrator, "Thank you for playing! Have a wonderful day!");
+      await delay_5sec;
 
     }
 }

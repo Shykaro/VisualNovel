@@ -193,7 +193,7 @@ namespace Template {
         await ƒS.Speech.tell(characters.narrator, "You can't move, but you glance at the small mage that has been left behind to cover us.");
         await ƒS.Speech.tell(characters.narrator, "A bright light shines from her staff, attracting the attention of every single helldog around her.");
         await ƒS.Speech.tell(characters.narrator, "In a big cracking thunder sound she smashes the staff into the ground!");
-        await ƒS.Sound.play(sound.boom, 0.3, true);
+        //await ƒS.Sound.play(sound.boom, 0.3, true);
         await ƒS.Speech.tell(characters.narrator, "Bitter freezing cold surrounds you in a matter of seconds, you seem to hear a sound of rain... rain in hell?!");
         await ƒS.Speech.tell(characters.narrator, "As you come to realise, a huge storm of ice spikes is raining with enormous speed from the sky.");
         await ƒS.Speech.tell(characters.narrator, "Whining after whining, you hear the countless Helldogs around you fall to the ground...");
