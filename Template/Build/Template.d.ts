@@ -191,8 +191,8 @@ declare namespace Template {
     const delay_5sec: ƒS.Signal;
     let dataForSave: {
         PName: string;
-        scoreRyu: number;
-        scoreForRyu: string;
+        Einfluss: number;
+        Skill: number;
     };
     function fromLeftToLeft(): ƒS.AnimationDefinition;
     function fromRightToRight(): ƒS.AnimationDefinition;

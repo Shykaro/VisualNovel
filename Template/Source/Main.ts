@@ -287,8 +287,8 @@ namespace Template {
 
   export let dataForSave = {  
       PName: "",
-      scoreRyu: 0,
-      scoreForRyu: ""
+      Einfluss: 0,
+      Skill: 0
   };
 
 

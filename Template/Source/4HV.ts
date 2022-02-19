@@ -188,6 +188,7 @@ namespace Template {
                       await ƒS.Character.hide(characters.trainer);
                       await ƒS.update(1);
                       //Skill++
+                      dataForSave.Skill = + 20;
                       askAgain = false;
                       break;
                     case thirdDialogueElementOptions.iSayDot5: //Chill around
@@ -233,6 +234,7 @@ namespace Template {
                 await ƒS.Character.hide(characters.trainer);
                 await ƒS.update(1);
                 //Skill++
+                dataForSave.Skill = + 20;
                 break;
             
             }
@@ -257,6 +259,7 @@ namespace Template {
             switch (forthDialogueElement) { 
               case forthDialogueElementOptions.iSayDot1: //go to smage PIA
                 //++ Einfluss, via meter??
+                dataForSave.Einfluss = + 20 ; //Einfluss wird erhöht
                 await ƒS.Speech.tell(characters.pia, "Hi there! Hope you're doing good, must've been quite a bit much for you.");
                 await ƒS.Character.show(characters.pia, characters.pia.pose.base, ƒS.positionPercent(70, 70));
                 await ƒS.update(1);
@@ -305,6 +308,7 @@ namespace Template {
                 await ƒS.Character.hide(characters.trainer);
                 await ƒS.update(1);
                 //Skill++
+                dataForSave.Skill = + 20;
                 break;
               case forthDialogueElementOptions.iSayDot2: //go to assassin
                 askAgain = true;
@@ -356,6 +360,7 @@ namespace Template {
                       await ƒS.Character.hide(characters.trainer);
                       await ƒS.update(1);
                       //Skill++
+                      dataForSave.Skill = + 20;
                       askAgain = false;
                       break;
                     case thirdALTDialogueElementOptions.iSayDot4: //Chill around
@@ -399,6 +404,7 @@ namespace Template {
                 await ƒS.Character.hide(characters.trainer);
                 await ƒS.update(1);
                 //Skill++
+                dataForSave.Skill = + 20;
                 break;
             }
           }
@@ -433,6 +439,7 @@ namespace Template {
           await ƒS.Character.hide(characters.trainer);
           await ƒS.update(1);
           //Skill++
+          dataForSave.Skill = + 20;
           break;
       }
 

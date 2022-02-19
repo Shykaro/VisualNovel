@@ -516,6 +516,7 @@ var Template;
                                         await Template.ƒS.Character.hide(Template.characters.trainer);
                                         await Template.ƒS.update(1);
                                         //Skill++
+                                        Template.dataForSave.Skill = +20;
                                         askAgain = false;
                                         break;
                                     case thirdDialogueElementOptions.iSayDot5: //Chill around
@@ -559,6 +560,7 @@ var Template;
                             await Template.ƒS.Character.hide(Template.characters.trainer);
                             await Template.ƒS.update(1);
                             //Skill++
+                            Template.dataForSave.Skill = +20;
                             break;
                     }
                 }
@@ -579,6 +581,7 @@ var Template;
                     switch (forthDialogueElement) {
                         case forthDialogueElementOptions.iSayDot1: //go to smage PIA
                             //++ Einfluss, via meter??
+                            Template.dataForSave.Einfluss = +20; //Einfluss wird erhöht
                             await Template.ƒS.Speech.tell(Template.characters.pia, "Hi there! Hope you're doing good, must've been quite a bit much for you.");
                             await Template.ƒS.Character.show(Template.characters.pia, Template.characters.pia.pose.base, Template.ƒS.positionPercent(70, 70));
                             await Template.ƒS.update(1);
@@ -626,6 +629,7 @@ var Template;
                             await Template.ƒS.Character.hide(Template.characters.trainer);
                             await Template.ƒS.update(1);
                             //Skill++
+                            Template.dataForSave.Skill = +20;
                             break;
                         case forthDialogueElementOptions.iSayDot2: //go to assassin
                             askAgain = true;
@@ -676,6 +680,7 @@ var Template;
                                         await Template.ƒS.Character.hide(Template.characters.trainer);
                                         await Template.ƒS.update(1);
                                         //Skill++
+                                        Template.dataForSave.Skill = +20;
                                         askAgain = false;
                                         break;
                                     case thirdALTDialogueElementOptions.iSayDot4: //Chill around
@@ -718,6 +723,7 @@ var Template;
                             await Template.ƒS.Character.hide(Template.characters.trainer);
                             await Template.ƒS.update(1);
                             //Skill++
+                            Template.dataForSave.Skill = +20;
                             break;
                     }
                 }
@@ -750,6 +756,7 @@ var Template;
                 await Template.ƒS.Character.hide(Template.characters.trainer);
                 await Template.ƒS.update(1);
                 //Skill++
+                Template.dataForSave.Skill = +20;
                 break;
         }
         //bang sound insert here
@@ -1115,8 +1122,8 @@ var Template;
     Template.delay_5sec = Template.ƒS.Progress.defineSignal([() => Template.ƒS.Progress.delay(5)]);
     Template.dataForSave = {
         PName: "",
-        scoreRyu: 0,
-        scoreForRyu: ""
+        Einfluss: 0,
+        Skill: 0
     };
     //Animations
     function fromLeftToLeft() {
