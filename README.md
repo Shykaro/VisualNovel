@@ -1,19 +1,19 @@
 
 # Pages-Game-Link
 
-- [Demons Cattle](https://xanderthier.github.io/VisualNovel/Template)
+- [Demons Cattle](https://shykaro.github.io/VisualNovel/Template/)
 
 
 # Directory bzw. Sourcecode Link
 
-- [Sourcecode](https://github.com/Xanderthier/VisualNovel/tree/main/Template)
-- [Konzeptdateien](https://github.com/Xanderthier/VisualNovel/tree/main/Template/Konzeption)
-- [Bewertungskriterien](https://github.com/Xanderthier/VisualNovel/blob/main/README.md)
+- [Sourcecode](https://github.com/shykaro/VisualNovel/tree/main/Template)
+- [Konzeptdateien](https://github.com/shykaro/VisualNovel/tree/main/Template/Konzeption)
+- [Bewertungskriterien](https://github.com/shykaro/VisualNovel/blob/main/README.md)
 
 
 # Gepacktes Konzept und Projektordner
 
-- [Zip/Rar Archiv](https://github.com/Xanderthier/VisualNovel/tree/main/GepackteDateien)
+- [Zip/Rar Archiv](https://github.com/shykaro/VisualNovel/tree/main/GepackteDateien)
 
 
 
@@ -36,8 +36,8 @@ A FUDGE module for the easy development of interactive stories, visual novels an
 | Nr | Bezeichnung           | Inhalt                                                                                                                                                                                                                                                                         |
 |---:|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    | Titel                 | 
-|    | Name                  | Alexander Thier
-|    | Matrikelnummer        | 263465
+|    | Name                  | Alex T.
+|    | Matrikelnummer        | 2----5
 |  1 | Konzeption     | Konzeption erledigt, beinhaltet Storyboard, zusammenfassung und erklärung der Items usw..                                                                                                                            |
 |  2 | Charakter-Konzept     | Charactere erledigt, beinhalten überschaubare Steckbriefe, umgesetzte Stereotypen.                                                                                                                                                                                |
 |  3 | Auswahlmöglichkeiten | Erledigt. Dialogoptionen entscheiden sehr dramatisch den weiteren Verlauf. Character sterben komplett usw..                                                                                                                                                     |
